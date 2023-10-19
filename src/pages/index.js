@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MainContent from "@/components/MainContent";
 import CardContent from "@/components/CardContent";
 import SlideContent from "@/components/SlideContent";
+import AdsContent from "@/components/AdsContent";
 import main from "@/assets/main/main_image.png";
 import { customerMainContentList } from "@/constants/customer";
 import {
@@ -46,7 +47,11 @@ const Home = () => {
         text="더 알아보기"
         onClick={navigateToFranchisePage}
       />
-      <CheckContent list={franchiseCheckContentList} />
+      <CheckContent
+        list={franchiseCheckContentList}
+        onClick={navigateToInquiryPage}
+      />
+      <AdsContent />
     </HomeContainer>
   );
 };

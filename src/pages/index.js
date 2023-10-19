@@ -2,13 +2,16 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import MainContent from "@/components/MainContent";
 import CardContent from "@/components/CardContent";
+import SlideContent from "@/components/SlideContent";
 import main from "@/assets/main/main_image.png";
 import { customerMainContentList } from "@/constants/customer";
+import { franchiseMainContentList } from "@/constants/franchise";
 
 const Home = () => {
   const router = useRouter();
   const navigateToMakeatPage = () => router.push("/makeat");
   const navigateToCustomerPage = () => router.push("/customer");
+  const navigateToFranchisePage = () => router.push("/franchise");
 
   return (
     <HomeContainer>
@@ -32,6 +35,11 @@ const Home = () => {
         list={customerMainContentList}
         text="더 알아보기"
         onClick={navigateToCustomerPage}
+      />
+      <SlideContent
+        list={franchiseMainContentList}
+        text="더 알아보기"
+        onClick={navigateToFranchisePage}
       />
     </HomeContainer>
   );

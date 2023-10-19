@@ -14,9 +14,7 @@ import { inquiryPageContentList } from "@/constants/inquiry";
 const Inquiry = () => {
   const router = useRouter();
 
-  const goBack = () => {
-    router.back();
-  };
+  const goBack = () => router.back();
 
   return (
     <InquiryContainer>

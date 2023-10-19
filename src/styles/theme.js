@@ -25,3 +25,4 @@ export const contentBackground = "#f1f2f6";
 export const slideBackground = "#ECF4F3";
 export const cardBackground = "#D4ECE7";
 export const fontColor = "#20202b";
+export const fontColor2 = "#808080";

@@ -1,3 +1,184 @@
-const Check = () => {};
+import { useState } from "react";
+import Image from "next/image";
+import styled from "styled-components";
+import { FiArrowRight } from "react-icons/fi";
+import {
+  slideBackground,
+  cardBackground,
+  main,
+  lightGray,
+} from "@/styles/theme";
+
+const Check = ({ contents, onClick }) => {
+  const [activeIndexes, setActiveIndexes] = useState([]);
+
+  const toggleOption = (i) => {
+    if (activeIndexes.includes(i)) {
+      setActiveIndexes((prevIndexes) =>
+        prevIndexes.filter((index) => index !== i)
+      );
+    } else {
+      setActiveIndexes((prevIndexes) => [...prevIndexes, i]);
+    }
+  };
+
+  const isButtonDisabled = activeIndexes.length === 0;
+
+  return (
+    <CheckContainer>
+      {contents.map((option, i) => (
+        <div
+          key={i}
+          className={`option ${activeIndexes.includes(i) ? "active" : ""}`}
+          onClick={() => toggleOption(i)}
+        >
+          <Image alt="icon" src={option.icon} className="icon" />
+          <span className="option-name">{option.name}</span>
+        </div>
+      ))}
+      <div
+        className={`option next-btn ${isButtonDisabled ? "disabled" : ""}`}
+        onClick={isButtonDisabled ? null : onClick}
+      >
+        <span className="text">NEXT</span>
+        <FiArrowRight />
+      </div>
+    </CheckContainer>
+  );
+};
+
+const CheckContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 50vw;
+  row-gap: 30px;
+
+  @media screen and (min-width: 2000px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+
+  @media screen and (max-width: 1700px) and (min-width: 1401px) {
+    justify-content: flex-end;
+    gap: 50px;
+  }
+
+  @media screen and (max-width: 1400px) and (min-width: 940px) {
+    justify-content: flex-end;
+    gap: 30px;
+    width: 60vw;
+  }
+
+  @media screen and (max-width: 939px) and (min-width: 767px),
+    screen and (max-width: 766px) {
+    justify-content: center;
+    gap: 20px;
+    width: 100vw;
+  }
+
+  .option {
+    display: -webkit- flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    cursor: pointer;
+
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      display: -webkit- flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+      width: 46%;
+      height: unset;
+      padding: 16px;
+      margin: 0 0 16px 0;
+      border: 3px solid transparent;
+    }
+
+    .icon {
+      width: auto;
+      height: 4.5rem;
+
+      @media screen and (max-width: 766px) {
+      }
+    }
+
+    .option-name {
+      margin-top: 20px;
+      font-size: 0.875rem;
+      text-align: center;
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        margin: 10px;
+      }
+    }
+  }
+
+  .option:hover {
+    background: ${slideBackground};
+  }
+
+  .active {
+    border: 3px solid ${main};
+  }
+
+  .next-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: ${cardBackground};
+    font-size: 1.5rem;
+
+    .text {
+      font-size: inherit;
+    }
+
+    svg {
+      margin-top: 10px;
+      color: ${main};
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      justify-content: center;
+      flex-direction: row;
+      font-size: 1.125rem;
+
+      svg {
+        margin: 0;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .disabled {
+    background: ${lightGray};
+    cursor: not-allowed;
+
+    &.disabled {
+      background: ${lightGray};
+      cursor: not-allowed;
+    }
+  }
+`;
 
 export default Check;

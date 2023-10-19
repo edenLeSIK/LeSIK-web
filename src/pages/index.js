@@ -5,13 +5,18 @@ import CardContent from "@/components/CardContent";
 import SlideContent from "@/components/SlideContent";
 import main from "@/assets/main/main_image.png";
 import { customerMainContentList } from "@/constants/customer";
-import { franchiseMainContentList } from "@/constants/franchise";
+import {
+  franchiseMainContentList,
+  franchiseCheckContentList,
+} from "@/constants/franchise";
+import CheckContent from "@/components/CheckContent";
 
 const Home = () => {
   const router = useRouter();
   const navigateToMakeatPage = () => router.push("/makeat");
   const navigateToCustomerPage = () => router.push("/customer");
   const navigateToFranchisePage = () => router.push("/franchise");
+  const navigateToInquiryPage = () => router.push("/inquiry");
 
   return (
     <HomeContainer>
@@ -41,6 +46,7 @@ const Home = () => {
         text="더 알아보기"
         onClick={navigateToFranchisePage}
       />
+      <CheckContent list={franchiseCheckContentList} />
     </HomeContainer>
   );
 };

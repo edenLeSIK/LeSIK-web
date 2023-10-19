@@ -60,7 +60,6 @@ const Header = () => {
   const iconColor =
     isScrollPastInnerHeight && !isHeaderModal ? `${darkGray}` : `${white}`;
 
-  // "/makeat" 또는 "/inquiry" 경로일 때 헤더를 렌더링하지 않도록
   if (router.pathname === "/makeat" || router.pathname === "/inquiry") {
     return null;
   }

@@ -10,7 +10,7 @@ import backElement from "@/assets/logo/modal_element.png";
 
 const HeaderModal = ({ setIsHeaderModal }) => {
   const router = useRouter();
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("/");
   const navigateToMakeatPage = () => {
     router.push("/makeat");
     setIsHeaderModal(false);

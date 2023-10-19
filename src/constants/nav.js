@@ -3,7 +3,7 @@ export const navList = [
   {
     id: 2,
     category: "ABOUT",
-    link: "lesik",
+    link: "about",
   },
   {
     id: 3,

@@ -5,7 +5,7 @@ import menu from "@/assets/customer/icons/menu.png";
 
 export const customerMainContentList = {
   label: "For Customer",
-  headline: "초개인화 헬스케어 푸드 서비스",
+  headline: "초개인화 맞춤형 푸드 서비스",
   desc: "개인 건강정보를 기반으로 메뉴가 생성되는 맞춤형 건강관리 식단 서비스",
   button: "MAKEAT 알아보기",
   contents: [
@@ -26,7 +26,7 @@ export const customerMainContentList = {
     },
     {
       icon: menu,
-      headline: "카트리지 시스템",
+      headline: "맞춤형 푸드의 새로운 컨셉",
       text: "AI가 내 건강과 취향을 고려해 언제든 새로운 메뉴를 제시해줘요.",
     },
   ],

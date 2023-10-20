@@ -25,14 +25,16 @@ const Home = () => {
         image={main}
         headline={
           <>
-            건강식의 개념을 바꾸다!
+            Cooksup!&nbsp;
             <br />
-            ​가장 진보한 미래의
+            완전히 새로운 푸드 솔루션,
             <br />
-            개인화 헬스케어 푸드 서비스
+            가장 진보한
+            <br />
+            미래의 푸드서비스 만나보세요
           </>
         }
-        desc="건강을 위한, 나만을 위한 FOOD, MAKEAT!"
+        desc="COOKSUP 솔루션을 통해 구축된 헬스 & 웰니스 푸드 브랜드를 소개합니다"
         onClick={navigateToMakeatPage}
         text="MAKEAT"
         color="main"

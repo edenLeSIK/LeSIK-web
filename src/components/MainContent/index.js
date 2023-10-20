@@ -62,21 +62,22 @@ const SectionContainer = styled.section`
     }
 
     h1 {
-      /* width: 40vw; */
       padding: 0 0 32px;
       color: ${white};
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 700;
-      line-height: 1;
+      line-height: 1.1;
       letter-spacing: 0.01rem;
       text-transform: uppercase;
       text-shadow: 0px 10px 10px rgba(32, 32, 43, 0.2);
+      white-space: normal;
+      word-break: keep-all;
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         // width: 91.12vw;
         padding: 0 0 16px;
-        font-size: 3.5555555556rem;
+        font-size: 2.78rem;
       }
     }
 

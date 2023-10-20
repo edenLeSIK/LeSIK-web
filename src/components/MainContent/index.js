@@ -58,7 +58,23 @@ const SectionContainer = styled.section`
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      padding-left: 4.44vw;
+      right: 0;
+      bottom: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    @media screen and (max-width: 320px) {
+    }
+
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+      /* 작은 화면에 대한 스타일 */
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 767px) {
+      /* 중간 크기 화면에 대한 스타일 */
     }
 
     h1 {
@@ -75,9 +91,10 @@ const SectionContainer = styled.section`
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
-        // width: 91.12vw;
-        padding: 0 0 16px;
-        font-size: 2.78rem;
+        width: 85vw;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        text-align: center;
       }
     }
 
@@ -89,10 +106,12 @@ const SectionContainer = styled.section`
       line-height: 1.5;
       letter-spacing: -0.01rem;
       text-shadow: 0px 10px 10px rgba(32, 32, 43, 0.2);
+      white-space: normal;
+      word-break: keep-all;
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
-        width: 70.005vw;
+        width: 80vw;
         font-size: 1rem;
         line-height: 1.25;
       }

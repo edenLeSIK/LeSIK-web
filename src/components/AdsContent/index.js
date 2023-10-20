@@ -11,7 +11,7 @@ const AdsContent = () => {
     <ContentContainer>
       <div className="content-wrapper">
         <h2 className="headline">
-          Ready <br /> to Makeat?
+          Ready <br /> to Cooksup?
         </h2>
         <div className="button-wrapper">
           <Button

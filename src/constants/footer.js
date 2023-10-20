@@ -5,7 +5,7 @@ export const footerInfoList = [
   },
   {
     title: "대표",
-    content: "김한성",
+    content: "유동일",
   },
   {
     title: "호스팅 서비스",
@@ -21,6 +21,7 @@ export const footerInfoList = [
   },
   {
     title: "주소",
-    content: "(34002) 대전광역시 유성구 과학나래2길 1 201-1호",
+    content:
+      "(34134) 대전광역시 유성구 대학로 99, 대전팁스타운 1층 코워킹스페이스 5번",
   },
 ];

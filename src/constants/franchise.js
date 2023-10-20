@@ -13,8 +13,8 @@ export const franchiseMainContentList = {
   button: "Do you want makeat?",
   contents: [
     {
-      headline: "최초 헬스케어 푸드 프렌차이즈​",
-      text: "최초의 개인화 헬스케어 푸드 프렌차이즈! 거대하게 성장할 시장을 초기에 선점하세요.",
+      headline: "최초 맞춤형 푸드 솔루션​",
+      text: "맞춤형 푸드를 제공할 수 있는 최초의 솔루션! 거대하게 성장할 시장을 초기에 선점하세요.",
     },
     {
       headline: "첨단 디지털 생산 솔루션",
@@ -33,7 +33,7 @@ export const franchiseMainContentList = {
 
 export const franchiseCheckContentList = {
   label: "Check it out",
-  headline: "How do you makeat?",
+  headline: "How do you cooksup?",
   desc: "당신의 주방에 있는 장비를 선택해주세요.",
   equipments: [
     { id: 1, icon: oven, name: "오븐" },

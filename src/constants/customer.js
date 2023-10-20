@@ -5,7 +5,7 @@ import menu from "@/assets/customer/icons/menu.png";
 
 export const customerMainContentList = {
   label: "For Customer",
-  headline: "초개인화 헬스케어 푸드 서비스",
+  headline: "초개인화 맞춤형 푸드 서비스",
   desc: "개인 건강정보를 기반으로 메뉴가 생성되는 맞춤형 건강관리 식단 서비스",
   button: "MAKEAT 알아보기",
   contents: [
@@ -26,7 +26,7 @@ export const customerMainContentList = {
     },
     {
       icon: menu,
-      headline: "카트리지 시스템",
+      headline: "맞춤형 푸드의 새로운 컨셉",
       text: "AI가 내 건강과 취향을 고려해 언제든 새로운 메뉴를 제시해줘요.",
     },
   ],
@@ -50,7 +50,7 @@ export const customerPageContentList = {
     },
     {
       headline: "어디서든 합리적인 가격에",
-      text: "나만을 위한 블록들의 섬세한 조합의 이면에는 대량으로 생산하여 원가절감을 이룬 블록이 있어요. 븛럭 단위당 생산원가를 낮취 완성된 메뉴의 공급가격을 합리적으로 유지할 수 있어요.",
+      text: "나만을 위한 블록들의 섬세한 조합의 이면에는 대량으로 생산하여 원가절감을 이룬 블록이 있어요. 블럭 단위당 생산원가를 낮취 완성된 메뉴의 공급가격을 합리적으로 유지할 수 있어요.",
     },
   ],
 };

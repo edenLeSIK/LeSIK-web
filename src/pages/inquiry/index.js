@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 import styled from "styled-components";
 import InquiryForm from "@/components/InquiryForm";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
@@ -44,13 +45,14 @@ const Inquiry = () => {
 const InquiryContainer = styled.main`
   width: 100vw;
   min-height: 100vh;
+  background: ${contentBackground};
 
   .headline-wrapper {
     padding-left: 4.44vw;
     padding-right: 4.44vw;
     padding-top: 50px;
     padding-bottom: 48px;
-    background-color: ${main};
+    background: ${main};
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
@@ -72,9 +74,10 @@ const InquiryContainer = styled.main`
       width: 44.45vw;
       padding-top: 80px;
 
-      @media screen and (max-width: 766px) {
+      @media screen and (max-width: 939px) and (max-width: 766px),
+        screen and (max-width: 766px) {
         width: 100%;
-        padding: 48px 5.33vw 30px;
+        padding: 40px 5.33vw 30px;
         text-align: center;
       }
 
@@ -92,16 +95,17 @@ const InquiryContainer = styled.main`
       }
 
       .desc {
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         color: ${white};
-        font-size: 1.6666666667rem;
+        font-size: 1.25rem;
         font-weight: 400;
         line-height: 1.15;
         letter-spacing: -0.01rem;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
-          screen and (max-width: 766px) {
-          font-size: 1.1111111111rem;
+          screen and (max-width: 766px) 
+          margin-bottom: 0;
+          font-size: 1rem;
           line-height: 1.25;
         }
       }
@@ -115,7 +119,6 @@ const InquiryContainer = styled.main`
     justify-content: space-between;
     padding-left: 4.44vw;
     padding-right: 4.44vw;
-    background-color: ${contentBackground};
 
     @media screen and (max-width: 766px) and (max-width: 766px) {
       padding: 0;
@@ -191,7 +194,7 @@ const InquiryContainer = styled.main`
         top: 0;
         right: 0;
         height: 40%;
-        background-color: ${purple};
+        background-color: ${main};
         z-index: -1;
       }
     }

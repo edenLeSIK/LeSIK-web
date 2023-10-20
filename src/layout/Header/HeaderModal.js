@@ -10,7 +10,7 @@ import backElement from "@/assets/logo/modal_element.png";
 
 const HeaderModal = ({ setIsHeaderModal }) => {
   const router = useRouter();
-  const [activeLink, setActiveLink] = useState("/");
+  const [activeLink, setActiveLink] = useState("");
   const navigateToMakeatPage = () => {
     router.push("/makeat");
     setIsHeaderModal(false);
@@ -29,7 +29,7 @@ const HeaderModal = ({ setIsHeaderModal }) => {
 
   useEffect(() => {
     const currentPath = router.pathname.replace(/^\//, "");
-    setActiveLink(currentPath);
+    setActiveLink(`/${currentPath}`);
   }, [router.pathname]);
 
   return (

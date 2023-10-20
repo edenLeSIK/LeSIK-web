@@ -73,9 +73,11 @@ const CheckContainer = styled.div`
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     gap: 20px;
-    width: 100vw;
+    width: 80vw;
   }
 
   .option {
@@ -103,11 +105,11 @@ const CheckContainer = styled.div`
       flex-direction: row;
       -webkit-align-items: center;
       align-items: center;
-      -webkit-justify-content: flex-start;
-      justify-content: flex-start;
-      width: 46%;
+      -webkit-justify-content: space-around;
+      justify-content: space-around;
+      width: auto;
       height: unset;
-      padding: 16px;
+      padding: 20px;
       margin: 0 0 16px 0;
       border: 3px solid transparent;
     }
@@ -116,7 +118,9 @@ const CheckContainer = styled.div`
       width: auto;
       height: 4.5rem;
 
-      @media screen and (max-width: 766px) {
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        height: 3rem;
       }
     }
 
@@ -127,7 +131,9 @@ const CheckContainer = styled.div`
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
-        margin: 10px;
+        margin: 0;
+        margin-left: 10px;
+        text-align: end;
       }
     }
   }

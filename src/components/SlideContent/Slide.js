@@ -73,7 +73,7 @@ const SliderContainer = styled(Slider)`
       screen and (max-width: 766px) {
       flex-direction: column;
       height: auto;
-      padding: 50px 30px;
+      padding: 50px 20px;
     }
 
     .number {
@@ -85,6 +85,7 @@ const SliderContainer = styled(Slider)`
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         margin-bottom: 20px;
+        font-size: 1.75rem;
       }
     }
 
@@ -113,7 +114,8 @@ const SliderContainer = styled(Slider)`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 1.3333333333rem;
+          font-size: 1.25rem;
+          text-align: center;
         }
       }
 
@@ -123,6 +125,8 @@ const SliderContainer = styled(Slider)`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
+          font-size: 0.875rem;
+          text-align: center;
         }
       }
     }

@@ -31,7 +31,6 @@ const Container = styled.div`
     screen and (max-width: 766px) {
     width: 100%;
     grid-template-columns: 1fr;
-    row-gap: 35px;
   }
 
   .content-item {
@@ -52,6 +51,7 @@ const Container = styled.div`
       screen and (max-width: 766px) {
       margin-left: 5.5583333333vw;
       margin-right: 5.5583333333vw;
+      padding: 20px;
     }
 
     .icon {

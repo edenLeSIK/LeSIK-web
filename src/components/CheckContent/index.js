@@ -22,7 +22,7 @@ const SectionContainer = styled.section`
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
-    padding: 40px 4.44vw;
+    padding: 40px 8vw;
   }
 
   .content {
@@ -46,21 +46,6 @@ const SectionContainer = styled.section`
       row-gap: 40px;
     }
 
-    h6 {
-      margin-left: 3px;
-      color: ${purple};
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.1rem;
-      text-transform: uppercase;
-
-      @media screen and (max-width: 939px) and (min-width: 767px),
-        screen and (max-width: 766px) {
-        font-size: 0.6666666667rem;
-        line-height: 1;
-      }
-    }
-
     .headline-wrapper {
       display: flex;
       -webkit-flex-direction: column;
@@ -81,6 +66,21 @@ const SectionContainer = styled.section`
         width: 100%;
       }
 
+      h6 {
+        margin-left: 3px;
+        color: ${purple};
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          font-size: 0.6666666667rem;
+          line-height: 1;
+        }
+      }
+
       .headline {
         font-size: 3.5rem;
         font-weight: 700;
@@ -90,7 +90,8 @@ const SectionContainer = styled.section`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 2.6666666667rem;
+          font-size: 2rem;
+          text-align: center;
         }
       }
 
@@ -104,6 +105,7 @@ const SectionContainer = styled.section`
           screen and (max-width: 766px) {
           font-size: 1rem;
           line-height: 1.25;
+          text-align: center;
         }
       }
     }

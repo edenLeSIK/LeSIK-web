@@ -27,8 +27,6 @@ const HeaderModal = ({ setIsHeaderModal }) => {
     };
   }, []);
 
-  console.log("activeLink:", activeLink);
-
   useEffect(() => {
     const currentPath = router.pathname.replace(/^\//, "");
     setActiveLink(`/${currentPath}`);
@@ -50,7 +48,6 @@ const HeaderModal = ({ setIsHeaderModal }) => {
               >
                 {activeLink === nav.link && "＞ "}
                 {nav.category}
-                {console.log("nav.link:", nav.link)}
               </Link>
             </li>
           ))}

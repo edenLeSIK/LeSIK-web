@@ -103,7 +103,7 @@ const InquiryContainer = styled.main`
         letter-spacing: -0.01rem;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
-          screen and (max-width: 766px) {
+          screen and (max-width: 766px) 
           margin-bottom: 0;
           font-size: 1rem;
           line-height: 1.25;

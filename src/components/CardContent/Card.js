@@ -43,12 +43,14 @@ const Container = styled.div`
     align-items: center;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+    min-width: 10rem;
     padding: 30px;
     border: 1px solid ${lightGray};
     background: ${white};
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
+      max-width: 400px;
       margin-left: 5.5583333333vw;
       margin-right: 5.5583333333vw;
       padding: 20px;
@@ -65,7 +67,7 @@ const Container = styled.div`
     }
 
     .sub-headline {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       line-height: 0.95;
       letter-spacing: 0.04rem;

@@ -92,9 +92,13 @@ const SectionContainer = styled.section`
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         width: 85vw;
-        font-size: 1.5rem;
+        font-size: 3rem;
         line-height: 1.3;
         text-align: center;
+      }
+
+      @media screen and (min-width: 481px) and (max-width: 767px) {
+        font-size: 2rem;
       }
     }
 
@@ -114,6 +118,10 @@ const SectionContainer = styled.section`
         width: 80vw;
         font-size: 1rem;
         line-height: 1.25;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 481px) and (max-width: 767px) {
       }
     }
 

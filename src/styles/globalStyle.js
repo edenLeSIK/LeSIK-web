@@ -20,16 +20,12 @@ export const GlobalStyle = createGlobalStyle`
         font-family: inherit;
         text-decoration: none;
     }
-    input, textarea, select, a{
+    input, textarea, select, a {
         text-decoration: none;
         color: ${black};
         font-family: 'Pretendard-Regular';
         resize: none;
         outline: none;
-    }
-    .default-width {
-        max-width: 1140px;
-        margin: 0 auto;
     }
     h1,h2 {
         font-family: 'GangwonEduPowerExtraBoldA';
@@ -63,6 +59,16 @@ export const GlobalStyle = createGlobalStyle`
             row-gap: 20px;
         }
     }
+    .cooksup {
+        font-family: "Central W01 Bold";
+        letter-spacing: -2px;
+    }
+    .makeat {
+        font-family: "Unica One";
+    }
+    .letter-spacing {
+        letter-spacing: +0.5px;
+    }
     @font-face {
         font-family: 'GangwonEduPowerExtraBoldA';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
@@ -74,5 +80,23 @@ export const GlobalStyle = createGlobalStyle`
         src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
         font-weight: 400;
         font-style: normal;
+    }
+    @font-face {
+        font-family: "Central W01 Bold";
+        src: url("https://db.onlinewebfonts.com/t/dd4320757ff990fa3d23662f08aa6f3a.eot");
+        src: url("https://db.onlinewebfonts.com/t/dd4320757ff990fa3d23662f08aa6f3a.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/dd4320757ff990fa3d23662f08aa6f3a.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/dd4320757ff990fa3d23662f08aa6f3a.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/dd4320757ff990fa3d23662f08aa6f3a.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/dd4320757ff990fa3d23662f08aa6f3a.svg#Central W01 Bold")format("svg");
+    }
+    @font-face {
+        font-family: "Unica One";
+        src: url("https://db.onlinewebfonts.com/t/0fe5a27204cb9f63fc5af74d10c3d040.eot");
+        src: url("https://db.onlinewebfonts.com/t/0fe5a27204cb9f63fc5af74d10c3d040.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/0fe5a27204cb9f63fc5af74d10c3d040.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/0fe5a27204cb9f63fc5af74d10c3d040.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/0fe5a27204cb9f63fc5af74d10c3d040.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/0fe5a27204cb9f63fc5af74d10c3d040.svg#Unica One")format("svg");
     }
 `;

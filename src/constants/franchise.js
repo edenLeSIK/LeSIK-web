@@ -48,7 +48,7 @@ export const franchiseCheckContentList = {
 
 export const franchisePageContentList = {
   label: "For Owner",
-  headline: "Makeat이 해결해드려요",
+  headline: "COOKSUP이 해결해드려요",
   desc: "",
   contents: [
     {
@@ -65,7 +65,7 @@ export const franchisePageContentList = {
     },
     {
       headline: "유행이 지나면 어쩌지?",
-      text: "Makeat은 특정 장르의 음식에 제한되지 않아요! 고객의 건강상태에 맞는 모든 장르의 음식을 AI가 생성해줘요.",
+      text: "COOKSUP은 특정 장르의 음식에 제한되지 않아요! 고객의 건강상태에 맞는 모든 장르의 음식을 AI가 생성해줘요.",
     },
   ],
 };

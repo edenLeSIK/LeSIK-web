@@ -48,7 +48,7 @@ export const franchiseCheckContentList = {
 
 export const franchisePageContentList = {
   label: "For Owner",
-  headline: "COOKSUP이 해결해드려요",
+  headline: "cooksup이 해결해드려요",
   desc: "",
   contents: [
     {

@@ -67,6 +67,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     .makeat {
         font-family: "Unica One";
+        text-transform: none;
     }
     .letter-spacing {
         letter-spacing: +0.5px;

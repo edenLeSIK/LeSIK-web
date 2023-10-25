@@ -21,9 +21,9 @@ const Franchise = () => {
         image={background}
         headline={
           <>
-            다른 고민없이
+            요리에 집중하세요
             <br />
-            음식 조리에만 집중하세요
+            나머지는 <span className="cooksup">cooksup</span>에 맡겨주세요.
           </>
         }
         text="입점 신청하기"

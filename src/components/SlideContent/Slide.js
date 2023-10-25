@@ -49,7 +49,6 @@ const SliderContainer = styled(Slider)`
     position: relative;
     top: 0;
     width: 100% !important;
-    /* height: 100% !important; */
   }
 
   .slide-content {
@@ -66,14 +65,14 @@ const SliderContainer = styled(Slider)`
     padding: 1.5rem;
     border-radius: 30px;
     background: ${white};
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: grab;
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       flex-direction: column;
       height: auto;
-      padding: 50px 30px;
+      padding: 50px 20px;
     }
 
     .number {
@@ -85,6 +84,7 @@ const SliderContainer = styled(Slider)`
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         margin-bottom: 20px;
+        font-size: 1.75rem;
       }
     }
 
@@ -113,7 +113,8 @@ const SliderContainer = styled(Slider)`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 1.3333333333rem;
+          font-size: 1.25rem;
+          text-align: center;
         }
       }
 
@@ -123,6 +124,8 @@ const SliderContainer = styled(Slider)`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
+          font-size: 0.875rem;
+          text-align: center;
         }
       }
     }

@@ -25,18 +25,21 @@ const Home = () => {
         image={main}
         headline={
           <>
-            Cooksup!&nbsp;
+            <span className="cooksup">Cooksup</span>
             <br />
-            완전히 새로운 푸드 솔루션,
+            새로운 푸드 솔루션,
             <br />
-            가장 진보한
-            <br />
-            미래의 푸드서비스 만나보세요
+            미래의 혁신적인 푸드서비스
           </>
         }
-        desc="COOKSUP 솔루션을 통해 구축된 헬스 & 웰니스 푸드 브랜드를 소개합니다"
+        desc={
+          <>
+            <span className="cooksup letter-spacing">Cooksup</span> 솔루션을
+            통해 구축된 헬스 & 웰니스 푸드 브랜드를 소개합니다.
+          </>
+        }
         onClick={navigateToMakeatPage}
-        text="MAKEAT"
+        text={<span className="makeat letter-spacing">Makeat</span>}
         color="main"
       />
       <CardContent

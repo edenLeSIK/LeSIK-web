@@ -5,15 +5,25 @@ import { lightGray, white } from "@/styles/theme";
 const Card = ({ contents }) => {
   return (
     <Container>
-      {contents.map((el) => (
-        <div className="content-item" key={el.headline}>
-          <div className="icon">
-            <Image alt="icon" src={el.icon} width={100} height={100} />
+      {contents.map((el) => {
+        const styledText = el.text.replace(
+          "Makeat",
+          '<span class="makeat">Makeat</span>'
+        );
+
+        return (
+          <div className="content-item" key={el.headline}>
+            <div className="icon">
+              <Image alt="icon" src={el.icon} width={100} height={100} />
+            </div>
+            <h3 className="sub-headline">{el.headline}</h3>
+            <p
+              className="text"
+              dangerouslySetInnerHTML={{ __html: styledText }}
+            />
           </div>
-          <h3 className="sub-headline">{el.headline}</h3>
-          <p className="text">{el.text}</p>
-        </div>
-      ))}
+        );
+      })}
     </Container>
   );
 };
@@ -23,15 +33,23 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
   column-gap: 2.22vw;
-  row-gap: 30px;
+  grid-gap: 3rem;
   align-items: flex-start;
+  align-items: stretch;
   width: 50vw;
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
-    width: 100%;
+    width: auto;
+    /* grid-template-columns: 1fr; */
+    column-gap: 0;
+    /* row-gap: 40px; */
+    grid-gap: 2rem;
+    padding: 0 3vw;
+  }
+
+  @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
-    row-gap: 35px;
   }
 
   .content-item {
@@ -44,14 +62,17 @@ const Container = styled.div`
     align-items: center;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+    min-width: 10rem;
     padding: 30px;
     border: 1px solid ${lightGray};
     background: ${white};
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      margin-left: 5.5583333333vw;
-      margin-right: 5.5583333333vw;
+      max-width: 400px;
+      /* margin-left: 5.5583333333vw;
+      margin-right: 5.5583333333vw; */
+      padding: 20px;
     }
 
     .icon {
@@ -62,10 +83,15 @@ const Container = styled.div`
         width: 100%;
         height: 100%;
       }
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        width: 100px;
+      }
     }
 
     .sub-headline {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       line-height: 0.95;
       letter-spacing: 0.04rem;

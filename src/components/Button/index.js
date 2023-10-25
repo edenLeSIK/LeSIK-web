@@ -33,11 +33,11 @@ const ButtonContainer = styled.button`
   justify-content: center;
   width: 100%;
   min-width: 150px;
-  padding: 13px 25px;
+  padding: 13px 23px;
   color: ${(props) =>
     (props.color === "mustard" && `${mustard}`) ||
     (props.color === "main" && `${white}`)};
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-size: ${(props) => props.color === "transparent" && "0.75rem"};
   font-weight: 700;
   line-height: 1.5;

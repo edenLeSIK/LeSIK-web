@@ -20,10 +20,11 @@ const Customer = () => {
         headline={
           <>
             당신에게 맞춘 건강식단,
-            <br /> makeat
+            <br />
+            <span className="makeat">Makeat</span>
           </>
         }
-        text="MAKEAT"
+        text={<span className="makeat">Makeat</span>}
         onClick={navigateToMakeatPage}
         color="main"
       />

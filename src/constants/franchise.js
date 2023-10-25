@@ -8,7 +8,7 @@ import stove from "@/assets/franchise/equipments/stove.png";
 
 export const franchiseMainContentList = {
   label: "For Franchises",
-  headline: "가장 진보한 미래형 프렌차이즈 솔루션",
+  headline: "가장 진보한 미래형 푸드 솔루션",
   desc: "모바일 앱과 디지털 생산 솔루션으로 구축된 가장 진보적인 프랜차이즈 모델",
   button: "Do you want makeat?",
   contents: [
@@ -48,7 +48,7 @@ export const franchiseCheckContentList = {
 
 export const franchisePageContentList = {
   label: "For Owner",
-  headline: "Makeat이 해결해드려요",
+  headline: "cooksup이 해결해드려요",
   desc: "",
   contents: [
     {
@@ -65,7 +65,7 @@ export const franchisePageContentList = {
     },
     {
       headline: "유행이 지나면 어쩌지?",
-      text: "Makeat은 특정 장르의 음식에 제한되지 않아요! 고객의 건강상태에 맞는 모든 장르의 음식을 AI가 생성해줘요.",
+      text: "COOKSUP은 특정 장르의 음식에 제한되지 않아요! 고객의 건강상태에 맞는 모든 장르의 음식을 AI가 생성해줘요.",
     },
   ],
 };

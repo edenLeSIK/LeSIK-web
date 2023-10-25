@@ -58,7 +58,22 @@ const SectionContainer = styled.section`
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      padding-left: 4.44vw;
+      right: 0;
+      bottom: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    @media screen and (max-width: 320px) {
+    }
+
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+      /* 작은 화면에 대한 스타일 */
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 767px) {
     }
 
     h1 {
@@ -75,33 +90,62 @@ const SectionContainer = styled.section`
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
-        // width: 91.12vw;
-        padding: 0 0 16px;
-        font-size: 2.78rem;
+        width: 85vw;
+        font-size: 3rem;
+        line-height: 1.3;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 481px) and (max-width: 767px) {
+        font-size: 2.25rem;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 2rem;
       }
     }
 
     h5 {
-      // width: 30.33333333333vw;
       color: ${white};
       font-size: 1.3333333333rem;
       font-weight: 400;
       line-height: 1.5;
       letter-spacing: -0.01rem;
-      text-shadow: 0px 10px 10px rgba(32, 32, 43, 0.2);
+      white-space: nowrap;
+      overflow: hidden;
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
-        width: 70.005vw;
+        width: 80vw;
         font-size: 1rem;
         line-height: 1.25;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: auto;
+        font-size: 0.825rem;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: auto;
+        animation: slideText 10s linear infinite;
+      }
+    }
+
+    @keyframes slideText {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
       }
     }
 
     .button-wrapper {
       display: flex;
       width: 160px;
-      margin-top: 10%;
+      margin-top: 3rem;
 
       img + img {
         margin-left: 50px;

@@ -10,8 +10,12 @@ const AdsContent = () => {
   return (
     <ContentContainer>
       <div className="content-wrapper">
-        <h2 className="headline">
-          Ready <br /> to Cooksup?
+        <h2 className="headline cooksup">
+          Ready
+          <br />
+          to
+          <br />
+          <span className="cooksup">Cooksup</span>?
         </h2>
         <div className="button-wrapper">
           <Button

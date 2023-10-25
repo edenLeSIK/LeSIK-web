@@ -22,7 +22,7 @@ const MakeatPc = () => {
     <MakeatPcContainer>
       <div className="main">
         <Link href="/" className="link">
-          당신에게 딱 맞춘 건강식단<span className="makeat">메이킷</span>
+          당신에게 딱 맞춘 건강식단<span className="makeat">Makeat</span>
         </Link>
         <form className="search-wrapper" onSubmit={onSubmit}>
           <input
@@ -42,7 +42,7 @@ const MakeatPc = () => {
       </div>
       <div className="download">
         <div className="notice-wrapper">
-          <div className="makeat-app">메이킷</div>
+          <div className="makeat-app makeat">Makeat</div>
           <div className="text">
             <p>앱으로 편하게 쇼핑하세요</p>
             <p className="gray">다운로드로 연결됩니다</p>
@@ -156,8 +156,8 @@ const MakeatPcContainer = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         background-color: ${main};
         border-radius: 8px;
         color: ${white};

@@ -11,12 +11,23 @@ const DescContent = ({
   contents,
   desc,
 }) => {
+  const styledHeadline = headline.replace(/Makeat|cooksup/g, (match) => {
+    if (match === "Makeat") {
+      return '<span class="makeat">Makeat</span>';
+    } else if (match === "cooksup") {
+      return '<span class="cooksup">cooksup</span>';
+    }
+  });
+
   return (
     <SectionContainer color={color}>
       <div className="content">
         <div className="headline-wrapper">
           <h6>{label}</h6>
-          <h2 className="headline">{headline}</h2>
+          <h2
+            className="headline"
+            dangerouslySetInnerHTML={{ __html: styledHeadline }}
+          />
           <h5 className="description">{desc}</h5>
           <div className="button-wrapper web">
             {text && (
@@ -82,21 +93,6 @@ const SectionContainer = styled.section`
       row-gap: 40px;
     }
 
-    h6 {
-      margin-left: 3px;
-      color: ${purple};
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.1rem;
-      text-transform: uppercase;
-
-      @media screen and (max-width: 939px) and (min-width: 767px),
-        screen and (max-width: 766px) {
-        font-size: 0.6666666667rem;
-        line-height: 1;
-      }
-    }
-
     .headline-wrapper {
       display: flex;
       -webkit-flex-direction: column;
@@ -112,7 +108,24 @@ const SectionContainer = styled.section`
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
+        -webkit-align-items: center;
+        align-items: center;
         width: 100%;
+      }
+
+      h6 {
+        margin-left: 3px;
+        color: ${purple};
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          font-size: 0.6666666667rem;
+          line-height: 1;
+        }
       }
 
       .headline {

@@ -31,11 +31,11 @@ const ResponsiveSlide = ({ contents }) => {
 };
 
 const PrevArrow = (props) => (
-  <RiArrowLeftSLine {...props} className="arrow prev" />
+  <RiArrowLeftSLine {...props} className="arrow prev" data-custom="true" />
 );
 
 const NextArrow = (props) => (
-  <RiArrowRightSLine {...props} className="arrow next" />
+  <RiArrowRightSLine {...props} className="arrow next" data-custom="true" />
 );
 
 const SliderContainer = styled(Slider)`
@@ -44,6 +44,7 @@ const SliderContainer = styled(Slider)`
   .arrow {
     color: ${gray};
     font-size: 3rem;
+    cursor: pointer;
   }
 
   .arrow.prev {

@@ -109,7 +109,7 @@ const CheckContainer = styled.div`
       justify-content: space-around;
       width: auto;
       height: unset;
-      padding: 20px;
+      padding: 25px 20px;
       margin: 0 0 16px 0;
       border: 3px solid transparent;
     }

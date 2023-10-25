@@ -5,15 +5,25 @@ import { lightGray, white } from "@/styles/theme";
 const Card = ({ contents }) => {
   return (
     <Container>
-      {contents.map((el) => (
-        <div className="content-item" key={el.headline}>
-          <div className="icon">
-            <Image alt="icon" src={el.icon} width={100} height={100} />
+      {contents.map((el) => {
+        const styledText = el.text.replace(
+          "MAKEAT",
+          '<span class="makeat">Makeat</span>'
+        );
+
+        return (
+          <div className="content-item" key={el.headline}>
+            <div className="icon">
+              <img alt="icon" src={el.icon} width={100} height={100} />
+            </div>
+            <h3 className="sub-headline">{el.headline}</h3>
+            <p
+              className="text"
+              dangerouslySetInnerHTML={{ __html: styledText }}
+            />
           </div>
-          <h3 className="sub-headline">{el.headline}</h3>
-          <p className="text">{el.text}</p>
-        </div>
-      ))}
+        );
+      })}
     </Container>
   );
 };

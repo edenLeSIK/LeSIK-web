@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     ${reset}
     * {
         box-sizing: border-box;
+        white-space: normal;
+        word-break: keep-all;
     }
     body{
         box-sizing: border-box;

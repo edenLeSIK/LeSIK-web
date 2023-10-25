@@ -49,7 +49,6 @@ const SliderContainer = styled(Slider)`
     position: relative;
     top: 0;
     width: 100% !important;
-    /* height: 100% !important; */
   }
 
   .slide-content {
@@ -66,7 +65,7 @@ const SliderContainer = styled(Slider)`
     padding: 1.5rem;
     border-radius: 30px;
     background: ${white};
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: grab;
 
     @media screen and (max-width: 939px) and (min-width: 767px),

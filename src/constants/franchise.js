@@ -8,7 +8,7 @@ import stove from "@/assets/franchise/equipments/stove.png";
 
 export const franchiseMainContentList = {
   label: "For Franchises",
-  headline: "가장 진보한 미래형 프렌차이즈 솔루션",
+  headline: "가장 진보한 미래형 푸드 솔루션",
   desc: "모바일 앱과 디지털 생산 솔루션으로 구축된 가장 진보적인 프랜차이즈 모델",
   button: "Do you want makeat?",
   contents: [

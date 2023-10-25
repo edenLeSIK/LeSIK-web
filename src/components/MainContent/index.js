@@ -128,7 +128,7 @@ const SectionContainer = styled.section`
       }
 
       @media screen and (max-width: 600px) {
-        white-space: nowrap;
+        width: auto;
         animation: slideText 10s linear infinite;
       }
     }

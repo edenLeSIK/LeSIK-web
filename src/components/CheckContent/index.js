@@ -3,12 +3,20 @@ import Check from "./Check";
 import { purple } from "@/styles/theme";
 
 const CheckContent = ({ list, onClick }) => {
+  const styledHeadline = list.headline.replace(
+    "cooksup",
+    '<span class="cooksup">cooksup</span>'
+  );
+
   return (
     <SectionContainer>
       <div className="content">
         <div className="headline-wrapper">
           <h6>{list.label}</h6>
-          <h2 className="headline">{list.headline}</h2>
+          <h2
+            className="headline"
+            dangerouslySetInnerHTML={{ __html: styledHeadline }}
+          />
           <h5 className="description">{list.desc}</h5>
         </div>
         <Check contents={list.equipments} onClick={onClick} />
@@ -87,11 +95,21 @@ const SectionContainer = styled.section`
         line-height: 1.2;
         letter-spacing: 0.01rem;
         text-transform: uppercase;
+        vertical-align: bottom;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
           font-size: 2rem;
           text-align: center;
+        }
+      }
+
+      .cooksup {
+        font-size: 3.6rem;
+
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          font-size: 2.2rem;
         }
       }
 

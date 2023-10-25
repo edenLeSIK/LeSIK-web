@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { purple, slideBackground } from "@/styles/theme";
 import Slide from "./Slide";
+import ResponsiveSlide from "./ResponsiveSlide";
 import Button from "../Button";
 
 const SlideContent = ({ list, text, onClick }) => {
@@ -22,7 +23,12 @@ const SlideContent = ({ list, text, onClick }) => {
             )}
           </div>
         </div>
-        <Slide contents={list.contents} />
+        <div className="slide">
+          <Slide contents={list.contents} />
+        </div>
+        <div className="responsive-slide">
+          <ResponsiveSlide contents={list.contents} />
+        </div>
       </div>
       <div className="button-wrapper mobile-button">
         {text && (
@@ -37,6 +43,7 @@ const SlideContent = ({ list, text, onClick }) => {
     </SectionContainer>
   );
 };
+
 const SectionContainer = styled.section`
   padding: 0 4.44vw;
   background: ${slideBackground};
@@ -130,6 +137,18 @@ const SectionContainer = styled.section`
           text-align: center;
         }
       }
+    }
+  }
+
+  .slide {
+    @media screen and (max-width: 939px) {
+      display: none;
+    }
+  }
+
+  .responsive-slide {
+    @media screen and (min-width: 940px) {
+      display: none;
     }
   }
 

@@ -81,7 +81,7 @@ const Header = () => {
                 className="link"
                 onClick={() => setIsHeaderModal(false)}
               >
-                <Image src={logoWhite} alt="logo" className="logo" />
+                <Image src={logoWhite} priority alt="logo" className="logo" />
               </Link>
             </>
           ) : (
@@ -92,7 +92,7 @@ const Header = () => {
                 className="link"
                 onClick={() => setIsHeaderModal(false)}
               >
-                <Image src={logoImage} alt="logo" className="logo" />
+                <Image src={logoImage} priority alt="logo" className="logo" />
               </Link>
             </>
           )}

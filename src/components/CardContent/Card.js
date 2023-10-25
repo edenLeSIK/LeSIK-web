@@ -23,13 +23,22 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
   column-gap: 2.22vw;
-  row-gap: 30px;
+  grid-gap: 3rem;
   align-items: flex-start;
+  align-items: stretch;
   width: 50vw;
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
-    width: 100%;
+    width: auto;
+    /* grid-template-columns: 1fr; */
+    column-gap: 0;
+    /* row-gap: 40px; */
+    grid-gap: 2rem;
+    padding: 0 3vw;
+  }
+
+  @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
   }
 
@@ -51,8 +60,8 @@ const Container = styled.div`
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       max-width: 400px;
-      margin-left: 5.5583333333vw;
-      margin-right: 5.5583333333vw;
+      /* margin-left: 5.5583333333vw;
+      margin-right: 5.5583333333vw; */
       padding: 20px;
     }
 
@@ -63,6 +72,11 @@ const Container = styled.div`
       img {
         width: 100%;
         height: 100%;
+      }
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        width: 100px;
       }
     }
 

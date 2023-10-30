@@ -45,6 +45,10 @@ const SliderContainer = styled(Slider)`
     color: ${gray};
     font-size: 3rem;
     cursor: pointer;
+
+    @media (min-width: 320px) and (max-width: 479px) {
+      font-size: 1.5rem;
+    }
   }
 
   .arrow.prev {
@@ -61,6 +65,12 @@ const SliderContainer = styled(Slider)`
     right: -50px;
   }
 
+  .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .slide-content {
     display: -webkit- flex !important;
     display: flex !important;
@@ -68,15 +78,24 @@ const SliderContainer = styled(Slider)`
     flex-direction: column;
     -webkit-align-items: center;
     align-items: center;
+    justify-content: space-between;
     width: auto !important;
     max-width: 300px;
+    height: 100%;
     min-height: 300px;
-    margin: 25px auto;
+    margin: 25px 10px;
     padding: 50px 20px;
     border-radius: 30px;
     background: ${white};
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: grab;
+
+    @media (min-width: 320px) and (max-width: 479px) {
+      justify-content: center;
+      margin: 20px 5px;
+      padding: 40px 10px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
 
     .number {
       width: 20%;
@@ -84,6 +103,10 @@ const SliderContainer = styled(Slider)`
       color: ${main};
       text-align: center;
       font-size: 1.75rem;
+
+      @media (min-width: 320px) and (max-width: 479px) {
+        font-size: 1.375rem;
+      }
     }
 
     .item {
@@ -101,6 +124,10 @@ const SliderContainer = styled(Slider)`
         line-height: 0.95;
         letter-spacing: 0.04rem;
         text-transform: uppercase;
+
+        @media (min-width: 320px) and (max-width: 479px) {
+          font-size: 1.125rem;
+        }
       }
 
       .text {
@@ -108,6 +135,10 @@ const SliderContainer = styled(Slider)`
         font-size: 0.875rem;
         text-align: center;
         line-height: 1.5;
+
+        @media (min-width: 320px) and (max-width: 479px) {
+          font-size: 0.8rem;
+        }
       }
     }
   }
@@ -122,6 +153,10 @@ const SliderContainer = styled(Slider)`
     margin: auto 0;
     margin-top: 30px;
 
+    @media (min-width: 320px) and (max-width: 479px) {
+      margin-top: 20px;
+    }
+
     li {
       display: flex;
       width: auto;
@@ -134,6 +169,10 @@ const SliderContainer = styled(Slider)`
         background: #c3e7e0;
         border-radius: 10px;
         cursor: pointer;
+
+        @media (min-width: 320px) and (max-width: 479px) {
+          width: 10px !important;
+        }
       }
 
       button:before {

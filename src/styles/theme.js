@@ -17,6 +17,8 @@ export const yellowHover = "#c7eb3a";
 export const orange = "#ff6e40";
 export const orangeHover = "#ff8e40";
 export const red = "#ff0000";
+export const makeatWhite = "#fffff6";
+export const makeatRed = "#ff0a0e";
 
 export const background = "#333333";
 export const lineColor = "#3D3D3D";

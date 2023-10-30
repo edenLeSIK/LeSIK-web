@@ -116,14 +116,14 @@ const SectionContainer = styled.section`
       h6 {
         margin-left: 3px;
         color: ${purple};
-        font-size: 0.8rem;
+        font-size: 1.125rem;
         font-weight: 700;
         letter-spacing: 0.1rem;
         text-transform: uppercase;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 0.6666666667rem;
+          font-size: 0.875rem;
           line-height: 1;
         }
       }

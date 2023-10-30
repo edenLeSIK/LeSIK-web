@@ -40,7 +40,7 @@ const Home = () => {
         }
         onClick={navigateToMakeatPage}
         text={<span className="makeat letter-spacing">Makeat</span>}
-        color="main"
+        color="makeat"
       />
       <CardContent
         list={customerMainContentList}

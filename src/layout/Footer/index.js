@@ -29,12 +29,14 @@ const Footer = () => {
                 {footerInfoList.map((el) => (
                   <li key={el.title}>
                     <span className="list-title">{el.title}</span>
-                    <span className="item">{el.content}</span>
-                    {el.link && (
-                      <a href={el.link.href} target="_blank">
-                        {el.link.name}
-                      </a>
-                    )}
+                    <span className="item">
+                      {el.content}{" "}
+                      {el.link && (
+                        <a href={el.link.href} target="_blank">
+                          {el.link.name}
+                        </a>
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -103,6 +105,8 @@ const FooterContainer = styled.footer`
         }
 
         ul {
+          width: 100%;
+
           li {
             display: flex;
             align-items: center;
@@ -110,7 +114,8 @@ const FooterContainer = styled.footer`
 
             .list-title {
               width: 10rem;
-              padding-right: 30px;
+              flex: 0 0 auto;
+              padding-right: 10px;
               color: ${fontColor2};
 
               @media screen and (max-width: 939px) and (min-width: 767px),
@@ -119,17 +124,21 @@ const FooterContainer = styled.footer`
               }
             }
 
+            .item {
+              flex: 1;
+            }
+
             .list-title,
             .item {
               @media screen and (max-width: 939px) and (min-width: 767px),
                 screen and (max-width: 766px) {
                 font-size: 0.6666666667rem;
-                word-wrap: break-word;
+                word-break: keep-all;
               }
             }
 
             a {
-              margin-left: 0.5rem;
+              vertical-align: 5%;
               font-size: 0.785rem;
               color: ${fontColor2};
 

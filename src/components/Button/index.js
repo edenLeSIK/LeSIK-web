@@ -64,6 +64,17 @@ const ButtonContainer = styled.button`
     (props.color === "makeat" && "15px")};
   transition: all ease 0.2s;
 
+  @media screen and (max-width: 939px) and (min-width: 767px),
+    screen and (max-width: 766px) {
+    min-width: 100px;
+    padding: 15px 21px;
+    font-size: 0.9rem;
+    font-size: ${(props) =>
+      (props.color === "transparent" && "0.5rem") ||
+      (props.color === "makeat" && "1rem")};
+    line-height: 1;
+  }
+
   &:hover {
     background: ${(props) =>
       (props.color === "main" && `${mainHover}`) ||
@@ -87,17 +98,6 @@ const ButtonContainer = styled.button`
     color: ${black};
     opacity: 0.6;
     cursor: not-allowed;
-  }
-
-  @media screen and (max-width: 939px) and (min-width: 767px),
-    screen and (max-width: 766px) {
-    min-width: 100px;
-    padding: 15px 21px;
-    font-size: 0.9rem;
-    font-size: ${(props) =>
-      (props.color === "transparent" && "0.5rem") ||
-      (props.color === "makeat" && "1rem")};
-    line-height: 1;
   }
 `;
 

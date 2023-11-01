@@ -32,19 +32,16 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
-  column-gap: 2.22vw;
-  grid-gap: 3rem;
-  align-items: flex-start;
+  grid-gap: 2rem;
   align-items: stretch;
-  width: 50vw;
+  width: 55vw;
+  margin-bottom: 0;
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
     width: auto;
-    /* grid-template-columns: 1fr; */
     column-gap: 0;
-    /* row-gap: 40px; */
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
     padding: 0 3vw;
   }
 
@@ -67,6 +64,10 @@ const Container = styled.div`
     border: 1px solid ${lightGray};
     background: ${white};
 
+    @media (min-width: 940px) and (max-width: 1439px) {
+      padding: 25px;
+    }
+
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       max-width: 400px;
@@ -84,6 +85,10 @@ const Container = styled.div`
         height: 100%;
       }
 
+      @media (min-width: 940px) and (max-width: 1439px) {
+        width: 50%;
+      }
+
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         width: 100px;
@@ -97,6 +102,10 @@ const Container = styled.div`
       letter-spacing: 0.04rem;
       text-transform: uppercase;
 
+      @media (min-width: 940px) and (max-width: 1439px) {
+        font-size: 1.5rem;
+      }
+
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         font-size: 1.3333333333rem;
@@ -104,14 +113,18 @@ const Container = styled.div`
     }
 
     .text {
-      margin: 20px 0 0;
+      margin: 15px 0 0;
       color: #4a4a5a;
       text-align: center;
       line-height: 1.2;
 
+      @media (min-width: 940px) and (max-width: 1439px) {
+        font-size: 1rem;
+      }
+
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
-        margin: 16px 0 0;
+        margin: 10px 0 0;
         font-size: 0.7777777778rem;
       }
     }

@@ -56,7 +56,7 @@ const InquiryContainer = styled.main`
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      padding: 48px 5.33vw 0;
+      padding: 40px 5.33vw;
     }
 
     .icon {
@@ -73,6 +73,13 @@ const InquiryContainer = styled.main`
       position: relative;
       width: 44.45vw;
       padding-top: 80px;
+
+      @media screen and (max-width: 939px) and (max-width: 766px),
+        screen and (max-width: 766px) {
+        width: 100%;
+        padding: 40px 5.33vw 30px;
+        text-align: center;
+      }
 
       @media screen and (max-width: 939px) and (max-width: 766px),
         screen and (max-width: 766px) {
@@ -103,14 +110,14 @@ const InquiryContainer = styled.main`
         letter-spacing: -0.01rem;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
-          screen and (max-width: 766px) 
+          screen and (max-width: 766px) {
           margin-bottom: 0;
           font-size: 1rem;
           line-height: 1.25;
         }
       }
     }
-  }
+
 
   .inquiry-content {
     display: flex;

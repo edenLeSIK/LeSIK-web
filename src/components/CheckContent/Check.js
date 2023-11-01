@@ -48,27 +48,13 @@ const Check = ({ contents, onClick }) => {
 };
 
 const CheckContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
-  width: 50vw;
-  row-gap: 30px;
+  gap: 30px;
 
   @media screen and (min-width: 2000px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 50px;
-  }
-
-  @media screen and (max-width: 1700px) and (min-width: 1401px) {
-    justify-content: flex-end;
-    gap: 50px;
-  }
-
-  @media screen and (max-width: 1400px) and (min-width: 940px) {
-    justify-content: flex-end;
-    gap: 30px;
-    width: 60vw;
   }
 
   @media screen and (max-width: 939px) and (min-width: 767px),
@@ -97,6 +83,17 @@ const CheckContainer = styled.div`
       rgba(17, 17, 26, 0.05) 0px 8px 32px;
     cursor: pointer;
 
+    @media (min-width: 1280px) and (max-width: 1600px) {
+      width: 180px;
+      height: 180px;
+      padding: 10px;
+    }
+
+    @media (min-width: 940px) and (max-width: 1439px) {
+      width: 160px;
+      height: 160px;
+    }
+
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       display: -webkit- flex;
@@ -118,6 +115,10 @@ const CheckContainer = styled.div`
       width: auto;
       height: 4.5rem;
 
+      @media (min-width: 1280px) and (max-width: 1600px) {
+        height: 4rem;
+      }
+
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         height: 3rem;
@@ -128,6 +129,10 @@ const CheckContainer = styled.div`
       margin-top: 20px;
       font-size: 0.875rem;
       text-align: center;
+
+      @media screen and (max-width: 1440px) {
+        margin-top: 15px;
+      }
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {

@@ -134,6 +134,7 @@ const SectionContainer = styled.section`
         line-height: 1.2;
         letter-spacing: 0.01rem;
         text-transform: uppercase;
+        text-align: center;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {

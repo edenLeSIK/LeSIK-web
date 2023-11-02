@@ -19,7 +19,7 @@ const NewsFeed = () => {
         <div className="hide-on-mobile">
           <Button text="더보기" color="main" onClick={openMore} />
         </div>
-        <Button className="only-on-mobile" text="Read More" color="yellow" />
+        <Button className="only-on-mobile" text="더보기" color="main" />
       </div>
       <div className="feed-wrapper">
         {newsList.map((el) => (

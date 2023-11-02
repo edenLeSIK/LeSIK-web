@@ -57,12 +57,25 @@ const CheckContainer = styled.div`
     gap: 50px;
   }
 
+  @media screen and (min-width: 1280px) and (max-width: 1439px) {
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  @media screen and (min-width: 940px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
-    gap: 20px;
     width: 80vw;
   }
 
@@ -83,13 +96,13 @@ const CheckContainer = styled.div`
       rgba(17, 17, 26, 0.05) 0px 8px 32px;
     cursor: pointer;
 
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media screen and (min-width: 1024px) and (max-width: 1600px) {
       width: 180px;
       height: 180px;
       padding: 10px;
     }
 
-    @media (min-width: 940px) and (max-width: 1439px) {
+    @media screen and (min-width: 940px) and (max-width: 1023px) {
       width: 160px;
       height: 160px;
     }
@@ -115,8 +128,12 @@ const CheckContainer = styled.div`
       width: auto;
       height: 4.5rem;
 
-      @media (min-width: 1280px) and (max-width: 1600px) {
+      @media screen and (min-width: 1280px) and (max-width: 1600px) {
         height: 4rem;
+      }
+
+      @media screen and (min-width: 940px) and (max-width: 1023px) {
+        height: 3.5rem;
       }
 
       @media screen and (max-width: 939px) and (min-width: 767px),

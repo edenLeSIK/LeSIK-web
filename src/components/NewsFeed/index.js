@@ -19,7 +19,7 @@ const NewsFeed = () => {
         <div className="hide-on-mobile">
           <Button text="더보기" color="main" onClick={openMore} />
         </div>
-        <Button className="only-on-mobile" text="더보기" color="main" />
+        <Button className="only-on-mobile" text="Read More" color="main" />
       </div>
       <div className="feed-wrapper">
         {newsList.map((el) => (
@@ -103,24 +103,6 @@ const FeedContainer = styled.section`
         screen and (max-width: 766px) {
         font-size: 2.6666666667rem;
       }
-    }
-  }
-
-  .feed-wrapper {
-    width: 60.0066666667vw;
-
-    @media screen and (max-width: 939px) and (min-width: 767px),
-      screen and (max-width: 766px) {
-      width: 100%;
-    }
-  }
-
-  .feed-wrapper {
-    width: 60.0066666667vw;
-
-    @media screen and (max-width: 939px) and (min-width: 767px),
-      screen and (max-width: 766px) {
-      width: 100%;
     }
   }
 

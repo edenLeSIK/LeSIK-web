@@ -52,6 +52,7 @@ const CheckContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   gap: 30px;
+  width: 55vw;
 
   @media screen and (min-width: 2000px) {
     gap: 50px;
@@ -59,12 +60,14 @@ const CheckContainer = styled.div`
 
   @media screen and (min-width: 1280px) and (max-width: 1439px) {
     gap: 20px;
+    width: auto;
   }
 
   @media screen and (min-width: 1024px) and (max-width: 1279px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 25px;
+    width: auto;
   }
 
   @media screen and (min-width: 940px) and (max-width: 1023px) {

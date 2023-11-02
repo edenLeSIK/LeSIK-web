@@ -35,7 +35,6 @@ const Container = styled.div`
   grid-gap: 2rem;
   align-items: stretch;
   width: 55vw;
-  margin-bottom: 0;
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {

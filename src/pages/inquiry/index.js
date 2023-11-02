@@ -81,13 +81,6 @@ const InquiryContainer = styled.main`
         text-align: center;
       }
 
-      @media screen and (max-width: 939px) and (max-width: 766px),
-        screen and (max-width: 766px) {
-        width: 100%;
-        padding: 40px 5.33vw 30px;
-        text-align: center;
-      }
-
       .headline {
         font-size: 4.5rem;
         margin-bottom: 40px;
@@ -117,7 +110,6 @@ const InquiryContainer = styled.main`
         }
       }
     }
-
 
   .inquiry-content {
     display: flex;

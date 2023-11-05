@@ -27,9 +27,9 @@ const Home = () => {
           <>
             <span className="cooksup">Cooksup</span>
             <br />
-            새로운 푸드 솔루션,
+            맞춤형 푸드 솔루션,
             <br />
-            미래의 혁신적인 푸드서비스
+            미래의 푸드 서비스를 시작하세요.
           </>
         }
         desc={

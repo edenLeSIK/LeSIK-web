@@ -39,6 +39,10 @@ const SliderContainer = styled(Slider)`
   flex-direction: row;
   width: 55vw !important;
 
+  @media screen and (min-width: 1920px) {
+    width: 50vw !important;
+  }
+
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
     flex-direction: column;
@@ -68,7 +72,11 @@ const SliderContainer = styled(Slider)`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: grab;
 
-    @media (min-width: 940px) and (max-width: 1439px) {
+    @media screen and (min-width: 2000px) {
+      max-width: 1000px;
+    }
+
+    @media screen and (min-width: 940px) and (max-width: 1439px) {
       height: 220px;
       margin: 20px 20px;
       padding: 1.25rem;
@@ -156,6 +164,10 @@ const SliderContainer = styled(Slider)`
     width: auto;
     margin: auto 0;
     z-index: 0;
+
+    @media screen and (min-width: 1920px) {
+      margin-right: 2rem;
+    }
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {

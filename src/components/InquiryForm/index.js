@@ -38,6 +38,10 @@ const InquiryFormContainer = styled.div`
   background: ${white};
   border-radius: 24px;
 
+  @media screen and (min-width: 1920px) {
+    width: 35vw;
+  }
+
   @media screen and (max-width: 766px) {
     width: 100%;
     margin: 0 5.33vw 0 0;

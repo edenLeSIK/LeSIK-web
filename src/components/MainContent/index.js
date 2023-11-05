@@ -52,7 +52,7 @@ const SectionContainer = styled.section`
     position: absolute;
     bottom: 0;
     left: 0;
-    // width: 60.6716666667vw;
+    /* width: 60.6716666667vw; */
     padding: 0 0 56px;
     padding-left: 4.44vw;
 
@@ -64,16 +64,6 @@ const SectionContainer = styled.section`
       flex-direction: column;
       align-items: center;
       padding: 0;
-    }
-
-    @media screen and (max-width: 320px) {
-    }
-
-    @media screen and (min-width: 321px) and (max-width: 480px) {
-      /* 작은 화면에 대한 스타일 */
-    }
-
-    @media screen and (min-width: 481px) and (max-width: 767px) {
     }
 
     h1 {
@@ -145,7 +135,7 @@ const SectionContainer = styled.section`
     .button-wrapper {
       display: flex;
       width: 160px;
-      margin-top: 3rem;
+      margin-top: 2.5rem;
 
       img + img {
         margin-left: 50px;

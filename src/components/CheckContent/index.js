@@ -101,8 +101,16 @@ const SectionContainer = styled.section`
         text-transform: uppercase;
         vertical-align: bottom;
 
-        @media (min-width: 940px) and (max-width: 1439px) {
+        @media (min-width: 1280px) and (max-width: 1439px) {
           font-size: 3rem;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          font-size: 2.85rem;
+        }
+
+        @media (min-width: 940px) and (max-width: 1023px) {
+          font-size: 2.5rem;
         }
 
         @media screen and (max-width: 939px) and (min-width: 767px),
@@ -115,8 +123,16 @@ const SectionContainer = styled.section`
       .cooksup {
         font-size: 3.6rem;
 
-        @media screen and (min-width: 940px) and (max-width: 1439px) {
-          font-size: 3.125rem;
+        @media screen and (min-width: 1280px) and (max-width: 1439px) {
+          font-size: 3.225rem;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          font-size: 3.05rem;
+        }
+
+        @media (min-width: 940px) and (max-width: 1023px) {
+          font-size: 2.75rem;
         }
 
         @media screen and (max-width: 939px) and (min-width: 767px),

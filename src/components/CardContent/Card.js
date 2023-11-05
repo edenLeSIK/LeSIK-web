@@ -36,6 +36,18 @@ const Container = styled.div`
   align-items: stretch;
   width: 55vw;
 
+  @media screen and (min-width: 1920px) {
+    width: 50vw;
+  }
+
+  @media screen and (min-width: 1800px) {
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 2000px) {
+    gap: 5rem;
+  }
+
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
     width: auto;
@@ -59,19 +71,23 @@ const Container = styled.div`
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
     min-width: 10rem;
+    max-width: 500px;
     padding: 30px;
     border: 1px solid ${lightGray};
     background: ${white};
 
-    @media (min-width: 940px) and (max-width: 1439px) {
+    @media screen and (min-width: 1800px) {
+      justify-content: center;
+      height: 300px;
+    }
+
+    @media screen and (min-width: 940px) and (max-width: 1439px) {
       padding: 25px;
     }
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       max-width: 400px;
-      /* margin-left: 5.5583333333vw;
-      margin-right: 5.5583333333vw; */
       padding: 20px;
     }
 
@@ -84,7 +100,7 @@ const Container = styled.div`
         height: 100%;
       }
 
-      @media (min-width: 940px) and (max-width: 1439px) {
+      @media screen and (min-width: 940px) and (max-width: 1439px) {
         width: 50%;
       }
 
@@ -101,8 +117,12 @@ const Container = styled.div`
       letter-spacing: 0.04rem;
       text-transform: uppercase;
 
-      @media (min-width: 940px) and (max-width: 1439px) {
+      @media screen and(min-width: 1024px) and (max-width: 1439px) {
         font-size: 1.5rem;
+      }
+
+      @media screen and (min-width: 940px) and (max-width: 1023px) {
+        font-size: 1.375rem;
       }
 
       @media screen and (max-width: 939px) and (min-width: 767px),
@@ -117,8 +137,12 @@ const Container = styled.div`
       text-align: center;
       line-height: 1.2;
 
-      @media (min-width: 940px) and (max-width: 1439px) {
+      @media screen and(min-width: 1024px) and (max-width: 1439px) {
         font-size: 1rem;
+      }
+
+      @media screen and (min-width: 940px) and (max-width: 1023px) {
+        font-size: 0.9rem;
       }
 
       @media screen and (max-width: 939px) and (min-width: 767px),

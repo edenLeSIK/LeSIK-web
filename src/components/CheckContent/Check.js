@@ -54,8 +54,13 @@ const CheckContainer = styled.div`
   gap: 30px;
   width: 55vw;
 
-  @media screen and (min-width: 2000px) {
+  @media screen and (min-width: 1920px) {
+    width: 50vw;
     gap: 50px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    gap: 60px;
   }
 
   @media screen and (min-width: 1280px) and (max-width: 1439px) {

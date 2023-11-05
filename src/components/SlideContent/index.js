@@ -47,6 +47,7 @@ const SlideContent = ({ list, text, onClick }) => {
 const SectionContainer = styled.section`
   padding: 0 4.44vw;
   background: ${slideBackground};
+
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
     padding: 40px 8vw;
@@ -121,8 +122,16 @@ const SectionContainer = styled.section`
         letter-spacing: 0.01rem;
         text-transform: uppercase;
 
-        @media (min-width: 940px) and (max-width: 1439px) {
+        @media (min-width: 1280px) and (max-width: 1439px) {
           font-size: 3rem;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          font-size: 2.85rem;
+        }
+
+        @media (min-width: 940px) and (max-width: 1023px) {
+          font-size: 2.5rem;
         }
 
         @media screen and (max-width: 939px) and (min-width: 767px),

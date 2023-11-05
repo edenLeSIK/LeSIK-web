@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../Button";
+import Desc from "./Desc";
 import { purple, contentBackground, lineColor2 } from "@/styles/theme";
 
 const DescContent = ({
@@ -40,14 +41,7 @@ const DescContent = ({
             )}
           </div>
         </div>
-        <div className="content-wrapper">
-          {contents.map((content) => (
-            <div className="content-item" key={content.headline}>
-              <h3 className="sub-headline">{content.headline}</h3>
-              <p className="text">{content.text}</p>
-            </div>
-          ))}
-        </div>
+        <Desc contents={contents} />
       </div>
       <div className="button-wrapper mobile-button">
         {text && (
@@ -116,14 +110,14 @@ const SectionContainer = styled.section`
       h6 {
         margin-left: 3px;
         color: ${purple};
-        font-size: 0.8rem;
+        font-size: 1.125rem;
         font-weight: 700;
         letter-spacing: 0.1rem;
         text-transform: uppercase;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 0.6666666667rem;
+          font-size: 0.875rem;
           line-height: 1;
         }
       }
@@ -135,10 +129,27 @@ const SectionContainer = styled.section`
         letter-spacing: 0.01rem;
         text-transform: uppercase;
 
+        @media (min-width: 1280px) and (max-width: 1439px) {
+          font-size: 3rem;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          font-size: 2.85rem;
+        }
+
+        @media (min-width: 940px) and (max-width: 1023px) {
+          font-size: 2.5rem;
+        }
+
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 2.6666666667rem;
+          font-size: 2rem;
+          text-align: center;
         }
+      }
+
+      .makeat {
+        vertical-align: text-bottom;
       }
 
       .description {
@@ -151,71 +162,6 @@ const SectionContainer = styled.section`
           screen and (max-width: 766px) {
           font-size: 1rem;
           line-height: 1.25;
-        }
-      }
-    }
-
-    .content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-auto-rows: auto;
-      column-gap: 2.22vw;
-      row-gap: 64px;
-      align-items: flex-start;
-      width: 50vw;
-
-      @media screen and (max-width: 939px) and (min-width: 767px),
-        screen and (max-width: 766px) {
-        width: 100%;
-        grid-template-columns: 1fr;
-        row-gap: 35px;
-      }
-
-      .content-item {
-        position: relative;
-        display: -webkit- flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-align-items: stretch;
-        align-items: stretch;
-        -webkit-justify-content: flex-start;
-        justify-content: flex-start;
-        padding-left: 20px;
-        border-left: 1.5px solid ${lineColor2};
-
-        @media screen and (max-width: 939px) and (min-width: 767px),
-          screen and (max-width: 766px) {
-          /* margin-left: 5.5583333333vw;
-          margin-right: 5.5583333333vw; */
-        }
-
-        .sub-headline {
-          color: #4d4d4d;
-          font-size: 2rem;
-          font-weight: 700;
-          line-height: 0.95;
-          letter-spacing: 0.04rem;
-          text-transform: uppercase;
-
-          @media screen and (max-width: 939px) and (min-width: 767px),
-            screen and (max-width: 766px) {
-            font-size: 1.3333333333rem;
-          }
-        }
-
-        .text {
-          margin: 40px 0 0;
-          color: #808080;
-          line-height: 1.7;
-          white-space: normal;
-          word-break: keep-all;
-
-          @media screen and (max-width: 939px) and (min-width: 767px),
-            screen and (max-width: 766px) {
-            margin: 16px 0 0;
-            font-size: 0.7777777778rem;
-          }
         }
       }
     }

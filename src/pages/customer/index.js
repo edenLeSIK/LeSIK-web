@@ -26,7 +26,7 @@ const Customer = () => {
         }
         text={<span className="makeat">Makeat</span>}
         onClick={navigateToMakeatPage}
-        color="main"
+        color="makeat"
       />
       <DescContent
         label={customerPageContentList.label}

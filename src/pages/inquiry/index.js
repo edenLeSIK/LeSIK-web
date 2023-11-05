@@ -1,15 +1,8 @@
 import { useRouter } from "next/router";
-import Image from "next/image";
 import styled from "styled-components";
 import InquiryForm from "@/components/InquiryForm";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
-import {
-  purple,
-  contentBackground,
-  main,
-  white,
-  darkGray,
-} from "@/styles/theme";
+import { contentBackground, main, white, darkGray } from "@/styles/theme";
 import { inquiryPageContentList } from "@/constants/inquiry";
 
 const Inquiry = () => {
@@ -56,7 +49,7 @@ const InquiryContainer = styled.main`
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      padding: 48px 5.33vw 0;
+      padding: 40px 5.33vw 0;
     }
 
     .icon {
@@ -82,7 +75,7 @@ const InquiryContainer = styled.main`
       }
 
       .headline {
-        font-size: 4.5rem;
+        font-size: 4rem;
         margin-bottom: 40px;
         color: ${white};
         white-space: normal;
@@ -103,8 +96,8 @@ const InquiryContainer = styled.main`
         letter-spacing: -0.01rem;
 
         @media screen and (max-width: 939px) and (min-width: 767px),
-          screen and (max-width: 766px) 
-          margin-bottom: 0;
+          screen and (max-width: 766px) {
+          padding-bottom: 20px;
           font-size: 1rem;
           line-height: 1.25;
         }
@@ -171,7 +164,7 @@ const InquiryContainer = styled.main`
 
     .right {
       width: 40vw;
-      transform: translateY(-30vh);
+      transform: translateY(-25vh);
 
       @media screen and (max-width: 939px) {
         transform: translateY(-20vh);

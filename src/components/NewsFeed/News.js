@@ -24,7 +24,7 @@ const News = ({ news }) => {
 
 const Styler = styled.div`
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   &:hover .icon {

@@ -27,9 +27,9 @@ const Home = () => {
           <>
             <span className="cooksup">Cooksup</span>
             <br />
-            새로운 푸드 솔루션,
+            맞춤형 푸드 솔루션,
             <br />
-            미래의 혁신적인 푸드서비스
+            미래의 푸드 서비스를 시작하세요.
           </>
         }
         desc={
@@ -40,7 +40,7 @@ const Home = () => {
         }
         onClick={navigateToMakeatPage}
         text={<span className="makeat letter-spacing">Makeat</span>}
-        color="main"
+        color="makeat"
       />
       <CardContent
         list={customerMainContentList}
@@ -64,6 +64,17 @@ const Home = () => {
 const HomeContainer = styled.main`
   width: 100vw;
   min-height: 100vh;
+
+  figure {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: auto;
+      object-fit: contain;
+      object-position: 0 50%;
+    }
+  }
 `;
 
 export default Home;

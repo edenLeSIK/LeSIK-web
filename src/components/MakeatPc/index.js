@@ -4,7 +4,14 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
-import { fontColor, gray, main, white } from "@/styles/theme";
+import {
+  fontColor,
+  gray,
+  main,
+  white,
+  makeatRed,
+  makeatWhite,
+} from "@/styles/theme";
 import googlePlay from "@/assets/makeat/google_play.png";
 
 const MakeatPc = () => {
@@ -120,7 +127,7 @@ const MakeatPcContainer = styled.section`
           justify-content: center;
           width: 40px;
           height: 40px;
-          background: ${main};
+          background: ${makeatRed};
           border-radius: 50%;
         }
 
@@ -129,7 +136,7 @@ const MakeatPcContainer = styled.section`
           display: block;
           width: 18px;
           height: 16px;
-          color: ${white};
+          color: ${makeatWhite};
         }
       }
     }
@@ -158,11 +165,12 @@ const MakeatPcContainer = styled.section`
         align-items: center;
         width: 55px;
         height: 55px;
-        background-color: ${main};
+        background: ${makeatWhite};
         border-radius: 8px;
-        color: ${white};
+        color: ${makeatRed};
         font-size: 0.9rem;
         font-weight: 700;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
       }
 
       .text {

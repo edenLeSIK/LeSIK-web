@@ -1,5 +1,5 @@
 export const inquiryPageContentList = {
-  headline: "지금까지의 외식업의 고민을 덜어드립니다",
+  headline: "외식업의 고민, 함께 해결해 드립니다.",
   desc: "COOKSUP 솔루션 도입을 통해 거대한 맞춤형 푸드 서비스 시장에 합류하세요!",
   contents: [
     {

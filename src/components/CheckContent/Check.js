@@ -48,35 +48,42 @@ const Check = ({ contents, onClick }) => {
 };
 
 const CheckContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
-  width: 50vw;
-  row-gap: 30px;
+  gap: 30px;
+  width: 55vw;
+
+  @media screen and (min-width: 1920px) {
+    width: 50vw;
+    gap: 50px;
+  }
 
   @media screen and (min-width: 2000px) {
+    gap: 60px;
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1439px) {
+    gap: 20px;
+    width: auto;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: auto;
   }
 
-  @media screen and (max-width: 1700px) and (min-width: 1401px) {
-    justify-content: flex-end;
-    gap: 50px;
-  }
-
-  @media screen and (max-width: 1400px) and (min-width: 940px) {
-    justify-content: flex-end;
-    gap: 30px;
-    width: 60vw;
+  @media screen and (min-width: 940px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
-    gap: 20px;
     width: 80vw;
   }
 
@@ -96,6 +103,17 @@ const CheckContainer = styled.div`
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
       rgba(17, 17, 26, 0.05) 0px 8px 32px;
     cursor: pointer;
+
+    @media screen and (min-width: 1024px) and (max-width: 1600px) {
+      width: 180px;
+      height: 180px;
+      padding: 10px;
+    }
+
+    @media screen and (min-width: 940px) and (max-width: 1023px) {
+      width: 160px;
+      height: 160px;
+    }
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
@@ -118,6 +136,14 @@ const CheckContainer = styled.div`
       width: auto;
       height: 4.5rem;
 
+      @media screen and (min-width: 1280px) and (max-width: 1600px) {
+        height: 4rem;
+      }
+
+      @media screen and (min-width: 940px) and (max-width: 1023px) {
+        height: 3.5rem;
+      }
+
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         height: 3rem;
@@ -128,6 +154,10 @@ const CheckContainer = styled.div`
       margin-top: 20px;
       font-size: 0.875rem;
       text-align: center;
+
+      @media screen and (max-width: 1440px) {
+        margin-top: 15px;
+      }
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {

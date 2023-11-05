@@ -37,7 +37,11 @@ const Slide = ({ contents }) => {
 const SliderContainer = styled(Slider)`
   display: flex;
   flex-direction: row;
-  width: 50vw !important;
+  width: 55vw !important;
+
+  @media screen and (min-width: 1920px) {
+    width: 50vw !important;
+  }
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
@@ -68,6 +72,16 @@ const SliderContainer = styled(Slider)`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: grab;
 
+    @media screen and (min-width: 2000px) {
+      max-width: 1000px;
+    }
+
+    @media screen and (min-width: 940px) and (max-width: 1439px) {
+      height: 220px;
+      margin: 20px 20px;
+      padding: 1.25rem;
+    }
+
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       flex-direction: column;
@@ -80,6 +94,10 @@ const SliderContainer = styled(Slider)`
       color: ${main};
       text-align: center;
       font-size: 2rem;
+
+      @media (min-width: 940px) and (max-width: 1439px) {
+        font-size: 1.875rem;
+      }
 
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
@@ -111,6 +129,10 @@ const SliderContainer = styled(Slider)`
         letter-spacing: 0.04rem;
         text-transform: uppercase;
 
+        @media (min-width: 940px) and (max-width: 1439px) {
+          font-size: 1.375rem;
+        }
+
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
           font-size: 1.25rem;
@@ -121,6 +143,10 @@ const SliderContainer = styled(Slider)`
       .text {
         color: ${gray};
         line-height: 1.5;
+
+        @media (min-width: 940px) and (max-width: 1439px) {
+          font-size: 0.9rem;
+        }
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
@@ -139,13 +165,16 @@ const SliderContainer = styled(Slider)`
     margin: auto 0;
     z-index: 0;
 
+    @media screen and (min-width: 1920px) {
+      margin-right: 2rem;
+    }
+
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       display: -webkit- flex !important;
       display: flex !important;
       flex-direction: row;
       justify-content: center;
-      /* width: 50%; */
       margin: 0;
       margin-top: 30px;
     }

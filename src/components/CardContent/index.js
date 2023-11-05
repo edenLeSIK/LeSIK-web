@@ -77,7 +77,7 @@ const SectionContainer = styled.section`
       -webkit-justify-content: flex-start;
       justify-content: flex-start;
       row-gap: 16px;
-      width: 25vw;
+      width: 30vw;
       white-space: normal;
       word-break: keep-all;
 
@@ -91,14 +91,18 @@ const SectionContainer = styled.section`
       h6 {
         margin-left: 3px;
         color: ${purple};
-        font-size: 0.8rem;
+        font-size: 1.125rem;
         font-weight: 700;
         letter-spacing: 0.1rem;
         text-transform: uppercase;
 
+        @media (min-width: 940px) and (max-width: 1439px) {
+          font-size: 1rem;
+        }
+
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 0.6666666667rem;
+          font-size: 0.875rem;
           line-height: 1;
         }
       }
@@ -112,6 +116,18 @@ const SectionContainer = styled.section`
         white-space: normal;
         word-break: keep-all;
 
+        @media (min-width: 1280px) and (max-width: 1439px) {
+          font-size: 3rem;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          font-size: 2.85rem;
+        }
+
+        @media (min-width: 940px) and (max-width: 1023px) {
+          font-size: 2.5rem;
+        }
+
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
           font-size: 2rem;
@@ -124,6 +140,10 @@ const SectionContainer = styled.section`
         font-weight: 400;
         line-height: 1.3;
         letter-spacing: -0.01rem;
+
+        @media (min-width: 940px) and (max-width: 1439px) {
+          font-size: 1.125rem;
+        }
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
@@ -142,6 +162,12 @@ const SectionContainer = styled.section`
   .button-wrapper {
     max-width: 200px;
     margin-top: 30px;
+
+    button {
+      @media (min-width: 940px) and (max-width: 1439px) {
+        font-size: 1rem;
+      }
+    }
 
     .only-on-mobile {
       display: none;

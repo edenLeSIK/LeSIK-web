@@ -32,19 +32,27 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
-  column-gap: 2.22vw;
-  grid-gap: 3rem;
-  align-items: flex-start;
+  grid-gap: 2rem;
   align-items: stretch;
-  width: 50vw;
+  width: 55vw;
+
+  @media screen and (min-width: 1920px) {
+    width: 50vw;
+  }
+
+  @media screen and (min-width: 1800px) {
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 2000px) {
+    gap: 5rem;
+  }
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
     width: auto;
-    /* grid-template-columns: 1fr; */
     column-gap: 0;
-    /* row-gap: 40px; */
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
     padding: 0 3vw;
   }
 
@@ -63,15 +71,23 @@ const Container = styled.div`
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
     min-width: 10rem;
+    max-width: 500px;
     padding: 30px;
     border: 1px solid ${lightGray};
     background: ${white};
 
+    @media screen and (min-width: 1800px) {
+      justify-content: center;
+      height: 300px;
+    }
+
+    @media screen and (min-width: 940px) and (max-width: 1439px) {
+      padding: 25px;
+    }
+
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
       max-width: 400px;
-      /* margin-left: 5.5583333333vw;
-      margin-right: 5.5583333333vw; */
       padding: 20px;
     }
 
@@ -82,6 +98,10 @@ const Container = styled.div`
       img {
         width: 100%;
         height: 100%;
+      }
+
+      @media screen and (min-width: 940px) and (max-width: 1439px) {
+        width: 50%;
       }
 
       @media screen and (max-width: 939px) and (min-width: 767px),
@@ -97,6 +117,14 @@ const Container = styled.div`
       letter-spacing: 0.04rem;
       text-transform: uppercase;
 
+      @media screen and(min-width: 1024px) and (max-width: 1439px) {
+        font-size: 1.5rem;
+      }
+
+      @media screen and (min-width: 940px) and (max-width: 1023px) {
+        font-size: 1.375rem;
+      }
+
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         font-size: 1.3333333333rem;
@@ -104,14 +132,22 @@ const Container = styled.div`
     }
 
     .text {
-      margin: 20px 0 0;
+      margin: 15px 0 0;
       color: #4a4a5a;
       text-align: center;
       line-height: 1.2;
 
+      @media screen and(min-width: 1024px) and (max-width: 1439px) {
+        font-size: 1rem;
+      }
+
+      @media screen and (min-width: 940px) and (max-width: 1023px) {
+        font-size: 0.9rem;
+      }
+
       @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
-        margin: 16px 0 0;
+        margin: 10px 0 0;
         font-size: 0.7777777778rem;
       }
     }

@@ -21,7 +21,7 @@ export const formList = [
   { id: 1, label: "이름", mark: true },
   { id: 2, label: "전화번호", mark: true },
   { id: 3, label: "이메일", mark: true },
-  { id: 4, label: "문의사항", mark: true },
+  { id: 4, label: "문의사항", mark: false },
   { id: 5, label: "가맹점 이름", mark: true },
   { id: 6, label: "가맹점 주소", mark: false },
 ];

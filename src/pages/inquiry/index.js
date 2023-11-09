@@ -46,10 +46,14 @@ const InquiryContainer = styled.main`
     padding-top: 50px;
     padding-bottom: 48px;
     background: ${main};
+    height: max-content;
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      padding: 40px 5.33vw 0;
+      padding-top: 40px;
+      padding-bottom: 30px;
+      padding-left: 5.33vw;
+      padding-right: 5.33vw;
     }
 
     .icon {
@@ -67,10 +71,10 @@ const InquiryContainer = styled.main`
       width: 44.45vw;
       padding-top: 80px;
 
-      @media screen and (max-width: 939px) and (max-width: 766px),
+      @media screen and (max-width: 939px) and (min-width: 767px),
         screen and (max-width: 766px) {
         width: 100%;
-        padding: 40px 5.33vw 30px;
+        padding: 40px 5.33vw 0;
         text-align: center;
       }
 
@@ -97,6 +101,7 @@ const InquiryContainer = styled.main`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
+          margin-bottom: 0;
           padding-bottom: 20px;
           font-size: 1rem;
           line-height: 1.25;
@@ -110,18 +115,14 @@ const InquiryContainer = styled.main`
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding-left: 4.44vw;
-    padding-right: 4.44vw;
 
-    @media screen and (max-width: 766px) and (max-width: 766px) {
-      padding: 0;
-    }
-
-    @media screen and (max-width: 766px) {
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
       display: flex;
       flex-direction: column-reverse;
       align-items: flex-start;
       justify-content: flex-start;
+      margin-top: 0;
     }
 
     .left {
@@ -129,26 +130,25 @@ const InquiryContainer = styled.main`
       top: 100px;
       width: 40.45vw;
 
-      @media screen and (max-width: 766px) and (max-width: 766px) {
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
         position: relative;
-        top: 0;
+        width: 100%;
         padding: 0 5.33vw;
-        width: 100%;
-      }
-
-      @media screen and (max-width: 766px) {
-        width: 100%;
+        transform: translateY(0%);
+        z-index: 0;
       }
 
       ul {
         padding-top: 48px;
-        padding-left: 32px;
+        padding-left: 6vw;
         font-size: 1.3333333333rem;
         font-weight: 400;
         line-height: 1.3;
         letter-spacing: -0.01rem;
 
-        @media screen and (max-width: 766px) {
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
           padding: 36px 32px 20px;
           font-size: 1rem;
         }
@@ -163,23 +163,21 @@ const InquiryContainer = styled.main`
     }
 
     .right {
-      width: 40vw;
       transform: translateY(-25vh);
 
-      @media screen and (max-width: 939px) {
-        transform: translateY(-20vh);
-      }
-
-      @media screen and (max-width: 766px) and (max-width: 766px) {
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
         position: relative;
         width: 100%;
-        padding: 0 5.33vw;
+        padding: 0 6vw;
         transform: translateY(0%);
         z-index: 0;
+        height: 40%;
       }
     }
 
-    @media screen and (max-width: 766px) and (max-width: 766px) {
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
       .right::after {
         content: "";
         position: absolute;
@@ -187,7 +185,7 @@ const InquiryContainer = styled.main`
         top: 0;
         right: 0;
         height: 40%;
-        background-color: ${main};
+        background: ${main};
         z-index: -1;
       }
     }

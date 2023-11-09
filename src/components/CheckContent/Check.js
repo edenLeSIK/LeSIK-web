@@ -38,7 +38,15 @@ const Check = ({ contents, onClick }) => {
       ))}
       <div
         className={`option next-btn ${isButtonDisabled ? "disabled" : ""}`}
-        onClick={isButtonDisabled ? null : onClick}
+        onClick={
+          isButtonDisabled
+            ? null
+            : () => {
+                if (!isButtonDisabled) {
+                  onClick(activeIndexes);
+                }
+              }
+        }
       >
         <span className="text">NEXT</span>
         <FiArrowRight />

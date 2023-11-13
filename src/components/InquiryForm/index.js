@@ -14,13 +14,35 @@ const InquiryForm = () => {
     가맹점주소: "",
   });
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    return emailRegex.test(email);
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    if (name === "전화번호") {
+      const numericValue = value.replace(/\D/g, "");
+      setFormData({ ...formData, [name]: numericValue });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+
+    if (name === "이메일") {
+      if (validateEmail(value)) {
+        setFormData({ ...formData, [name]: value });
+      } else {
+        console.error("올바른 이메일 주소를 입력하세요.");
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
     console.log(name, value);
   };
 
-  const handleSubmit = (e) => {
+  const submitEmail = (e) => {
     e.preventDefault();
 
     console.log(e);
@@ -28,7 +50,7 @@ const InquiryForm = () => {
 
   return (
     <InquiryFormContainer>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submitEmail}>
         <p className="text">
           <span>﹡</span> 필수 항목을 모두 작성해주세요
         </p>

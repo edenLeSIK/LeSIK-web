@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import InquiryForm from "@/components/InquiryForm";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import InquiryForm from "@/components/InquiryForm";
 import { contentBackground, main, white, darkGray } from "@/styles/theme";
 import { inquiryPageContentList } from "@/constants/inquiry";
 

@@ -18,10 +18,10 @@ export const inquiryPageContentList = {
 };
 
 export const formList = [
-  { id: 1, label: "이름", mark: true },
-  { id: 2, label: "전화번호", mark: true },
-  { id: 3, label: "이메일", mark: true },
-  { id: 4, label: "문의사항", mark: false },
-  { id: 5, label: "가맹점 이름", mark: true },
-  { id: 6, label: "가맹점 주소", mark: false },
+  { id: 1, label: "이름", eng: "name", mark: true },
+  { id: 2, label: "전화번호", eng: "tel", mark: true },
+  { id: 3, label: "이메일", eng: "email", mark: true },
+  { id: 4, label: "문의사항", eng: "inquiry", mark: false },
+  { id: 5, label: "가맹점 이름", eng: "franchiseName", mark: true },
+  { id: 6, label: "가맹점 주소", eng: "franchiseAddress", mark: false },
 ];

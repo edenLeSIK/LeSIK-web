@@ -4,14 +4,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
-import {
-  fontColor,
-  gray,
-  main,
-  white,
-  makeatRed,
-  makeatWhite,
-} from "@/styles/theme";
+import { fontColor, gray, makeatRed, makeatWhite } from "@/styles/theme";
 import googlePlay from "@/assets/makeat/google_play.png";
 
 const MakeatPc = () => {

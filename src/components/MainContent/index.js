@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { white } from "@/styles/theme";
+import { main, white } from "@/styles/theme";
 import Button from "../Button";
 
 const MainContent = ({ image, headline, desc, onClick, text, color }) => {

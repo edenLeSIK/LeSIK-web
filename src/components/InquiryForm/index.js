@@ -1,72 +1,83 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
 import Button from "../Button";
 import { fontColor, red, white } from "@/styles/theme";
 import { formList } from "@/constants/inquiry";
 
-const InquiryForm = () => {
-  const [formData, setFormData] = useState({
-    이름: "",
-    전화번호: "",
-    이메일: "",
-    문의사항: "",
-    가맹점이름: "",
-    가맹점주소: "",
-  });
+let SERVICE_ID = "service_evz3vmk";
+let TEMPLATE_ID = "template_iyb6337";
+let PUBLIC_KEY = "AqdLES4vOVs7gN_R-";
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    return emailRegex.test(email);
-  };
+const InquiryForm = () => {
+  const formRef = useRef();
+  const [formData, setFormData] = useState({
+    name: "",
+    tel: "",
+    email: "",
+    inquiry: "",
+    franchiseName: "",
+    framchiseAddress: "",
+    equipments: [],
+  });
+  const optionsQueryParam =
+    typeof window !== "undefined"
+      ? new URLSearchParams(window.location.search).getAll("options")
+      : [];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
-    if (name === "전화번호") {
-      const numericValue = value.replace(/\D/g, "");
-      setFormData({ ...formData, [name]: numericValue });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-
-    if (name === "이메일") {
-      if (validateEmail(value)) {
-        setFormData({ ...formData, [name]: value });
-      } else {
-        console.error("올바른 이메일 주소를 입력하세요.");
-      }
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
     console.log(name, value);
   };
 
-  const submitEmail = (e) => {
+  const submitEmail = async (e) => {
     e.preventDefault();
 
-    console.log(e);
+    try {
+      const response = await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formRef.current,
+        PUBLIC_KEY
+      );
+
+      console.log(response);
+      toast.success("신청이 완료되었습니다.");
+    } catch (error) {
+      console.error(error);
+      toast.error("메일 전송에 실패하였습니다.");
+    }
   };
 
   return (
     <InquiryFormContainer>
-      <form onSubmit={submitEmail}>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick
+        theme="light"
+      />
+      <form ref={formRef} onSubmit={submitEmail}>
         <p className="text">
           <span>﹡</span> 필수 항목을 모두 작성해주세요
         </p>
         {formList.map((el) => (
           <div className="input-wrapper" key={el.id}>
-            {el.id === 5 && (
-              <div className="input-wrapper">
-                <p className="sort">가맹점 정보</p>
-              </div>
-            )}
+            {el.id === 5 && <p className="sort">가맹점 정보</p>}
             <label>
               {el.label} {el.mark && <span>﹡</span>}
             </label>
-            <input type="text" name={el.label} onChange={handleInputChange} />
+            <input type="text" name={el.eng} onChange={handleInputChange} />
           </div>
         ))}
+        <div className="equipments">
+          <label>가맹점 주방기기</label>
+          <input name="equipments" value={optionsQueryParam} readOnly />
+        </div>
         <div className="button-wrapper">
           <Button text="제출하기" color="yellow" />
         </div>
@@ -152,6 +163,10 @@ const InquiryFormContainer = styled.div`
       textarea {
         height: 5.5rem;
       }
+    }
+
+    .equipments {
+      display: none;
     }
 
     .button-wrapper {

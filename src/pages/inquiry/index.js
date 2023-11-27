@@ -85,6 +85,10 @@ const InquiryContainer = styled.main`
         white-space: normal;
         word-break: keep-all;
 
+        @media screen and (max-width: 1280px) and (min-width: 940px) {
+          font-size: 3.25rem;
+        }
+
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
           font-size: 2.5rem;

@@ -22,6 +22,7 @@ const InquiryForm = () => {
     framchiseAddress: "",
     equipments: [],
   });
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const optionsQueryParam =
     typeof window !== "undefined"
       ? new URLSearchParams(window.location.search).getAll("options")
@@ -30,21 +31,39 @@ const InquiryForm = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    console.log(name, value);
+
+    if (
+      (["name", "tel", "email", "franchiseName"].includes(name) &&
+        value.trim() === "") ||
+      (name === "tel" && !/^\d+$/.test(value)) ||
+      (name === "email" && !/^\S+@\S+\.\S+$/.test(value))
+    ) {
+      setIsButtonDisabled(true);
+      return;
+    }
+
+    if (
+      formData.name.trim() !== "" &&
+      /^\d+$/.test(formData.tel) &&
+      /^\S+@\S+\.\S+$/.test(formData.email) &&
+      formData.franchiseName.trim() !== ""
+    ) {
+      setIsButtonDisabled(false);
+    } else {
+      setIsButtonDisabled(true);
+    }
   };
 
   const submitEmail = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await emailjs.sendForm(
+      await emailjs.sendForm(
         SERVICE_ID,
         TEMPLATE_ID,
         formRef.current,
         PUBLIC_KEY
       );
-
-      console.log(response);
       toast.success("신청이 완료되었습니다.");
     } catch (error) {
       console.error(error);
@@ -54,8 +73,8 @@ const InquiryForm = () => {
 
   return (
     <InquiryFormContainer>
-      <ToastContainer
-        position="top-center"
+      <Toast
+        // position="top-center"
         autoClose={2000}
         hideProgressBar={false}
         closeOnClick
@@ -79,7 +98,7 @@ const InquiryForm = () => {
           <input name="equipments" value={optionsQueryParam} readOnly />
         </div>
         <div className="button-wrapper">
-          <Button text="제출하기" color="yellow" />
+          <Button text="제출하기" color="main" disabled={isButtonDisabled} />
         </div>
       </form>
     </InquiryFormContainer>
@@ -174,6 +193,10 @@ const InquiryFormContainer = styled.div`
       margin-top: 20px;
     }
   }
+`;
+
+const Toast = styled(ToastContainer)`
+  margin: auto;
 `;
 
 export default InquiryForm;

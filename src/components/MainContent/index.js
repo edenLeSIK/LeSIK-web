@@ -31,6 +31,7 @@ const SectionContainer = styled.section`
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
+  background: ${main};
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {

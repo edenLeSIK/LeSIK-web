@@ -7,10 +7,6 @@ import Button from "../Button";
 import { fontColor, red, white } from "@/styles/theme";
 import { formList } from "@/constants/inquiry";
 
-let SERVICE_ID = "service_evz3vmk";
-let TEMPLATE_ID = "template_iyb6337";
-let PUBLIC_KEY = "AqdLES4vOVs7gN_R-";
-
 const InquiryForm = () => {
   const formRef = useRef();
   const [formData, setFormData] = useState({
@@ -59,10 +55,10 @@ const InquiryForm = () => {
 
     try {
       await emailjs.sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
         formRef.current,
-        PUBLIC_KEY
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
       );
       toast.success("신청이 완료되었습니다.");
     } catch (error) {
@@ -74,7 +70,6 @@ const InquiryForm = () => {
   return (
     <InquiryFormContainer>
       <Toast
-        // position="top-center"
         autoClose={2000}
         hideProgressBar={false}
         closeOnClick
@@ -82,7 +77,8 @@ const InquiryForm = () => {
       />
       <form ref={formRef} onSubmit={submitEmail}>
         <p className="text">
-          <span>﹡</span> 필수 항목을 모두 작성해주세요
+          <span>﹡</span> 필수 항목을 모두 작성해주세요. 전화번호와 이메일
+          형식에 유의하세요.
         </p>
         {formList.map((el) => (
           <div className="input-wrapper" key={el.id}>
@@ -94,7 +90,6 @@ const InquiryForm = () => {
           </div>
         ))}
         <div className="equipments">
-          <label>가맹점 주방기기</label>
           <input name="equipments" value={optionsQueryParam} readOnly />
         </div>
         <div className="button-wrapper">

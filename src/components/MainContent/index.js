@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { white } from "@/styles/theme";
+import { main, white } from "@/styles/theme";
 import Button from "../Button";
 
 const MainContent = ({ image, headline, desc, onClick, text, color }) => {
@@ -31,6 +31,7 @@ const SectionContainer = styled.section`
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
+  background: ${main};
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {

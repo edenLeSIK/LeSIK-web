@@ -17,7 +17,12 @@ const Home = () => {
   const navigateToMakeatPage = () => router.push("/makeat");
   const navigateToCustomerPage = () => router.push("/customer");
   const navigateToFranchisePage = () => router.push("/franchise");
-  const navigateToInquiryPage = () => router.push("/inquiry");
+  const navigateToInquiryPage = (selectedOptions) => {
+    router.push({
+      pathname: "/inquiry",
+      query: { options: selectedOptions },
+    });
+  };
 
   return (
     <HomeContainer>
@@ -54,9 +59,17 @@ const Home = () => {
       />
       <CheckContent
         list={franchiseCheckContentList}
-        onClick={navigateToInquiryPage}
+        onClick={(selectedIndexes) => {
+          if (selectedIndexes.length > 0) {
+            const selectedOption = selectedIndexes.map(
+              (index) => franchiseCheckContentList.equipments[index]
+            );
+            const optionNames = selectedOption.map((option) => option.name);
+            navigateToInquiryPage(optionNames);
+          }
+        }}
       />
-      <AdsContent />
+      <AdsContent onClick={navigateToInquiryPage} />
     </HomeContainer>
   );
 };

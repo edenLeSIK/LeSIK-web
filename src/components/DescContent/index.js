@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "../Button";
 import Desc from "./Desc";
-import { purple, contentBackground, lineColor2 } from "@/styles/theme";
+import { purple, contentBackground } from "@/styles/theme";
 
 const DescContent = ({
   color,

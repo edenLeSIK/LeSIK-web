@@ -1,30 +1,99 @@
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
 import Button from "../Button";
 import { fontColor, red, white } from "@/styles/theme";
 import { formList } from "@/constants/inquiry";
 
 const InquiryForm = () => {
+  const formRef = useRef();
+  const [formData, setFormData] = useState({
+    name: "",
+    tel: "",
+    email: "",
+    inquiry: "",
+    franchiseName: "",
+    framchiseAddress: "",
+    equipments: [],
+  });
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const optionsQueryParam =
+    typeof window !== "undefined"
+      ? new URLSearchParams(window.location.search).getAll("options")
+      : [];
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    if (
+      (["name", "tel", "email", "franchiseName"].includes(name) &&
+        value.trim() === "") ||
+      (name === "tel" && !/^\d+$/.test(value)) ||
+      (name === "email" && !/^\S+@\S+\.\S+$/.test(value))
+    ) {
+      setIsButtonDisabled(true);
+      return;
+    }
+
+    if (
+      formData.name.trim() !== "" &&
+      /^\d+$/.test(formData.tel) &&
+      /^\S+@\S+\.\S+$/.test(formData.email) &&
+      formData.franchiseName.trim() !== ""
+    ) {
+      setIsButtonDisabled(false);
+    } else {
+      setIsButtonDisabled(true);
+    }
+  };
+
+  const submitEmail = async (e) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        formRef.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      );
+      toast.success("신청이 완료되었습니다.");
+    } catch (error) {
+      console.error(error);
+      toast.error("메일 전송에 실패하였습니다.");
+    }
+  };
+
   return (
     <InquiryFormContainer>
-      <form>
+      <Toast
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick
+        theme="light"
+      />
+      <form ref={formRef} onSubmit={submitEmail}>
         <p className="text">
-          <span>﹡</span> 필수 항목을 모두 작성해주세요
+          <span>﹡</span> 필수 항목을 모두 작성해주세요. 전화번호와 이메일
+          형식에 유의하세요.
         </p>
         {formList.map((el) => (
           <div className="input-wrapper" key={el.id}>
-            {el.id === 5 && (
-              <div className="input-wrapper">
-                <p className="sort">가맹점 정보</p>
-              </div>
-            )}
+            {el.id === 5 && <p className="sort">가맹점 정보</p>}
             <label>
               {el.label} {el.mark && <span>﹡</span>}
             </label>
-            <input type="text" />
+            <input type="text" name={el.eng} onChange={handleInputChange} />
           </div>
         ))}
+        <div className="equipments">
+          <input name="equipments" value={optionsQueryParam} readOnly />
+        </div>
         <div className="button-wrapper">
-          <Button text="제출하기" color="yellow" />
+          <Button text="제출하기" color="main" disabled={isButtonDisabled} />
         </div>
       </form>
     </InquiryFormContainer>
@@ -33,18 +102,20 @@ const InquiryForm = () => {
 
 const InquiryFormContainer = styled.div`
   width: 38.8916666667vw;
-  /* margin-right: 4.44vw; */
+  margin-right: 4.44vw;
   padding: 40px 32px;
   background: ${white};
   border-radius: 24px;
 
   @media screen and (min-width: 1920px) {
     width: 35vw;
+    margin-right: 5vw;
   }
 
-  @media screen and (max-width: 766px) {
-    width: 100%;
-    margin: 0 5.33vw 0 0;
+  @media screen and (max-width: 939px) {
+    width: 80vw;
+    margin-right: 0;
+    margin: 0 auto;
     padding: 32px 24px;
   }
 
@@ -66,7 +137,7 @@ const InquiryFormContainer = styled.div`
       width: 100%;
       padding: 10px 0;
 
-      @media (max-width: 767px) {
+      @media (max-width: 939px) {
         display: inline-block;
         width: 100%;
         padding: 5px 0;
@@ -97,6 +168,10 @@ const InquiryFormContainer = styled.div`
         border-radius: 8px;
         color: ${fontColor};
         font-weight: 400;
+
+        @media (max-width: 939px) {
+          padding: 0.825rem;
+        }
       }
 
       textarea {
@@ -104,11 +179,19 @@ const InquiryFormContainer = styled.div`
       }
     }
 
+    .equipments {
+      display: none;
+    }
+
     .button-wrapper {
       width: 100%;
       margin-top: 20px;
     }
   }
+`;
+
+const Toast = styled(ToastContainer)`
+  margin: auto;
 `;
 
 export default InquiryForm;

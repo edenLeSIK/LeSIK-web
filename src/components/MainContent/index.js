@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { main, white } from "@/styles/theme";
+import { cardBackground, white } from "@/styles/theme";
 import Button from "../Button";
 
 const MainContent = ({ image, headline, desc, onClick, text, color }) => {
@@ -12,6 +12,8 @@ const MainContent = ({ image, headline, desc, onClick, text, color }) => {
           src={image}
           priority={true}
           className="main-image"
+          layout="fill"
+          placeholder="blur"
         />
       </figure>
       <div className="main-content">
@@ -31,7 +33,7 @@ const SectionContainer = styled.section`
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
-  background: ${main};
+  background: ${cardBackground};
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {

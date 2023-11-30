@@ -11,6 +11,7 @@ const MainContent = ({ image, headline, desc, onClick, text, color }) => {
           alt="main-image"
           src={image}
           priority={true}
+          className="main-image"
           placeholder="blur"
         />
       </figure>

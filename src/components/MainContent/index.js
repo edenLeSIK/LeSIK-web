@@ -54,7 +54,6 @@ const SectionContainer = styled.section`
     position: absolute;
     bottom: 0;
     left: 0;
-    /* width: 60.6716666667vw; */
     padding: 0 0 56px;
     padding-left: 4.44vw;
 

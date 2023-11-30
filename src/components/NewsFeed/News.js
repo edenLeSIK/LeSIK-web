@@ -85,7 +85,7 @@ const NewsContainer = styled.article`
         line-height: 1.3;
         letter-spacing: -0.01rem;
         display: -webkit-box;
-        -webkit-line-clamp: 1; /* 최대 표시할 줄 수 */
+        -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -109,6 +109,7 @@ const NewsContainer = styled.article`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
+          margin: 15px 0 0;
           font-size: 0.6666666667rem;
           line-height: 1.5;
           -webkit-line-clamp: 2;

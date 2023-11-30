@@ -22,7 +22,7 @@ export const newsList = [
     date: "2022.07.04",
     summary:
       "쿡썹 '래식'과 '메디머스'는 본량농협이 생산하는 황후의아침 사포닌쌀을 활용한 수험생 건강기능식단 메뉴 개발을 위한 MOU 양해각서를 체결했다고 밝혔다. 쿡썹을 서비스 하고 있는 ㈜래식(대표 김한성)과, 건강기능성 메디푸드 플랫폼㈜메디머스(대표 김종현), 황후의아침 사포닌쌀을 생산하는 광주광역시 본량농협(조합장 정상윤)은 수험생을 위한 건강기능성 식단 메뉴개발을 위한 협력 관계를 구축 했다.",
-    link: "https://mnb.moneys.co.kr/mnbview.php?no=2022063012185821695&ref=https%3A%2F%2Fsearch.naver.com",
+    link: "https://www.moneys.co.kr/news/mwView.php?no=2022063012185821695",
     magazine: "머니S",
   },
   {

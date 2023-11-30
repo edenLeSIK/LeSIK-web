@@ -17,6 +17,11 @@ const Inquiry = () => {
         <div className="content">
           <h1 className="headline">{inquiryPageContentList.headline}</h1>
           <h4 className="desc">{inquiryPageContentList.desc}</h4>
+          <ul className="sub-desc">
+            {inquiryPageContentList.contents.map((el) => (
+              <li key={el.content}>{el.content}</li>
+            ))}
+          </ul>
         </div>
       </section>
       <section className="inquiry-content">
@@ -59,6 +64,11 @@ const InquiryContainer = styled.main`
     .icon {
       color: ${white};
       font-size: 3.5rem;
+
+      @media screen and (max-width: 939px) and (min-width: 767px),
+        screen and (max-width: 766px) {
+        display: none;
+      }
     }
 
     .icon:hover {
@@ -111,6 +121,27 @@ const InquiryContainer = styled.main`
           line-height: 1.25;
         }
       }
+
+      .sub-desc {
+        display: none;
+
+        @media screen and (max-width: 939px) and (min-width: 767px),
+          screen and (max-width: 766px) {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          li {
+            padding: 15px 20px;
+            background: #1c977c;
+            border-radius: 10px;
+            color: ${white};
+            font-size: 0.8rem;
+            line-height: 1.25;
+            opacity: 0.8;
+          }
+        }
+      }
     }
   }
 
@@ -122,11 +153,7 @@ const InquiryContainer = styled.main`
 
     @media screen and (max-width: 939px) and (min-width: 767px),
       screen and (max-width: 766px) {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: flex-start;
-      justify-content: flex-start;
-      margin-top: 0;
+      display: block;
     }
 
     .left {
@@ -153,8 +180,7 @@ const InquiryContainer = styled.main`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          padding: 36px 32px 20px;
-          font-size: 1rem;
+          display: none;
         }
 
         li {
@@ -173,7 +199,7 @@ const InquiryContainer = styled.main`
         screen and (max-width: 766px) {
         position: relative;
         width: 100%;
-        padding: 0 6vw;
+        padding: 0 6vw 40px;
         transform: translateY(0%);
         z-index: 0;
         height: 40%;

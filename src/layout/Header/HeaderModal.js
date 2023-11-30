@@ -129,7 +129,8 @@ const HeaderModalContainer = styled.div`
 
         @media screen and (max-width: 939px) and (min-width: 767px),
           screen and (max-width: 766px) {
-          font-size: 2.785rem;
+          font-size: 2.25rem;
+          line-height: 1.22;
           letter-spacing: 0;
         }
       }

@@ -93,6 +93,7 @@ const CheckContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     width: 80vw;
+    gap: 20px;
   }
 
   .option {
@@ -133,7 +134,7 @@ const CheckContainer = styled.div`
       align-items: center;
       -webkit-justify-content: space-around;
       justify-content: space-around;
-      width: auto;
+      width: 150px;
       height: unset;
       padding: 25px 20px;
       margin: 0 0 16px 0;

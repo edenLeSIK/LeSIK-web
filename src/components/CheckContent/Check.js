@@ -134,7 +134,8 @@ const CheckContainer = styled.div`
       align-items: center;
       -webkit-justify-content: space-around;
       justify-content: space-around;
-      width: 150px;
+      width: auto;
+      min-width: 150px;
       height: unset;
       padding: 25px 20px;
       margin: 0 0 16px 0;

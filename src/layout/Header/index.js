@@ -67,10 +67,10 @@ const Header = () => {
   return (
     <>
       <HeaderContainer
-        icon={iconColor}
-        background={backgroundColor}
-        font={fontColor}
-        shadow={boxShadow}
+        $icon={iconColor}
+        $background={backgroundColor}
+        $font={fontColor}
+        $shadow={boxShadow}
       >
         <div className="header-wrapper">
           {isHeaderModal ? (

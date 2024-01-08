@@ -77,17 +77,6 @@ const Home = () => {
 const HomeContainer = styled.main`
   width: 100vw;
   min-height: 100vh;
-
-  figure {
-    display: flex;
-    align-items: center;
-
-    img {
-      width: auto;
-      object-fit: contain;
-      object-position: 0 50%;
-    }
-  }
 `;
 
 export default Home;

@@ -67,7 +67,7 @@ const Header = () => {
   return (
     <>
       <HeaderContainer
-        $icon={iconColor}
+        icon={iconColor}
         $background={backgroundColor}
         $font={fontColor}
         $shadow={boxShadow}

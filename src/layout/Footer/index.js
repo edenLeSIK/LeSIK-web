@@ -30,7 +30,7 @@ const Footer = () => {
                   <li key={el.title}>
                     <span className="list-title">{el.title}</span>
                     <span className="item">
-                      {el.content}{" "}
+                      {el.content}
                       {el.link && (
                         <a href={el.link.href} target="_blank">
                           {el.link.name}

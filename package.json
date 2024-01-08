@@ -13,6 +13,7 @@
     "@emailjs/browser": "^3.11.0",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.5.1",
+    "i18next": "^23.7.16",
     "jquery": "^3.7.1",
     "next": "latest",
     "react": "^18",

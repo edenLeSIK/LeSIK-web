@@ -5,6 +5,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { CgCloseO } from "react-icons/cg";
 import { FaHamburger } from "react-icons/fa";
+import { AiOutlineGlobal } from "react-icons/ai";
 import Button from "@/components/Button";
 import HeaderModal from "./HeaderModal";
 import logo from "@/assets/logo/logo.png";
@@ -104,6 +105,7 @@ const Header = () => {
               onClick={navigateToMakeatPage}
             />
           </div>
+          <AiOutlineGlobal className="language-icon icon" />
         </div>
       </HeaderContainer>
       {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
@@ -138,7 +140,7 @@ const HeaderContainer = styled.header`
 
   .header-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 0fr;
     width: 100%;
     margin: 0 auto;
 
@@ -188,8 +190,37 @@ const HeaderContainer = styled.header`
     }
 
     .button-wrapper {
+      display: flex;
       align-self: center;
       justify-self: flex-end;
+      gap: 1rem;
+    }
+
+    .language-icon {
+      margin-left: 1rem;
+      font-size: 2%.5;
+    }
+
+    @keyframes rotateIcon {
+      0% {
+        transform: rotateY(0deg);
+      }
+      25% {
+        transform: rotateY(90deg);
+      }
+      50% {
+        transform: rotateY(180deg);
+      }
+      80% {
+        transform: rotateY(270deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .language-icon:hover {
+      animation: rotateIcon 2s infinite linear;
     }
 
     ul {

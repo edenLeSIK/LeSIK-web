@@ -8,16 +8,25 @@ import { FaHamburger } from "react-icons/fa";
 import { AiOutlineGlobal } from "react-icons/ai";
 import Button from "@/components/Button";
 import HeaderModal from "./HeaderModal";
+import Dropdown from "./Dropdown";
 import logo from "@/assets/logo/logo.png";
 import logoOriginal from "@/assets/logo/logo_ori.png";
 import logoWhite from "@/assets/logo/logo_white.png";
-import { black, white, darkGray } from "@/styles/theme";
+import {
+  black,
+  white,
+  darkGray,
+  main,
+  mainHover,
+  offWhite,
+} from "@/styles/theme";
 
 const Header = () => {
   const router = useRouter();
   const [isHeaderModal, setIsHeaderModal] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [logoImage, setLogoImage] = useState(logo);
+  const [isLanguage, setIsLanguage] = useState(false);
 
   const navigateToMakeatPage = () => {
     router.push("/makeat");
@@ -105,7 +114,12 @@ const Header = () => {
               onClick={navigateToMakeatPage}
             />
           </div>
-          <AiOutlineGlobal className="language-icon icon" />
+          <AiOutlineGlobal
+            className="language-icon"
+            onClick={() => {
+              setIsLanguage(!isLanguage);
+            }}
+          />
         </div>
       </HeaderContainer>
       {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
@@ -164,6 +178,11 @@ const HeaderContainer = styled.header`
         min-width: auto;
         font-size: 2rem;
       }
+
+      &:hover {
+        color: ${offWhite};
+        opacity: 0.9;
+      }
     }
 
     .link {
@@ -199,28 +218,6 @@ const HeaderContainer = styled.header`
     .language-icon {
       margin-left: 1rem;
       font-size: 2%.5;
-    }
-
-    @keyframes rotateIcon {
-      0% {
-        transform: rotateY(0deg);
-      }
-      25% {
-        transform: rotateY(90deg);
-      }
-      50% {
-        transform: rotateY(180deg);
-      }
-      80% {
-        transform: rotateY(270deg);
-      }
-      100% {
-        transform: rotateY(360deg);
-      }
-    }
-
-    .language-icon:hover {
-      animation: rotateIcon 2s infinite linear;
     }
 
     ul {

@@ -17,14 +17,15 @@ const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 0.375rem;
+  padding: 0.275rem;
   background: ${white};
   border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 10000;
   list-style: none;
 
   li {
-    padding: 0.85rem;
+    padding: 0.875rem;
     border-radius: 0.25rem;
     color: ${darkGray};
     cursor: pointer;

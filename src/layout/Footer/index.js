@@ -138,6 +138,7 @@ const FooterContainer = styled.footer`
             }
 
             a {
+              margin-left: 0.275rem;
               vertical-align: 5%;
               font-size: 0.785rem;
               color: ${fontColor2};

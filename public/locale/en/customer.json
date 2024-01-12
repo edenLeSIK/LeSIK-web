@@ -1,0 +1,4 @@
+import serve from "@/assets/customer/icons/serve.png";
+import plate from "@/assets/customer/icons/plate.png";
+import fork from "@/assets/customer/icons/fork.png";
+import menu from "@/assets/customer/icons/menu.png";

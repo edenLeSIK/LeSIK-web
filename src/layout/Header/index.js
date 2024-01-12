@@ -12,21 +12,14 @@ import Dropdown from "./Dropdown";
 import logo from "@/assets/logo/logo.png";
 import logoOriginal from "@/assets/logo/logo_ori.png";
 import logoWhite from "@/assets/logo/logo_white.png";
-import {
-  black,
-  white,
-  darkGray,
-  main,
-  mainHover,
-  offWhite,
-} from "@/styles/theme";
+import { black, white, darkGray, offWhite, lineColor } from "@/styles/theme";
 
 const Header = () => {
   const router = useRouter();
   const [isHeaderModal, setIsHeaderModal] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [logoImage, setLogoImage] = useState(logo);
-  const [isLanguage, setIsLanguage] = useState(false);
+  const [isDropdown, setIsDropdown] = useState(false);
 
   const navigateToMakeatPage = () => {
     router.push("/makeat");
@@ -69,18 +62,23 @@ const Header = () => {
       : "none";
   const iconColor =
     isScrollPastInnerHeight && !isHeaderModal ? `${darkGray}` : `${white}`;
+  const iconHoverColor =
+    isScrollPastInnerHeight && !isHeaderModal ? `${lineColor}` : `${offWhite}`;
 
   if (router.pathname === "/makeat" || router.pathname === "/inquiry") {
     return null;
   }
 
+  console.log(isDropdown);
+
   return (
     <>
       <HeaderContainer
         icon={iconColor}
-        $background={backgroundColor}
-        $font={fontColor}
-        $shadow={boxShadow}
+        iconHover={iconHoverColor}
+        background={backgroundColor}
+        font={fontColor}
+        shadow={boxShadow}
       >
         <div className="header-wrapper">
           {isHeaderModal ? (
@@ -114,12 +112,13 @@ const Header = () => {
               onClick={navigateToMakeatPage}
             />
           </div>
-          <AiOutlineGlobal
-            className="language-icon"
-            onClick={() => {
-              setIsLanguage(!isLanguage);
-            }}
-          />
+          <div className="dropdown-wrapper">
+            <AiOutlineGlobal
+              className="language-icon"
+              onClick={() => setIsDropdown(!isDropdown)}
+            />
+            {isDropdown && <Dropdown setIsDropdown={setIsDropdown} />}
+          </div>
         </div>
       </HeaderContainer>
       {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
@@ -140,7 +139,7 @@ const HeaderContainer = styled.header`
   transition: background-color 0.2s ease;
   z-index: 50;
   box-shadow: ${(props) => props.shadow};
-  overflow: hidden;
+  /* overflow: hidden; */
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
@@ -180,8 +179,8 @@ const HeaderContainer = styled.header`
       }
 
       &:hover {
-        color: ${offWhite};
-        opacity: 0.9;
+        color: ${(props) => props.iconHover};
+        opacity: 0.8;
       }
     }
 
@@ -215,31 +214,16 @@ const HeaderContainer = styled.header`
       gap: 1rem;
     }
 
-    .language-icon {
-      margin-left: 1rem;
-      font-size: 2%.5;
-    }
-
-    ul {
+    .dropdown-wrapper {
+      position: relative;
       display: flex;
+      flex-direction: row;
       align-items: center;
-      padding: 0;
+      color: ${(props) => props.font};
 
-      li > a {
-        padding: 0 8px;
-        color: ${(props) => props.font};
-        font-size: 1.125rem;
-        font-weight: 700;
-      }
-
-      li > a:hover {
-        color: ${darkGray};
-        font-size: 1.125rem;
-        font-weight: 700;
-      }
-
-      li + li {
-        margin-left: 30px;
+      .language-icon {
+        margin-left: 1rem;
+        font-size: 2%.5;
       }
     }
   }

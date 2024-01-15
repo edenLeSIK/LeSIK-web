@@ -1,0 +1,91 @@
+{
+  "franchiseMainContentList": {
+    "label": "For Franchise",
+    "headline": "The Most Advanced Futuristic Food Solution",
+    "desc": "A cutting-edge franchise model built on a mobile app and digital production solution.",
+    "button": "Do you want makeat?",
+    "contents": [
+      {
+        "headline": "The First Custom Food Solution​",
+        "text": "The first solution that can provide customized food! Seize the vast and rapidly growing market from the very beginning."
+      },
+      {
+        "headline": "Cutting-edge Digital Production Solution",
+        "text": "From ordering to cooking, every process is digitally controlled, enabling precise and efficient operation of your establishment."
+      },
+      {
+        "headline": "Operation Based on Demand​",
+        "text": "Secure stable business operations based on demand through mobile app access and order processing.​"
+      },
+      {
+        "headline": "Cartridge System",
+        "text": "With block-unit ingredient supply and a digital cooking control system, everyone can easily and accurately produce meals."
+      }
+    ]
+  },
+  "franchiseCheckContentList": {
+    "label": "Check it out",
+    "headline": "How do you cooksup?",
+    "desc": "Choose the equipment in your kitchen.",
+    "equipments": [
+      {
+        "id": 1,
+        "icon": "@/assets/franchise/equipments/oven.png",
+        "name": "Oven"
+      },
+      {
+        "id": 2,
+        "icon": "@/assets/franchise/equipments/fire_pot.png",
+        "name": "Fire Pot"
+      },
+      {
+        "id": 3,
+        "icon": "@/assets/franchise/equipments/fridge.png",
+        "name": "Fridge"
+      },
+      {
+        "id": 4,
+        "icon": "@/assets/franchise/equipments/freezer.png",
+        "name": "Freezer"
+      },
+      {
+        "id": 5,
+        "icon": "@/assets/franchise/equipments/fryer.png",
+        "name": "Fryer"
+      },
+      {
+        "id": 6,
+        "icon": "@/assets/franchise/equipments/grill.png",
+        "name": "Grill"
+      },
+      {
+        "id": 7,
+        "icon": "@/assets/franchise/equipments/stove.png",
+        "name": "Stove"
+      }
+    ]
+  },
+  "franchisePageContentList": {
+    "label": "For Owner",
+    "headline": "COOKSUP has got you covered",
+    "desc": "",
+    "contents": [
+      {
+        "headline": "How does the business work?",
+        "text": "All business activities are handled by the headquarters! Orders are also processed through the app at the headquarters! Focus only on cooking!"
+      },
+      {
+        "headline": "Worried about interior costs?",
+        "text": "Only the minimum requirements are needed. We help you make the most of your existing kitchen facilities and start with minimal costs."
+      },
+      {
+        "headline": "Reduce labor costs!",
+        "text": "All menus are composed of block units and are assembled immediately upon order. Due to the very low difficulty of cooking, it can be done with minimal unskilled labor."
+      },
+      {
+        "headline": "What if the trend passes?",
+        "text": "COOKSUP is not limited to specific genres of food! AI creates food in all genres that match the customer's health status."
+      }
+    ]
+  }
+}

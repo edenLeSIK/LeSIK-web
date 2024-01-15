@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import News from "./News";
 import { main, slideBackground } from "@/styles/theme";
-import { newsList } from "@/constants/about";
+import { AboutContentList } from "@/constants/about";
 
 const NewsFeed = () => {
   const openMore = () => {
@@ -14,15 +14,15 @@ const NewsFeed = () => {
   return (
     <FeedContainer>
       <div className="headline-wrapper">
-        <h6>Cooksup news</h6>
-        <h2>관련 뉴스</h2>
+        <h6>{AboutContentList.label}</h6>
+        <h2>{AboutContentList.headline}</h2>
         <div className="hide-on-mobile">
           <Button text="더보기" color="main" onClick={openMore} />
         </div>
         <Button className="only-on-mobile" text="Read More" color="main" />
       </div>
       <div className="feed-wrapper">
-        {newsList.map((el) => (
+        {AboutContentList.newsList.map((el) => (
           <News key={el.link} news={el} />
         ))}
       </div>

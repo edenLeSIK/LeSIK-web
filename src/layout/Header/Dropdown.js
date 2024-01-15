@@ -1,11 +1,19 @@
+import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { darkGray, main, white } from "@/styles/theme";
 
 const Dropdown = ({ setIsDropdown }) => {
+  const { i18n } = useTranslation();
+
+  const handleLanguage = (language) => {
+    i18n.changeLanguage(language);
+    setIsDropdown(false);
+  };
+
   return (
     <DropdownList>
-      <li onClick={() => setIsDropdown(false)}>한국어</li>
-      <li onClick={() => setIsDropdown(false)}>English</li>
+      <li onClick={() => handleLanguage("kr")}>한국어</li>
+      <li onClick={() => handleLanguage("en")}>English</li>
     </DropdownList>
   );
 };

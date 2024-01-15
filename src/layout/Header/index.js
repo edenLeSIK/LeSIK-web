@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { CgCloseO } from "react-icons/cg";
 import { FaHamburger } from "react-icons/fa";
@@ -20,6 +21,7 @@ const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [logoImage, setLogoImage] = useState(logo);
   const [isDropdown, setIsDropdown] = useState(false);
+  const { t, i18n } = useTranslation("main");
 
   const navigateToMakeatPage = () => {
     router.push("/makeat");
@@ -139,7 +141,6 @@ const HeaderContainer = styled.header`
   transition: background-color 0.2s ease;
   z-index: 50;
   box-shadow: ${(props) => props.shadow};
-  /* overflow: hidden; */
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {

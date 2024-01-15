@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { appWithTranslation } from "next-i18next";
 import { Header, Footer } from "@/layout";
 import { GlobalStyle } from "@/styles/globalStyle";
 
@@ -35,4 +36,4 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default App;
+export default appWithTranslation(App);

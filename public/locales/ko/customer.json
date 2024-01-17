@@ -6,22 +6,22 @@
     "button": "Makeat 알아보기",
     "contents": [
       {
-        "icon": "@/assets/customer/icons/serve.png",
+        "icon": "/assets/customer/icons/serve.png",
         "headline": "언제 어디서나",
         "text": "모바일 앱을 통해 온·오프라인 어디서든 서비스를 이용할 수 있어요."
       },
       {
-        "icon": "@/assets/customer/icons/plate.png",
+        "icon": "/assets/customer/icons/plate.png",
         "headline": "건강한 삶, 건강한 식사",
         "text": "나만을 위한 건강 맞춤형 음식으로 건강한 삶을 즐겨보세요."
       },
       {
-        "icon": "@/assets/customer/icons/fork.png",
+        "icon": "/assets/customer/icons/fork.png",
         "headline": "다양하고 맛있는 식사",
         "text": "건강한 식사도 맛있다! 신선한 재료로 맛있고 다양하게 Makeat 하세요."
       },
       {
-        "icon": "@/assets/customer/icons/menu.png",
+        "icon": "/assets/customer/icons/menu.png",
         "headline": "맞춤형 푸드의 새로운 컨셉",
         "text": "AI가 내 건강과 취향을 고려해 언제든 새로운 메뉴를 제시해줘요."
       }

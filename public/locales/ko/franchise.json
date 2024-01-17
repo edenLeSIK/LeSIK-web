@@ -30,37 +30,37 @@
     "equipments": [
       {
         "id": 1,
-        "icon": "@/assets/franchise/equipments/oven.png",
+        "icon": "/assets/franchise/equipments/oven.png",
         "name": "오븐"
       },
       {
         "id": 2,
-        "icon": "@/assets/franchise/equipments/fire_pot.png",
+        "icon": "/assets/franchise/equipments/fire_pot.png",
         "name": "화덕"
       },
       {
         "id": 3,
-        "icon": "@/assets/franchise/equipments/fridge.png",
+        "icon": "/assets/franchise/equipments/fridge.png",
         "name": "냉장고"
       },
       {
         "id": 4,
-        "icon": "@/assets/franchise/equipments/freezer.png",
+        "icon": "/assets/franchise/equipments/freezer.png",
         "name": "냉동고"
       },
       {
         "id": 5,
-        "icon": "@/assets/franchise/equipments/fryer.png",
+        "icon": "/assets/franchise/equipments/fryer.png",
         "name": "튀김기"
       },
       {
         "id": 6,
-        "icon": "@/assets/franchise/equipments/grill.png",
+        "icon": "/assets/franchise/equipments/grill.png",
         "name": "그릴"
       },
       {
         "id": 7,
-        "icon": "@/assets/franchise/equipments/stove.png",
+        "icon": "/assets/franchise/equipments/stove.png",
         "name": "화구"
       }
     ]

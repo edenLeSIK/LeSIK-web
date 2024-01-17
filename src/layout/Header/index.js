@@ -71,8 +71,6 @@ const Header = () => {
     return null;
   }
 
-  console.log(isDropdown);
-
   return (
     <>
       <HeaderContainer

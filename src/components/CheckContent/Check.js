@@ -32,7 +32,13 @@ const Check = ({ contents, onClick }) => {
           className={`option ${activeIndexes.includes(i) ? "active" : ""}`}
           onClick={() => toggleOption(i)}
         >
-          <Image alt="icon" src={option.icon} className="icon" />
+          <Image
+            alt="icon"
+            src={option.icon}
+            className="icon"
+            width={100}
+            height={100}
+          />
           <span className="option-name">{option.name}</span>
         </div>
       ))}

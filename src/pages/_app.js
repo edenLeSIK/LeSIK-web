@@ -26,12 +26,10 @@ const App = ({ Component, pageProps }) => {
         />
         <meta property="og:type" content="website" />
       </Head>
-      <>
-        <GlobalStyle />
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </>
+      <GlobalStyle />
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
 };

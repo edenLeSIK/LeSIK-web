@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation, Trans } from "next-i18next";
 import styled from "styled-components";
 import MainContent from "@/components/MainContent";
 import CardContent from "@/components/CardContent";
 import SlideContent from "@/components/SlideContent";
+import CheckContent from "@/components/CheckContent";
 import AdsContent from "@/components/AdsContent";
 import main from "@/assets/main/main_image.png";
 import { customerMainContentList } from "@/constants/customer";
@@ -10,10 +13,12 @@ import {
   franchiseMainContentList,
   franchiseCheckContentList,
 } from "@/constants/franchise";
-import CheckContent from "@/components/CheckContent";
 
 const Home = () => {
   const router = useRouter();
+  const { t: mainT } = useTranslation("main");
+  const { t: customerT } = useTranslation("customer");
+  const { t: franchiseT } = useTranslation("franchise");
   const navigateToMakeatPage = () => router.push("/makeat");
   const navigateToCustomerPage = () => router.push("/customer");
   const navigateToFranchisePage = () => router.push("/franchise");
@@ -24,41 +29,57 @@ const Home = () => {
     });
   };
 
+  console.log(33333, mainT);
+
+  console.log(2222, franchiseT("franchiseCheckContentList"));
+  console.log(
+    123,
+    franchiseT("franchiseMainContentList.contents", { returnObjects: true })
+  );
+
+  console.log(
+    1111,
+    franchiseT("franchiseMainContentList", { returnObjects: true })
+  );
+
   return (
     <HomeContainer>
       <MainContent
         image={main}
         headline={
-          <>
-            <span className="cooksup">Cooksup</span>
-            <br />
-            맞춤형 푸드 솔루션,
-            <br />
-            미래의 푸드 서비스를 시작하세요.
-          </>
+          <Trans
+            i18nKey="home.headline"
+            components={{ span: <span className="cooksup" /> }}
+          >
+            {mainT("home.headline")}
+          </Trans>
         }
         desc={
-          <>
-            <span className="cooksup letter-spacing">Cooksup</span> 솔루션을
-            통해 구축된 헬스 & 웰니스 푸드 브랜드를 소개합니다.
-          </>
+          <Trans
+            i18nKey="home.description"
+            components={{ span: <span className="cooksup" /> }}
+          >
+            {mainT("home.description")}
+          </Trans>
         }
         onClick={navigateToMakeatPage}
         text={<span className="makeat letter-spacing">Makeat</span>}
         color="makeat"
       />
       <CardContent
-        list={customerMainContentList}
+        list={customerT("customerMainContentList", { returnObjects: true })}
         text="더 알아보기"
         onClick={navigateToCustomerPage}
       />
       <SlideContent
-        list={franchiseMainContentList}
+        list={franchiseT("franchiseMainContentList", {
+          returnObjects: true,
+        })}
         text="더 알아보기"
         onClick={navigateToFranchisePage}
       />
       <CheckContent
-        list={franchiseCheckContentList}
+        list={franchiseT("franchiseCheckContentList", { returnObjects: true })}
         onClick={(selectedIndexes) => {
           if (selectedIndexes.length > 0) {
             const selectedOption = selectedIndexes.map(
@@ -72,6 +93,18 @@ const Home = () => {
       <AdsContent onClick={navigateToInquiryPage} />
     </HomeContainer>
   );
+};
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "main",
+        "customer",
+        "franchise",
+      ])),
+    },
+  };
 };
 
 const HomeContainer = styled.main`

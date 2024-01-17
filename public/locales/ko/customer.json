@@ -1,4 +1,8 @@
 {
+  "customer": {
+    "headline": " 당신에게 맞춘 건강식단,<br /><span className=\"makeat\">Makeat</span>",
+    "button": "<span className=\"makeat letter-spacing\">Makeat</span>"
+  },
   "customerMainContentList": {
     "label": "For Customer",
     "headline": "초개인화 맞춤형 푸드 서비스",

@@ -1,5 +1,9 @@
 {
-  "purchase": "Purchase now!",
-  "more": "Learn More..",
-  "makeat": "Purchase <span className=\"makeat\">Makeat</span>"
+  "home": {},
+  "button": {
+    "purchase": "Purchase now!",
+    "more": "Learn More..",
+    "makeat": "Purchase <span className=\"makeat\">Makeat</span>"
+  },
+  "footer": {}
 }

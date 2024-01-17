@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation, Trans } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styled from "styled-components";
 import MainContent from "@/components/MainContent";
 import CardContent from "@/components/CardContent";
@@ -8,11 +8,6 @@ import SlideContent from "@/components/SlideContent";
 import CheckContent from "@/components/CheckContent";
 import AdsContent from "@/components/AdsContent";
 import main from "@/assets/main/main_image.png";
-import { customerMainContentList } from "@/constants/customer";
-import {
-  franchiseMainContentList,
-  franchiseCheckContentList,
-} from "@/constants/franchise";
 
 const Home = () => {
   const router = useRouter();
@@ -28,19 +23,6 @@ const Home = () => {
       query: { options: selectedOptions },
     });
   };
-
-  console.log(33333, mainT);
-
-  console.log(2222, franchiseT("franchiseCheckContentList"));
-  console.log(
-    123,
-    franchiseT("franchiseMainContentList.contents", { returnObjects: true })
-  );
-
-  console.log(
-    1111,
-    franchiseT("franchiseMainContentList", { returnObjects: true })
-  );
 
   return (
     <HomeContainer>

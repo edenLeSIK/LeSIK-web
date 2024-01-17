@@ -2,9 +2,8 @@ import styled from "styled-components";
 import Button from "../Button";
 import News from "./News";
 import { main, slideBackground } from "@/styles/theme";
-import { AboutContentList } from "@/constants/about";
 
-const NewsFeed = () => {
+const NewsFeed = ({ t }) => {
   const openMore = () => {
     const newsLink =
       "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EB%9E%98%EC%8B%9D";
@@ -14,21 +13,29 @@ const NewsFeed = () => {
   return (
     <FeedContainer>
       <div className="headline-wrapper">
-        <h6>{AboutContentList.label}</h6>
-        <h2>{AboutContentList.headline}</h2>
+        <h6>{t("label")}</h6>
+        <h2>{t("headline")}</h2>
         <div className="hide-on-mobile">
-          <Button text="더보기" color="main" onClick={openMore} />
+          <Button text={t("button")} color="main" onClick={openMore} />
         </div>
         <Button className="only-on-mobile" text="Read More" color="main" />
       </div>
       <div className="feed-wrapper">
-        {AboutContentList.newsList.map((el) => (
+        {t("newsList", { returnObjects: true }).map((el) => (
           <News key={el.link} news={el} />
         ))}
       </div>
     </FeedContainer>
   );
 };
+
+// export const getStaticProps = async ({ locale }) => {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, ["news"])),
+//     },
+//   };
+// };
 
 const FeedContainer = styled.section`
   display: flex;

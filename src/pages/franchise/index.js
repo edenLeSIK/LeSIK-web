@@ -7,7 +7,6 @@ import DescContent from "@/components/DescContent";
 import SlideContent from "@/components/SlideContent";
 import CheckContent from "@/components/CheckContent";
 import background from "@/assets/franchise/franchise.png";
-import { franchiseCheckContentList } from "@/constants/franchise";
 
 const Franchise = () => {
   const router = useRouter();

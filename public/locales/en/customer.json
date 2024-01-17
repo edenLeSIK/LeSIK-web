@@ -6,22 +6,22 @@
     "button": "Makeat Learn More",
     "contents": [
       {
-        "icon": "@/assets/customer/icons/serve.png",
+        "id": 1,
         "headline": "Anytime, Anywhere",
         "text": "Access our services seamlessly both online and offline through our mobile app."
       },
       {
-        "icon": "@/assets/customer/icons/plate.png",
+        "id": 2,
         "headline": "Healthy Life, Healthy Diet",
         "text": "Indulge in a healthy lifestyle with personalized, health-focused meals designed just for you."
       },
       {
-        "icon": "@/assets/customer/icons/fork.png",
+        "id": 3,
         "headline": "Diverse and Delicious Meals",
         "text": "Healthy eating can be delicious too! Create tasty and diverse meals with fresh ingredients through our Makeat service."
       },
       {
-        "icon": "@/assets/customer/icons/menu.png",
+        "id": 4,
         "headline": "The New Concept of Customized Food",
         "text": "Experience a fresh approach to personalized food with AI suggesting new menus anytime, considering both your health and preferences."
       }

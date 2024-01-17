@@ -7,6 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n,
+  initReactI18next: true,
 };
 
 module.exports = nextConfig;

@@ -34,37 +34,30 @@
     "equipments": [
       {
         "id": 1,
-        "icon": "@/assets/franchise/equipments/oven.png",
         "name": "Oven"
       },
       {
         "id": 2,
-        "icon": "@/assets/franchise/equipments/fire_pot.png",
         "name": "Fire Pot"
       },
       {
         "id": 3,
-        "icon": "@/assets/franchise/equipments/fridge.png",
         "name": "Fridge"
       },
       {
         "id": 4,
-        "icon": "@/assets/franchise/equipments/freezer.png",
         "name": "Freezer"
       },
       {
         "id": 5,
-        "icon": "@/assets/franchise/equipments/fryer.png",
         "name": "Fryer"
       },
       {
         "id": 6,
-        "icon": "@/assets/franchise/equipments/grill.png",
         "name": "Grill"
       },
       {
         "id": 7,
-        "icon": "@/assets/franchise/equipments/stove.png",
         "name": "Stove"
       }
     ]

@@ -1,4 +1,8 @@
 {
+  "franchise": {
+    "headline": "요리에 집중하세요<br />나머지는 <span className=\"cooksup\">cooksup</span>에 맡겨주세요.",
+    "button": "입점 신청하기"
+  },
   "franchiseMainContentList": {
     "label": "For Franchise",
     "headline": "가장 진보한 미래형 푸드 솔루션",
@@ -25,7 +29,7 @@
   },
   "franchiseCheckContentList": {
     "label": "Check it out",
-    "headline": "How do you cooksup?",
+    "headline": "어떻게 cooksup 할까요?",
     "desc": "당신의 주방에 있는 장비를 선택해주세요.",
     "equipments": [
       {

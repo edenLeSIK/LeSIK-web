@@ -8,6 +8,7 @@ import {
   main,
   lightGray,
 } from "@/styles/theme";
+import { franchiseIconList } from "@/constants/image";
 
 const Check = ({ contents, onClick }) => {
   const [activeIndexes, setActiveIndexes] = useState([]);
@@ -26,22 +27,21 @@ const Check = ({ contents, onClick }) => {
 
   return (
     <CheckContainer>
-      {contents.map((option, i) => (
-        <div
-          key={i}
-          className={`option ${activeIndexes.includes(i) ? "active" : ""}`}
-          onClick={() => toggleOption(i)}
-        >
-          <Image
-            alt="icon"
-            src={option.icon}
-            className="icon"
-            width={100}
-            height={100}
-          />
-          <span className="option-name">{option.name}</span>
-        </div>
-      ))}
+      {contents.map((option, i) => {
+        const matchingIcon = franchiseIconList.find(
+          (icon) => icon.id === option.id
+        );
+        return (
+          <div
+            key={i}
+            className={`option ${activeIndexes.includes(i) ? "active" : ""}`}
+            onClick={() => toggleOption(i)}
+          >
+            <Image alt="icon" src={matchingIcon?.icon} className="icon" />
+            <span className="option-name">{option.name}</span>
+          </div>
+        );
+      })}
       <div
         className={`option next-btn ${isButtonDisabled ? "disabled" : ""}`}
         onClick={

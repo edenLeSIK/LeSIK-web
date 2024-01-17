@@ -11,14 +11,8 @@ const Customer = () => {
   const router = useRouter();
   const { t: mainT } = useTranslation("main");
   const { t: customerT } = useTranslation("customer");
-  const navigateToMakeatPage = () => router.push("/makeat");
 
-  console.log(
-    323232,
-    customerT("customerMainContentList.contents", {
-      returnObjects: true,
-    })
-  );
+  const navigateToMakeatPage = () => router.push("/makeat");
 
   return (
     <CustomerContainer>

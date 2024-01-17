@@ -14,6 +14,7 @@ const Home = () => {
   const { t: mainT } = useTranslation("main");
   const { t: customerT } = useTranslation("customer");
   const { t: franchiseT } = useTranslation("franchise");
+
   const navigateToMakeatPage = () => router.push("/makeat");
   const navigateToCustomerPage = () => router.push("/customer");
   const navigateToFranchisePage = () => router.push("/franchise");

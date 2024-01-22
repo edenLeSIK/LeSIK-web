@@ -5,9 +5,23 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify: true,
   i18n,
-  initReactI18next: true,
+
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      if (!config.resolve.fallback) {
+        config.resolve.fallback = {};
+      }
+      config.resolve.fallback.fs = false;
+    }
+
+    return config;
+  },
+
+  future: {
+    webpack5: true,
+  },
 };
 
 module.exports = nextConfig;

@@ -5,9 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
 import Button from "../Button";
 import { fontColor, red, white } from "@/styles/theme";
-import { formList } from "@/constants/inquiry";
 
-const InquiryForm = () => {
+const InquiryForm = ({ formList }) => {
   const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +14,7 @@ const InquiryForm = () => {
     email: "",
     inquiry: "",
     franchiseName: "",
-    framchiseAddress: "",
+    franchiseAddress: "",
     equipments: [],
   });
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);

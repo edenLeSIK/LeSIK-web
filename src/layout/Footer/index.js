@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { useTranslation, Trans } from "next-i18next";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
@@ -16,6 +18,8 @@ import { footerInfoList } from "@/constants/footer";
 
 const Footer = () => {
   const router = useRouter();
+  const { t } = useTranslation("common");
+
   const navigateToMakeatPage = () => router.push("/makeat");
 
   return (
@@ -70,6 +74,14 @@ const Footer = () => {
       </FooterContainer>
     )
   );
+};
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 };
 
 const FooterContainer = styled.footer`

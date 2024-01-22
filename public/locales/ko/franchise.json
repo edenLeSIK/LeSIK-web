@@ -29,7 +29,7 @@
   },
   "franchiseCheckContentList": {
     "label": "Check it out",
-    "headline": "어떻게 cooksup 할까요?",
+    "headline": "How do you cooksup?",
     "desc": "당신의 주방에 있는 장비를 선택해주세요.",
     "equipments": [
       {

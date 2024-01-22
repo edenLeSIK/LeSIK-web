@@ -1,0 +1,10 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "exclude": ["next-i18next"]
+      }
+    ]
+  ]
+}

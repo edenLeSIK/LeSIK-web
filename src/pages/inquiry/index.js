@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { useTranslation, Trans } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styled from "styled-components";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import InquiryForm from "@/components/InquiryForm";
@@ -7,37 +9,52 @@ import { inquiryPageContentList } from "@/constants/inquiry";
 
 const Inquiry = () => {
   const router = useRouter();
+  const { t } = useTranslation("inquiry");
 
   const goBack = () => router.back();
+
+  console.log(t("inquiryPageContentList.contents", { returnObjects: true }));
 
   return (
     <InquiryContainer>
       <section className="headline-wrapper">
         <BsFillArrowLeftSquareFill className="icon" onClick={goBack} />
         <div className="content">
-          <h1 className="headline">{inquiryPageContentList.headline}</h1>
-          <h4 className="desc">{inquiryPageContentList.desc}</h4>
+          <h1 className="headline">{t(inquiryPageContentList.headline)}</h1>
+          <h4 className="desc">{t(inquiryPageContentList.desc)}</h4>
           <ul className="sub-desc">
-            {inquiryPageContentList.contents.map((el) => (
-              <li key={el.content}>{el.content}</li>
-            ))}
+            {t("inquiryPageContentList.contents", { returnObjects: true }).map(
+              (el) => (
+                <li key={el.content}>{el.content}</li>
+              )
+            )}
           </ul>
         </div>
       </section>
       <section className="inquiry-content">
         <div className="left">
           <ul>
-            {inquiryPageContentList.contents.map((el) => (
-              <li key={el.content}>{el.content}</li>
-            ))}
+            {t("inquiryPageContentList.contents", { returnObjects: true }).map(
+              (el) => (
+                <li key={el.content}>{el.content}</li>
+              )
+            )}
           </ul>
         </div>
         <div className="right">
-          <InquiryForm />
+          <InquiryForm formList={t("formList", { returnObjects: true })} />
         </div>
       </section>
     </InquiryContainer>
   );
+};
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["inquiry"])),
+    },
+  };
 };
 
 const InquiryContainer = styled.main`

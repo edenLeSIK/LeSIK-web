@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import InquiryForm from "@/components/InquiryForm";
 import { contentBackground, main, white, darkGray } from "@/styles/theme";
-import { inquiryPageContentList } from "@/constants/inquiry";
 
 const Inquiry = () => {
   const router = useRouter();
@@ -13,15 +12,13 @@ const Inquiry = () => {
 
   const goBack = () => router.back();
 
-  console.log(t("inquiryPageContentList.contents", { returnObjects: true }));
-
   return (
     <InquiryContainer>
       <section className="headline-wrapper">
         <BsFillArrowLeftSquareFill className="icon" onClick={goBack} />
         <div className="content">
-          <h1 className="headline">{t(inquiryPageContentList.headline)}</h1>
-          <h4 className="desc">{t(inquiryPageContentList.desc)}</h4>
+          <h1 className="headline">{t("inquiryPageContentList.headline")}</h1>
+          <h4 className="desc">{t("inquiryPageContentList.desc")}</h4>
           <ul className="sub-desc">
             {t("inquiryPageContentList.contents", { returnObjects: true }).map(
               (el) => (
@@ -42,7 +39,11 @@ const Inquiry = () => {
           </ul>
         </div>
         <div className="right">
-          <InquiryForm formList={t("formList", { returnObjects: true })} />
+          <InquiryForm
+            formList={t("formList", { returnObjects: true })}
+            warningText={t("formInfo.warningText")}
+            franchiseInfo={t("formInfo.franchiseInfo")}
+          />
         </div>
       </section>
     </InquiryContainer>

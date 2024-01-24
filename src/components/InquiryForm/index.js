@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import { fontColor, red, white } from "@/styles/theme";
 
-const InquiryForm = ({ formList }) => {
+const InquiryForm = ({ formList, warningText, franchiseInfo }) => {
   const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
@@ -76,12 +76,11 @@ const InquiryForm = ({ formList }) => {
       />
       <form ref={formRef} onSubmit={submitEmail}>
         <p className="text">
-          <span>﹡</span> 필수 항목을 모두 작성해주세요. 전화번호와 이메일
-          형식에 유의하세요.
+          <span>﹡</span> {warningText}
         </p>
         {formList.map((el) => (
           <div className="input-wrapper" key={el.id}>
-            {el.id === 5 && <p className="sort">가맹점 정보</p>}
+            {el.id === 5 && <p className="sort">{franchiseInfo}</p>}
             <label>
               {el.label} {el.mark && <span>﹡</span>}
             </label>

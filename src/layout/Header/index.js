@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styled from "styled-components";
 import { CgCloseO } from "react-icons/cg";
 import { FaHamburger } from "react-icons/fa";
@@ -21,7 +22,7 @@ const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [logoImage, setLogoImage] = useState(logo);
   const [isDropdown, setIsDropdown] = useState(false);
-  const { t, i18n } = useTranslation("main");
+  const { t } = useTranslation("common");
 
   const navigateToMakeatPage = () => {
     router.push("/makeat");
@@ -107,7 +108,7 @@ const Header = () => {
           <div className="button-wrapper">
             <Button
               color={isHeaderModal ? "yellow" : "main"}
-              text="구매하기"
+              text={t("button.purchase")}
               className="hide-on-mobile"
               onClick={navigateToMakeatPage}
             />
@@ -124,6 +125,14 @@ const Header = () => {
       {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
     </>
   );
+};
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 };
 
 const HeaderContainer = styled.header`

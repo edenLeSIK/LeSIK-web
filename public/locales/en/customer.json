@@ -1,4 +1,8 @@
 {
+  "customer": {
+    "headline": "A Health Menu Tailored for You,<br /><span className=\"makeat\">Makeat</span>",
+    "button": "<span className=\"makeat letter-spacing\">Makeat</span>"
+  },
   "customerMainContentList": {
     "label": "For Customer",
     "headline": "Ultra-personalized Custom Food Service",

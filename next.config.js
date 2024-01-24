@@ -9,18 +9,16 @@ const nextConfig = {
   i18n,
 
   webpack: (config, { isServer }) => {
-    if (isServer) {
+    if (!isServer) {
       if (!config.resolve.fallback) {
         config.resolve.fallback = {};
       }
       config.resolve.fallback.fs = false;
     }
-
     return config;
   },
-
-  future: {
-    webpack5: true,
+  experimental: {
+    forceSwcTransforms: true,
   },
 };
 

@@ -11,9 +11,9 @@ import main from "@/assets/main/main_image.png";
 
 const Home = () => {
   const router = useRouter();
-  const { t: mainT } = useTranslation("main");
   const { t: customerT } = useTranslation("customer");
   const { t: franchiseT } = useTranslation("franchise");
+  const { t: commonT } = useTranslation("common");
 
   const navigateToMakeatPage = () => router.push("/makeat");
   const navigateToCustomerPage = () => router.push("/customer");
@@ -34,7 +34,7 @@ const Home = () => {
             i18nKey="home.headline"
             components={{ span: <span className="cooksup" /> }}
           >
-            {mainT("home.headline")}
+            {commonT("home.headline")}
           </Trans>
         }
         desc={
@@ -42,7 +42,7 @@ const Home = () => {
             i18nKey="home.description"
             components={{ span: <span className="cooksup" /> }}
           >
-            {mainT("home.description")}
+            {commonT("home.description")}
           </Trans>
         }
         onClick={navigateToMakeatPage}
@@ -51,14 +51,14 @@ const Home = () => {
       />
       <CardContent
         list={customerT("customerMainContentList", { returnObjects: true })}
-        text="더 알아보기"
+        text={commonT("button.more")}
         onClick={navigateToCustomerPage}
       />
       <SlideContent
         list={franchiseT("franchiseMainContentList", {
           returnObjects: true,
         })}
-        text="더 알아보기"
+        text={commonT("button.more")}
         onClick={navigateToFranchisePage}
       />
       <CheckContent
@@ -73,7 +73,10 @@ const Home = () => {
           }
         }}
       />
-      <AdsContent onClick={navigateToInquiryPage} />
+      <AdsContent
+        onClick={navigateToInquiryPage}
+        button={commonT("button.right")}
+      />
     </HomeContainer>
   );
 };
@@ -82,7 +85,7 @@ export const getStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
-        "main",
+        "common",
         "customer",
         "franchise",
       ])),
@@ -93,6 +96,20 @@ export const getStaticProps = async ({ locale }) => {
 const HomeContainer = styled.main`
   width: 100vw;
   min-height: 100vh;
+
+  figure {
+    @media screen and (max-width: 939px) and (min-width: 767px),
+      screen and (max-width: 766px) {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: auto;
+        object-fit: contain;
+        object-position: 0 50%;
+      }
+    }
+  }
 `;
 
 export default Home;

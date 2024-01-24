@@ -2,6 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import { fontColor, gray, makeatRed, makeatWhite } from "@/styles/theme";
@@ -10,6 +12,7 @@ import googlePlay from "@/assets/makeat/google_play.png";
 const MakeatPc = () => {
   const router = useRouter();
   const [search, setSearch] = useState("");
+  const { t } = useTranslation("makeat");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -18,15 +21,18 @@ const MakeatPc = () => {
 
   const handleQuery = (e) => setSearch(e.target.value);
 
+  console.log(t("headline"));
+
   return (
     <MakeatPcContainer>
       <div className="main">
         <Link href="/" className="link">
-          당신에게 딱 맞춘 건강식단<span className="makeat">Makeat</span>
+          {t("headline")}
+          <span className="makeat">Makeat</span>
         </Link>
         <form className="search-wrapper" onSubmit={onSubmit}>
           <input
-            placeholder="검색어를 입력하세요."
+            placeholder={t("search")}
             value={search}
             onChange={handleQuery}
           />
@@ -44,8 +50,8 @@ const MakeatPc = () => {
         <div className="notice-wrapper">
           <div className="makeat-app makeat">Makeat</div>
           <div className="text">
-            <p>앱으로 편하게 쇼핑하세요</p>
-            <p className="gray">다운로드로 연결됩니다</p>
+            <p>{t("app-message")}</p>
+            <p className="gray">{t("download-message")}</p>
           </div>
         </div>
         <div className="app-wrapper">
@@ -59,6 +65,14 @@ const MakeatPc = () => {
       </div>
     </MakeatPcContainer>
   );
+};
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["makeat"])),
+    },
+  };
 };
 
 const MakeatPcContainer = styled.section`

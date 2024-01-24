@@ -14,6 +14,10 @@
       }
     ]
   },
+  "formInfo": {
+    "warningText": "필수 항목을 모두 작성해주세요. 전화번호와 이메일 형식에 유의하세요.",
+    "franchiseInfo": "가맹점 정보"
+  },
   "formList": [
     { "id": 1, "label": "이름", "eng": "name", "mark": true },
     { "id": 2, "label": "전화번호", "eng": "tel", "mark": true },

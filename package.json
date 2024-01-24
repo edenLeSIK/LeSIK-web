@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.23.7",
     "@babel/preset-env": "^7.23.8",
     "@emailjs/browser": "^3.12.1",
     "i18next": "^23.7.16",

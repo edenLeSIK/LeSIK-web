@@ -1,4 +1,3 @@
-import { main } from "@/styles/theme";
 import styled from "styled-components";
 
 const MakeatMobile = () => {

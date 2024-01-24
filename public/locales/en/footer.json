@@ -1,27 +1,29 @@
-[
-  { "company": "LeSik Co., Ltd." },
-  {
-    "title": "Business Registration Number",
-    "content": "452-88-01682"
-  },
-  {
-    "title": "Representative",
-    "content": "Dongil You"
-  },
-  {
-    "title": "Hosting Service",
-    "content": "LeSik Co., Ltd."
-  },
-  {
-    "title": "Mail Order Sales Report Number",
-    "content": "2022-DaejeonYuseong-0960",
-    "link": {
-      "name": "Business Information Verification",
-      "href": "https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
+{
+  "company": "LeSIK Co., Ltd.",
+  "contents": [
+    {
+      "title": "Business Registration Number",
+      "content": "452-88-01682"
+    },
+    {
+      "title": "Representative",
+      "content": "Dongil You"
+    },
+    {
+      "title": "Hosting Service",
+      "content": "LeSik Co., Ltd."
+    },
+    {
+      "title": "Mail Order Sales Report Number",
+      "content": "2022-DaejeonYuseong-0960",
+      "link": {
+        "name": "Business Information Verification",
+        "href": "https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
+      }
+    },
+    {
+      "title": "Address",
+      "content": "(34134) 1st Floor, Co-working Space 5, Daejeon Tips Town, 99 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea"
     }
-  },
-  {
-    "title": "Address",
-    "content": "(34134) 1st Floor, Co-working Space 5, Daejeon Tips Town, 99 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea"
-  }
-]
+  ]
+}

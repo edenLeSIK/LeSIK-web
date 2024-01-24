@@ -14,6 +14,10 @@
       }
     ]
   },
+  "formInfo": {
+    "warningText": "Please fill in all required fields. Please pay attention to the format of the phone number and email.",
+    "franchiseInfo": "Franchise Information"
+  },
   "formList": [
     { "id": 1, "label": "Name", "eng": "name", "mark": true },
     { "id": 2, "label": "Phone Number", "eng": "tel", "mark": true },

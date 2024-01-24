@@ -48,18 +48,6 @@ const SectionContainer = styled.section`
       width: 100%;
       height: 100%;
     }
-
-    @media screen and (max-width: 939px) and (min-width: 767px),
-      screen and (max-width: 766px) {
-      display: flex;
-      align-items: center;
-
-      img {
-        width: auto;
-        object-fit: contain;
-        object-position: 0 50%;
-      }
-    }
   }
 
   .main-content {

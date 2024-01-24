@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useTranslation, Trans } from "next-i18next";
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
@@ -28,9 +28,9 @@ const Footer = () => {
         <div className="info">
           <div className="row">
             <address className="address">
-              <strong className="company">주식회사 래식</strong>
+              <strong className="company">{t("footer.company")}</strong>
               <ul>
-                {footerInfoList.map((el) => (
+                {/* {t("footer.contents", { returnObjects: true }).map((el) => (
                   <li key={el.title}>
                     <span className="list-title">{el.title}</span>
                     <span className="item">
@@ -42,7 +42,7 @@ const Footer = () => {
                       )}
                     </span>
                   </li>
-                ))}
+                ))} */}
               </ul>
             </address>
             <div className="right">
@@ -50,7 +50,14 @@ const Footer = () => {
                 <Button
                   color="mustard"
                   borderRadius="10"
-                  text="makeat 구매하기"
+                  text={
+                    <Trans
+                      i18nKey="button.makeat"
+                      components={{ span: <span className="makeat" /> }}
+                    >
+                      {t("button.makeat")}
+                    </Trans>
+                  }
                   onClick={navigateToMakeatPage}
                 />
               </div>
@@ -79,7 +86,7 @@ const Footer = () => {
 export const getStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
     },
   };
 };

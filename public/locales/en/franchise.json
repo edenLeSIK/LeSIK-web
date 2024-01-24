@@ -1,7 +1,7 @@
 {
-  "customer": {
-    "headline": "A Health Menu Tailored for You,<br /><span className=\"makeat\">Makeat</span>",
-    "button": "<span className=\"makeat letter-spacing\">Makeat</span>"
+  "franchise": {
+    "headline": "Focus on Cooking,<br />Leave the Rest to <span className=\"cooksup\">Cooksup</span>.",
+    "button": "Apply for Franchise"
   },
   "franchiseMainContentList": {
     "label": "For Franchise",

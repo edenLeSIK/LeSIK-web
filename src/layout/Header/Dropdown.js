@@ -12,7 +12,7 @@ const Dropdown = ({ setIsDropdown }) => {
 
   return (
     <DropdownList>
-      <li onClick={() => handleLanguage("kr")}>한국어</li>
+      <li onClick={() => handleLanguage("ko")}>한국어</li>
       <li onClick={() => handleLanguage("en")}>English</li>
     </DropdownList>
   );

@@ -14,7 +14,6 @@ import {
   yellow,
   fontColor2,
 } from "@/styles/theme";
-import { footerInfoList } from "@/constants/footer";
 
 const Footer = () => {
   const router = useRouter();
@@ -30,7 +29,7 @@ const Footer = () => {
             <address className="address">
               <strong className="company">{t("footer.company")}</strong>
               <ul>
-                {/* {t("footer.contents", { returnObjects: true }).map((el) => (
+                {t("footer.contents", { returnObjects: true }).map((el) => (
                   <li key={el.title}>
                     <span className="list-title">{el.title}</span>
                     <span className="item">
@@ -42,7 +41,7 @@ const Footer = () => {
                       )}
                     </span>
                   </li>
-                ))} */}
+                ))}
               </ul>
             </address>
             <div className="right">

@@ -1,12 +1,23 @@
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { darkGray, main, white } from "@/styles/theme";
 
 const Dropdown = ({ setIsDropdown }) => {
+  const router = useRouter();
   const { i18n } = useTranslation();
+  const { protocol, host, pathname } = window.location;
 
   const handleLanguage = (language) => {
-    i18n.changeLanguage(language);
+    if (i18n.language === language) {
+      setIsDropdown(false);
+      return;
+    }
+
+    const newLanguage = i18n.language === "ko" ? "/en" : "";
+    const newPath = pathname.replace(/^\/en(\/|$)/g, "/");
+    window.location.href = `${protocol}//${host}${newLanguage}${newPath}`;
     setIsDropdown(false);
   };
 

@@ -28,7 +28,7 @@ const Header = () => {
     router.push("/makeat");
     setIsHeaderModal(false);
   };
-  const handleHeader = () => setIsHeaderModal(!isHeaderModal);
+  const handleHeaderModal = () => setIsHeaderModal(!isHeaderModal);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,16 +75,16 @@ const Header = () => {
   return (
     <>
       <HeaderContainer
-        icon={iconColor}
-        iconHover={iconHoverColor}
-        background={backgroundColor}
-        font={fontColor}
-        shadow={boxShadow}
+        $icon={iconColor}
+        $iconHover={iconHoverColor}
+        $background={backgroundColor}
+        $font={fontColor}
+        $shadow={boxShadow}
       >
         <div className="header-wrapper">
           {isHeaderModal ? (
             <>
-              <CgCloseO onClick={handleHeader} className="icon" />
+              <CgCloseO onClick={handleHeaderModal} className="icon" />
               <Link
                 href="/"
                 className="link"
@@ -95,7 +95,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              <FaHamburger onClick={handleHeader} />
+              <FaHamburger onClick={handleHeaderModal} />
               <Link
                 href="/"
                 className="link"

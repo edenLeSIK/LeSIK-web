@@ -11,9 +11,7 @@ import main from "@/assets/main/main_image.png";
 
 const Home = () => {
   const router = useRouter();
-  const { t: customerT } = useTranslation("customer");
-  const { t: franchiseT } = useTranslation("franchise");
-  const { t: commonT } = useTranslation("common");
+  const { t } = useTranslation();
 
   const navigateToMakeatPage = () => router.push("/makeat");
   const navigateToCustomerPage = () => router.push("/customer");
@@ -34,7 +32,7 @@ const Home = () => {
             i18nKey="home.headline"
             components={{ span: <span className="cooksup" /> }}
           >
-            {commonT("home.headline")}
+            {t("common:home.headline")}
           </Trans>
         }
         desc={
@@ -42,7 +40,7 @@ const Home = () => {
             i18nKey="home.description"
             components={{ span: <span className="cooksup" /> }}
           >
-            {commonT("home.description")}
+            {t("common:home.description")}
           </Trans>
         }
         onClick={navigateToMakeatPage}
@@ -50,19 +48,19 @@ const Home = () => {
         color="makeat"
       />
       <CardContent
-        list={customerT("customerMainContentList", { returnObjects: true })}
-        text={commonT("button.more")}
+        list={t("customer:customerMainContentList", { returnObjects: true })}
+        text={t("common:button.more")}
         onClick={navigateToCustomerPage}
       />
       <SlideContent
-        list={franchiseT("franchiseMainContentList", {
+        list={t("franchise:franchiseMainContentList", {
           returnObjects: true,
         })}
-        text={commonT("button.more")}
+        text={t("common:button.more")}
         onClick={navigateToFranchisePage}
       />
       <CheckContent
-        list={franchiseT("franchiseCheckContentList", { returnObjects: true })}
+        list={t("franchise:franchiseCheckContentList", { returnObjects: true })}
         onClick={(selectedIndexes) => {
           if (selectedIndexes.length > 0) {
             const selectedOption = selectedIndexes.map(
@@ -75,7 +73,7 @@ const Home = () => {
       />
       <AdsContent
         onClick={navigateToInquiryPage}
-        button={commonT("button.right")}
+        button={t("common:button.right")}
       />
     </HomeContainer>
   );

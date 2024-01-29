@@ -69,10 +69,10 @@ const Footer = () => {
             <p>Copyright © LeSIK. All Rights Reserved.</p>
             <div className="legal-pages">
               <a>
-                <p>개인정보처리방침</p>
+                <p>{t("footer.privacy_policy")}</p>
               </a>
               <a>
-                <p>이용약관</p>
+                <p>{t("footer.terms")}</p>
               </a>
             </div>
           </div>
@@ -85,7 +85,7 @@ const Footer = () => {
 export const getStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "footer"])),
+      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 };

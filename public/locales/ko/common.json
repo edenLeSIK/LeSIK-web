@@ -6,7 +6,7 @@
   "button": {
     "purchase": "구매하기",
     "more": "더 알아보기",
-    "makeat": "<span className=\"makeat\">Makeat </span>구매하기",
+    "makeat": "<span className=\"makeat\">Makeat</span> 구매하기",
     "right": "바로 알아보기"
   },
   "footer": {
@@ -37,7 +37,7 @@
         "content": "(34134) 대전광역시 유성구 대학로 99, 대전팁스타운 1층 코워킹스페이스 5번"
       }
     ],
-    "privacyPolicy": "개인정보처리방침",
-    "termsOfService": "이용약관"
+    "privacy_policy": "개인정보처리방침",
+    "terms": "이용약관"
   }
 }

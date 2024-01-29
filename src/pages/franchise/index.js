@@ -30,7 +30,6 @@ const Franchise = () => {
         onClick={navigateToInquiryPage}
         color="main"
       />
-
       <DescContent
         label={t("franchisePageContentList.label")}
         headline={t("franchisePageContentList.headline")}

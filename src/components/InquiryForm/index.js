@@ -6,7 +6,14 @@ import styled from "styled-components";
 import Button from "../Button";
 import { fontColor, red, white } from "@/styles/theme";
 
-const InquiryForm = ({ formList, warningText, franchiseInfo }) => {
+const InquiryForm = ({
+  formList,
+  warningText,
+  franchiseInfo,
+  successMessage,
+  errorMessage,
+  button,
+}) => {
   const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
@@ -59,10 +66,10 @@ const InquiryForm = ({ formList, warningText, franchiseInfo }) => {
         formRef.current,
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       );
-      toast.success("신청이 완료되었습니다.");
+      toast.success(successMessage);
     } catch (error) {
       console.error(error);
-      toast.error("메일 전송에 실패하였습니다.");
+      toast.error(errorMessage);
     }
   };
 
@@ -91,7 +98,7 @@ const InquiryForm = ({ formList, warningText, franchiseInfo }) => {
           <input name="equipments" value={optionsQueryParam} readOnly />
         </div>
         <div className="button-wrapper">
-          <Button text="제출하기" color="main" disabled={isButtonDisabled} />
+          <Button text={button} color="main" disabled={isButtonDisabled} />
         </div>
       </form>
     </InquiryFormContainer>

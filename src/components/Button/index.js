@@ -83,7 +83,9 @@ const ButtonContainer = styled.button`
       (props.color === "pink" && `${pinkHover}`) ||
       (props.color === "orange" && `${orangeHover}`)};
     color: ${(props) => props.color === "transparent" && "rgba(0,0,0,0.7)"};
-    opacity: ${(props) => props.color === "makeat" && "0.9"};
+    opacity: ${(props) =>
+      (props.color === "makeat" && "0.9") ||
+      (props.color === "mustard" && "0.6")};
     cursor: pointer;
   }
 

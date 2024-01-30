@@ -6,5 +6,6 @@
         "exclude": ["next-i18next"]
       }
     ]
-  ]
+  ],
+  "plugins": ["babel-plugin-styled-components"]
 }

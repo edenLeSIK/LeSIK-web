@@ -21,14 +21,10 @@
         "content": "유동일"
       },
       {
-        "title": "호스팅 서비스",
-        "content": "주식회사 래식"
-      },
-      {
         "title": "통신판매업 신고번호",
         "content": "2022-대전유성-0960",
         "link": {
-          "name": "사업자정보확인",
+          "name": "Business Information Verification",
           "href": "https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
         }
       },

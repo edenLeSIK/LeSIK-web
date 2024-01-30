@@ -18,7 +18,14 @@ const Inquiry = () => {
         <BsFillArrowLeftSquareFill className="icon" onClick={goBack} />
         <div className="content">
           <h1 className="headline">{t("inquiryPageContentList.headline")}</h1>
-          <h4 className="desc">{t("inquiryPageContentList.desc")}</h4>
+          <h4 className="desc">
+            <Trans
+              i18nKey="inquiryPageContentList.desc"
+              components={{ span: <span className="makeat" /> }}
+            >
+              {t("inquiryPageContentList.desc")}
+            </Trans>
+          </h4>
           <ul className="sub-desc">
             {t("inquiryPageContentList.contents", { returnObjects: true }).map(
               (el) => (
@@ -43,6 +50,9 @@ const Inquiry = () => {
             formList={t("formList", { returnObjects: true })}
             warningText={t("formInfo.warningText")}
             franchiseInfo={t("formInfo.franchiseInfo")}
+            button={t("button")}
+            successMessage={t("messages.success")}
+            errorMessage={t("messages.error")}
           />
         </div>
       </section>

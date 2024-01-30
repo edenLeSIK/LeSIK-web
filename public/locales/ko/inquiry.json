@@ -30,5 +30,10 @@
       "eng": "franchiseAddress",
       "mark": false
     }
-  ]
+  ],
+  "messages": {
+    "success": "신청이 완료되었습니다.",
+    "error": "메일 전송에 실패하였습니다."
+  },
+  "button": "제출하기"
 }

@@ -1,19 +1,12 @@
 import { useRouter } from "next/router";
-import { useTranslation, Trans } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation, Trans } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styled from "styled-components";
 import Button from "@/components/Button";
 import logoWhite from "@/assets/logo/logo_text_white.png";
-import {
-  background,
-  lineColor,
-  main,
-  white,
-  yellow,
-  fontColor2,
-} from "@/styles/theme";
+import { background, lineColor, main, white, fontColor2 } from "@/styles/theme";
 
 const Footer = () => {
   const router = useRouter();
@@ -21,17 +14,23 @@ const Footer = () => {
 
   const navigateToMakeatPage = () => router.push("/makeat");
 
+  const contents = t("footer.contents", { returnObjects: true }) || [];
+
   return (
-    !(router.pathname === "/makeat") && (
+    !(router.pathname === "/makeat") &&
+    Array.isArray(contents) &&
+    contents.length > 0 && (
       <FooterContainer>
         <div className="info">
           <div className="row">
             <address className="address">
               <strong className="company">{t("footer.company")}</strong>
               <ul>
-                {t("footer.contents", { returnObjects: true }).map((el) => (
+                {contents.map((el) => (
                   <li key={el.title}>
-                    <span className="list-title">{el.title}</span>
+                    {el.title.length > 0 && (
+                      <span className="list-title">{el.title}</span>
+                    )}
                     <span className="item">
                       {el.content}
                       {el.link && (
@@ -85,7 +84,7 @@ const Footer = () => {
 export const getStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
     },
   };
 };
@@ -246,7 +245,7 @@ const FooterContainer = styled.footer`
         }
 
         a:hover {
-          color: ${yellow};
+          color: ${main};
         }
 
         a + a {

@@ -1,6 +1,6 @@
 {
   "inquiryPageContentList": {
-    "headline": "Solving the Challenges of the Food Service Industry Together",
+    "headline": "Uniting to Conquer Challenges in Food Service",
     "desc": "Join the vast customized food service market by adopting COOKSUP solution!",
     "contents": [
       {
@@ -35,5 +35,10 @@
       "eng": "franchiseAddress",
       "mark": false
     }
-  ]
+  ],
+  "messages": {
+    "success": "Application submitted",
+    "error": "e-mail failed."
+  },
+  "button": "Submit"
 }

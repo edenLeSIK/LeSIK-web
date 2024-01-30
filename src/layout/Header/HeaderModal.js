@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { Trans } from "next-i18next";
 import styled from "styled-components";
 import Button from "@/components/Button";
 import { navList } from "@/constants/nav";
 import { main, mustard, white } from "@/styles/theme";
 import backElement from "@/assets/logo/modal_element.png";
 
-const HeaderModal = ({ setIsHeaderModal }) => {
+const HeaderModal = ({ setIsHeaderModal, button }) => {
   const router = useRouter();
   const [activeLink, setActiveLink] = useState("");
   const navigateToMakeatPage = () => {
@@ -56,7 +57,14 @@ const HeaderModal = ({ setIsHeaderModal }) => {
       <div className="button-wrapper">
         <Button
           color="mustard"
-          text="makeat 구매하기"
+          text={
+            <Trans
+              i18key={button}
+              components={{ span: <span className="makeat" /> }}
+            >
+              {button}
+            </Trans>
+          }
           className="only-on-mobile"
           onClick={navigateToMakeatPage}
         />

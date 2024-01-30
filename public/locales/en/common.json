@@ -1,31 +1,27 @@
 {
   "home": {
-    "headline": "<span className=\"cooksup\">Cooksup</span><br />Tailored Food Solutions,<br />Start the Future of Food Service.",
+    "headline": "<span className=\"cooksup\">Cooksup</span><br />Tailored Food Solutions,<br />Shaping the Future of Food Service.",
     "description": "Introducing a Health & Wellness food brand established through the <span className=\"cooksup letter-spacing\">Cooksup</span> solution."
   },
   "button": {
     "purchase": "Purchase Now!",
     "more": "Learn More..",
-    "makeat": "Purchase <span className=\"makeat\">Makeat</span>",
+    "makeat": "Purchase <span className=\"makeat\"> Makeat</span>",
     "right": "Right Away"
   },
   "footer": {
     "company": "LeSIK Co., Ltd.",
     "contents": [
       {
-        "title": "Business Registration Number",
+        "title": "",
         "content": "452-88-01682"
       },
       {
-        "title": "Representative",
+        "title": "",
         "content": "Dongil You"
       },
       {
-        "title": "Hosting Service",
-        "content": "LeSik Co., Ltd."
-      },
-      {
-        "title": "Mail Order Sales Report Number",
+        "title": "",
         "content": "2022-DaejeonYuseong-0960",
         "link": {
           "name": "Business Information Verification",
@@ -33,7 +29,7 @@
         }
       },
       {
-        "title": "Address",
+        "title": "",
         "content": "(34134) 1st Floor, Co-working Space 5, Daejeon Tips Town, 99 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea"
       }
     ],

@@ -32,7 +32,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const position = window.pageYOffset;
+      const position = window.scrollY;
       setScrollPosition(position);
     };
     if (typeof window !== "undefined")
@@ -57,16 +57,16 @@ const Header = () => {
   const isScrollPastInnerHeight =
     scrollPosition > (typeof window !== "undefined" && window.innerHeight);
   const backgroundColor =
-    isScrollPastInnerHeight && !isHeaderModal ? `${white}` : `transparent`;
-  const fontColor = isScrollPastInnerHeight ? `${black}` : `${white}`;
+    isScrollPastInnerHeight && !isHeaderModal ? white : "transparent";
+  const fontColor = isScrollPastInnerHeight ? black : white;
   const boxShadow =
     isScrollPastInnerHeight && !isHeaderModal
       ? "0px 5px 10px rgba(0, 0, 0, 0.1)"
       : "none";
   const iconColor =
-    isScrollPastInnerHeight && !isHeaderModal ? `${darkGray}` : `${white}`;
+    isScrollPastInnerHeight && !isHeaderModal ? darkGray : white;
   const iconHoverColor =
-    isScrollPastInnerHeight && !isHeaderModal ? `${lineColor}` : `${offWhite}`;
+    isScrollPastInnerHeight && !isHeaderModal ? lineColor : offWhite;
 
   if (router.pathname === "/makeat" || router.pathname === "/inquiry") {
     return null;
@@ -75,11 +75,11 @@ const Header = () => {
   return (
     <>
       <HeaderContainer
-        $icon={iconColor}
-        $iconHover={iconHoverColor}
-        $background={backgroundColor}
-        $font={fontColor}
-        $shadow={boxShadow}
+        $backgroundColor={backgroundColor}
+        $fontColor={fontColor}
+        $boxShadow={boxShadow}
+        $iconColor={iconColor}
+        $iconHoverColor={iconHoverColor}
       >
         <div className="header-wrapper">
           {isHeaderModal ? (
@@ -122,7 +122,12 @@ const Header = () => {
           </div>
         </div>
       </HeaderContainer>
-      {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
+      {isHeaderModal && (
+        <HeaderModal
+          setIsHeaderModal={setIsHeaderModal}
+          button={t("button.makeat")}
+        />
+      )}
     </>
   );
 };
@@ -144,10 +149,10 @@ const HeaderContainer = styled.header`
   align-items: center;
   width: 100%;
   padding: 15px 4.44vw;
-  background-color: ${(props) => props.background};
+  background-color: ${(props) => props.$backgroundColor};
   transition: background-color 0.2s ease;
   z-index: 50;
-  box-shadow: ${(props) => props.shadow};
+  box-shadow: ${(props) => props.$boxShadow};
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
@@ -175,7 +180,7 @@ const HeaderContainer = styled.header`
       align-self: center;
       justify-self: flex-start;
       margin: auto 0;
-      color: ${(props) => props.icon};
+      color: ${(props) => props.$iconColor};
       font-size: 2.75rem;
       transition: all 0.2s ease;
       cursor: pointer;
@@ -187,7 +192,7 @@ const HeaderContainer = styled.header`
       }
 
       &:hover {
-        color: ${(props) => props.iconHover};
+        color: ${(props) => props.$iconHoverColor};
         opacity: 0.8;
       }
     }
@@ -227,7 +232,7 @@ const HeaderContainer = styled.header`
       display: flex;
       flex-direction: row;
       align-items: center;
-      color: ${(props) => props.font};
+      color: ${(props) => props.$fontColor};
 
       .language-icon {
         margin-left: 1rem;

@@ -18,6 +18,7 @@ import {
 const Button = ({ icon, text, color, onClick, disabled, className }) => {
   return (
     <ButtonContainer
+      suppressHydrationWarning
       color={color}
       onClick={onClick}
       disabled={disabled}

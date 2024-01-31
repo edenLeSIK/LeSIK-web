@@ -18,8 +18,7 @@ const Footer = () => {
 
   return (
     !(router.pathname === "/makeat") &&
-    Array.isArray(contents) &&
-    contents.length > 0 && (
+    Array.isArray(contents) && (
       <FooterContainer>
         <div className="info">
           <div className="row">
@@ -27,7 +26,7 @@ const Footer = () => {
               <strong className="company">{t("footer.company")}</strong>
               <ul>
                 {contents.map((el) => (
-                  <li key={el.title}>
+                  <li key={el.content}>
                     {el.title.length > 0 && (
                       <span className="list-title">{el.title}</span>
                     )}

@@ -86,7 +86,7 @@ const ButtonContainer = styled.button`
     color: ${(props) => props.color === "transparent" && "rgba(0,0,0,0.7)"};
     opacity: ${(props) =>
       (props.color === "makeat" && "0.9") ||
-      (props.color === "mustard" && "0.6")};
+      (props.color === "mustard" && "0.8")};
     cursor: pointer;
   }
 

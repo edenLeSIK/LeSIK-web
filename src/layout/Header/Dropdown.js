@@ -14,7 +14,9 @@ const Dropdown = ({ setIsDropdown }) => {
 
     const newLanguage = i18n.language === "ko" ? "/en" : "";
     const newPath = pathname.replace(/^\/en(\/|$)/g, "/");
-    window.location.href = `${protocol}//${host}${newLanguage}${newPath}`;
+    const route = `${protocol}//${host}${newLanguage}${newPath}`;
+    window.location.href = route;
+
     setIsDropdown(false);
   };
 

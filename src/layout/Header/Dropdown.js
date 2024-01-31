@@ -1,11 +1,8 @@
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { darkGray, main, white } from "@/styles/theme";
 
 const Dropdown = ({ setIsDropdown }) => {
-  const router = useRouter();
   const { i18n } = useTranslation();
   const { protocol, host, pathname } = window.location;
 

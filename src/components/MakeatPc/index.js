@@ -7,7 +7,7 @@ import { BsSearch } from "react-icons/bs";
 import { fontColor, gray, makeatRed, makeatWhite } from "@/styles/theme";
 import googlePlay from "@/assets/makeat/google_play.png";
 
-const MakeatPc = () => {
+const MakeatPc = ({ headline, searchText, appText, downloadText }) => {
   const router = useRouter();
   const [search, setSearch] = useState("");
 
@@ -22,11 +22,12 @@ const MakeatPc = () => {
     <MakeatPcContainer>
       <div className="main">
         <Link href="/" className="link">
-          당신에게 딱 맞춘 건강식단<span className="makeat">Makeat</span>
+          {headline}
+          <span className="makeat">Makeat</span>
         </Link>
         <form className="search-wrapper" onSubmit={onSubmit}>
           <input
-            placeholder="검색어를 입력하세요."
+            placeholder={searchText}
             value={search}
             onChange={handleQuery}
           />
@@ -44,8 +45,8 @@ const MakeatPc = () => {
         <div className="notice-wrapper">
           <div className="makeat-app makeat">Makeat</div>
           <div className="text">
-            <p>앱으로 편하게 쇼핑하세요</p>
-            <p className="gray">다운로드로 연결됩니다</p>
+            <p>{appText}</p>
+            <p className="gray">{downloadText}</p>
           </div>
         </div>
         <div className="app-wrapper">

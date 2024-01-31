@@ -1,0 +1,44 @@
+{
+  "inquiryPageContentList": {
+    "headline": "Uniting to Conquer Challenges in Food Service",
+    "desc": "Join the vast customized food service market by adopting COOKSUP solution!",
+    "contents": [
+      {
+        "content": "All operations and orders are managed through the app! Focus solely on production without other worries."
+      },
+      {
+        "content": "Utilize your existing kitchen. You can transition by introducing our system to the facilities you already possess."
+      },
+      {
+        "content": "It's really easy. All ingredients are provided in block units, allowing you to produce by combining them according to the system."
+      }
+    ]
+  },
+  "formInfo": {
+    "warningText": "Please fill in all required fields. Please pay attention to the format of the phone number and email.",
+    "franchiseInfo": "Franchise Information"
+  },
+  "formList": [
+    { "id": 1, "label": "Name", "eng": "name", "mark": true },
+    { "id": 2, "label": "Phone Number", "eng": "tel", "mark": true },
+    { "id": 3, "label": "Email", "eng": "email", "mark": true },
+    { "id": 4, "label": "Inquiry", "eng": "inquiry", "mark": false },
+    {
+      "id": 5,
+      "label": "Franchise Name",
+      "eng": "franchiseName",
+      "mark": true
+    },
+    {
+      "id": 6,
+      "label": "Franchise Address",
+      "eng": "franchiseAddress",
+      "mark": false
+    }
+  ],
+  "messages": {
+    "success": "Application submitted",
+    "error": "e-mail failed."
+  },
+  "button": "Submit"
+}

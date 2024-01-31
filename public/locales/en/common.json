@@ -1,0 +1,39 @@
+{
+  "home": {
+    "headline": "<span className=\"cooksup\">Cooksup</span><br />Tailored Food Solutions,<br />Shaping the Future of Food Service.",
+    "description": "Introducing a Health & Wellness food brand established through the <span className=\"cooksup letter-spacing\">Cooksup</span> solution."
+  },
+  "button": {
+    "purchase": "Purchase Now!",
+    "more": "Learn More..",
+    "makeat": "Purchase <span className=\"makeat\"> Makeat</span>",
+    "right": "Right Away"
+  },
+  "footer": {
+    "company": "LeSIK Co., Ltd.",
+    "contents": [
+      {
+        "title": "",
+        "content": "452-88-01682"
+      },
+      {
+        "title": "",
+        "content": "Dongil You"
+      },
+      {
+        "title": "",
+        "content": "2022-DaejeonYuseong-0960",
+        "link": {
+          "name": "Business Information Verification",
+          "href": "https://www.ftc.go.kr/bizCommPop.do?wrkr_no=4528801682"
+        }
+      },
+      {
+        "title": "",
+        "content": "(34134) 1st Floor, Co-working Space 5, Daejeon Tips Town, 99 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea"
+      }
+    ],
+    "privacy_policy": "Privacy Policy",
+    "terms": "Terms"
+  }
+}

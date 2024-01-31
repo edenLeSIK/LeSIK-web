@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import { background, main, white } from "@/styles/theme";
 
-const AdsContent = () => {
+const AdsContent = ({ button }) => {
   const router = useRouter();
   const navigateToInquiryPage = () => router.push("/inquiry");
 
@@ -19,7 +19,7 @@ const AdsContent = () => {
         </h2>
         <div className="button-wrapper">
           <Button
-            text="바로 참여하기"
+            text={button}
             color="yellow"
             onClick={navigateToInquiryPage}
           />

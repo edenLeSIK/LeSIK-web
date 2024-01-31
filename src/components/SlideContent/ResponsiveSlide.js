@@ -30,11 +30,11 @@ const ResponsiveSlide = ({ contents }) => {
   );
 };
 
-const PrevArrow = (props) => (
+const PrevArrow = ({ currentSlide, slideCount, ...props }) => (
   <RiArrowLeftSLine {...props} className="arrow prev" data-custom="true" />
 );
 
-const NextArrow = (props) => (
+const NextArrow = ({ currentSlide, slideCount, ...props }) => (
   <RiArrowRightSLine {...props} className="arrow next" data-custom="true" />
 );
 

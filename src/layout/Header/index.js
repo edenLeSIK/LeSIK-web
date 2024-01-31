@@ -2,31 +2,37 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styled from "styled-components";
 import { CgCloseO } from "react-icons/cg";
 import { FaHamburger } from "react-icons/fa";
+import { AiOutlineGlobal } from "react-icons/ai";
 import Button from "@/components/Button";
 import HeaderModal from "./HeaderModal";
+import Dropdown from "./Dropdown";
 import logo from "@/assets/logo/logo.png";
 import logoOriginal from "@/assets/logo/logo_ori.png";
 import logoWhite from "@/assets/logo/logo_white.png";
-import { black, white, darkGray } from "@/styles/theme";
+import { black, white, darkGray, offWhite, lineColor } from "@/styles/theme";
 
 const Header = () => {
   const router = useRouter();
   const [isHeaderModal, setIsHeaderModal] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [logoImage, setLogoImage] = useState(logo);
+  const [isDropdown, setIsDropdown] = useState(false);
+  const { t } = useTranslation("common");
 
   const navigateToMakeatPage = () => {
     router.push("/makeat");
     setIsHeaderModal(false);
   };
-  const handleHeader = () => setIsHeaderModal(!isHeaderModal);
+  const handleHeaderModal = () => setIsHeaderModal(!isHeaderModal);
 
   useEffect(() => {
     const handleScroll = () => {
-      const position = window.pageYOffset;
+      const position = window.scrollY;
       setScrollPosition(position);
     };
     if (typeof window !== "undefined")
@@ -51,14 +57,16 @@ const Header = () => {
   const isScrollPastInnerHeight =
     scrollPosition > (typeof window !== "undefined" && window.innerHeight);
   const backgroundColor =
-    isScrollPastInnerHeight && !isHeaderModal ? `${white}` : `transparent`;
-  const fontColor = isScrollPastInnerHeight ? `${black}` : `${white}`;
+    isScrollPastInnerHeight && !isHeaderModal ? white : "transparent";
+  const fontColor = isScrollPastInnerHeight ? black : white;
   const boxShadow =
     isScrollPastInnerHeight && !isHeaderModal
       ? "0px 5px 10px rgba(0, 0, 0, 0.1)"
       : "none";
   const iconColor =
-    isScrollPastInnerHeight && !isHeaderModal ? `${darkGray}` : `${white}`;
+    isScrollPastInnerHeight && !isHeaderModal ? darkGray : white;
+  const iconHoverColor =
+    isScrollPastInnerHeight && !isHeaderModal ? lineColor : offWhite;
 
   if (router.pathname === "/makeat" || router.pathname === "/inquiry") {
     return null;
@@ -67,15 +75,16 @@ const Header = () => {
   return (
     <>
       <HeaderContainer
-        icon={iconColor}
-        background={backgroundColor}
-        font={fontColor}
-        shadow={boxShadow}
+        $backgroundColor={backgroundColor}
+        $fontColor={fontColor}
+        $boxShadow={boxShadow}
+        $iconColor={iconColor}
+        $iconHoverColor={iconHoverColor}
       >
         <div className="header-wrapper">
           {isHeaderModal ? (
             <>
-              <CgCloseO onClick={handleHeader} className="icon" />
+              <CgCloseO onClick={handleHeaderModal} className="icon" />
               <Link
                 href="/"
                 className="link"
@@ -86,7 +95,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              <FaHamburger onClick={handleHeader} />
+              <FaHamburger onClick={handleHeaderModal} />
               <Link
                 href="/"
                 className="link"
@@ -99,16 +108,36 @@ const Header = () => {
           <div className="button-wrapper">
             <Button
               color={isHeaderModal ? "yellow" : "main"}
-              text="구매하기"
+              text={t("button.purchase")}
               className="hide-on-mobile"
               onClick={navigateToMakeatPage}
             />
           </div>
+          <div className="dropdown-wrapper">
+            <AiOutlineGlobal
+              className="language-icon"
+              onClick={() => setIsDropdown(!isDropdown)}
+            />
+            {isDropdown && <Dropdown setIsDropdown={setIsDropdown} />}
+          </div>
         </div>
       </HeaderContainer>
-      {isHeaderModal && <HeaderModal setIsHeaderModal={setIsHeaderModal} />}
+      {isHeaderModal && (
+        <HeaderModal
+          setIsHeaderModal={setIsHeaderModal}
+          button={t("button.makeat")}
+        />
+      )}
     </>
   );
+};
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 };
 
 const HeaderContainer = styled.header`
@@ -120,11 +149,10 @@ const HeaderContainer = styled.header`
   align-items: center;
   width: 100%;
   padding: 15px 4.44vw;
-  background-color: ${(props) => props.background};
+  background-color: ${(props) => props.$backgroundColor};
   transition: background-color 0.2s ease;
   z-index: 50;
-  box-shadow: ${(props) => props.shadow};
-  overflow: hidden;
+  box-shadow: ${(props) => props.$boxShadow};
 
   @media screen and (max-width: 939px) and (min-width: 767px),
     screen and (max-width: 766px) {
@@ -138,7 +166,7 @@ const HeaderContainer = styled.header`
 
   .header-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 0fr;
     width: 100%;
     margin: 0 auto;
 
@@ -152,7 +180,7 @@ const HeaderContainer = styled.header`
       align-self: center;
       justify-self: flex-start;
       margin: auto 0;
-      color: ${(props) => props.icon};
+      color: ${(props) => props.$iconColor};
       font-size: 2.75rem;
       transition: all 0.2s ease;
       cursor: pointer;
@@ -161,6 +189,11 @@ const HeaderContainer = styled.header`
         screen and (max-width: 766px) {
         min-width: auto;
         font-size: 2rem;
+      }
+
+      &:hover {
+        color: ${(props) => props.$iconHoverColor};
+        opacity: 0.8;
       }
     }
 
@@ -188,30 +221,22 @@ const HeaderContainer = styled.header`
     }
 
     .button-wrapper {
+      display: flex;
       align-self: center;
       justify-self: flex-end;
+      gap: 1rem;
     }
 
-    ul {
+    .dropdown-wrapper {
+      position: relative;
       display: flex;
+      flex-direction: row;
       align-items: center;
-      padding: 0;
+      color: ${(props) => props.$fontColor};
 
-      li > a {
-        padding: 0 8px;
-        color: ${(props) => props.font};
-        font-size: 1.125rem;
-        font-weight: 700;
-      }
-
-      li > a:hover {
-        color: ${darkGray};
-        font-size: 1.125rem;
-        font-weight: 700;
-      }
-
-      li + li {
-        margin-left: 30px;
+      .language-icon {
+        margin-left: 1rem;
+        font-size: 2%.5;
       }
     }
   }

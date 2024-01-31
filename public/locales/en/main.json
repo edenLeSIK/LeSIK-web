@@ -1,0 +1,18 @@
+{
+  "home": {
+    "headline": "Customized Food Solution<br /><span className=\"cooksup\">Cooksup</span>,<br />Start the Future of Food Service.",
+    "description": "Introducing a Health & Wellness food brand established through the <span className=\"cooksup letter-spacing\">Cooksup</span> solution.",
+    "button": "<span className=\"makeat letter-spacing\">Makeat</span>"
+  },
+  "customer": {
+    "headline": "A Health Menu Tailored for You,<br /><span className=\"makeat\">Makeat</span>",
+    "button": "<span className=\"makeat letter-spacing\">Makeat</span>"
+  },
+  "franchise": {
+    "headline": "Focus on Cooking,<br />Leave the Rest to <span className=\"cooksup\">Cooksup</span>.",
+    "button": "Apply for Franchise"
+  },
+  "about": {
+    "headline": "Welcome!<br />We are LeSik Corporation."
+  }
+}

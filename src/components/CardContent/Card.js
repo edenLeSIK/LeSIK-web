@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { lightGray, white } from "@/styles/theme";
+import { customerIconList } from "@/constants/image";
 
 const Card = ({ contents }) => {
   return (
@@ -10,11 +11,12 @@ const Card = ({ contents }) => {
           "Makeat",
           '<span class="makeat">Makeat</span>'
         );
+        const matchingIcon = customerIconList.find((icon) => icon.id === el.id);
 
         return (
           <div className="content-item" key={el.headline}>
             <div className="icon">
-              <Image alt="icon" src={el.icon} width={100} height={100} />
+              <Image alt="icon" src={matchingIcon?.icon} />
             </div>
             <h3 className="sub-headline">{el.headline}</h3>
             <p

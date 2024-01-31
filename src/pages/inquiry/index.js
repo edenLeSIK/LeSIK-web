@@ -1,12 +1,14 @@
 import { useRouter } from "next/router";
+import { useTranslation, Trans } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styled from "styled-components";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import InquiryForm from "@/components/InquiryForm";
 import { contentBackground, main, white, darkGray } from "@/styles/theme";
-import { inquiryPageContentList } from "@/constants/inquiry";
 
 const Inquiry = () => {
   const router = useRouter();
+  const { t } = useTranslation("inquiry");
 
   const goBack = () => router.back();
 
@@ -15,29 +17,55 @@ const Inquiry = () => {
       <section className="headline-wrapper">
         <BsFillArrowLeftSquareFill className="icon" onClick={goBack} />
         <div className="content">
-          <h1 className="headline">{inquiryPageContentList.headline}</h1>
-          <h4 className="desc">{inquiryPageContentList.desc}</h4>
+          <h1 className="headline">{t("inquiryPageContentList.headline")}</h1>
+          <h4 className="desc">
+            <Trans
+              i18nKey="inquiryPageContentList.desc"
+              components={{ span: <span className="makeat" /> }}
+            >
+              {t("inquiryPageContentList.desc")}
+            </Trans>
+          </h4>
           <ul className="sub-desc">
-            {inquiryPageContentList.contents.map((el) => (
-              <li key={el.content}>{el.content}</li>
-            ))}
+            {t("inquiryPageContentList.contents", { returnObjects: true }).map(
+              (el) => (
+                <li key={el.content}>{el.content}</li>
+              )
+            )}
           </ul>
         </div>
       </section>
       <section className="inquiry-content">
         <div className="left">
           <ul>
-            {inquiryPageContentList.contents.map((el) => (
-              <li key={el.content}>{el.content}</li>
-            ))}
+            {t("inquiryPageContentList.contents", { returnObjects: true }).map(
+              (el) => (
+                <li key={el.content}>{el.content}</li>
+              )
+            )}
           </ul>
         </div>
         <div className="right">
-          <InquiryForm />
+          <InquiryForm
+            formList={t("formList", { returnObjects: true })}
+            warningText={t("formInfo.warningText")}
+            franchiseInfo={t("formInfo.franchiseInfo")}
+            button={t("button")}
+            successMessage={t("messages.success")}
+            errorMessage={t("messages.error")}
+          />
         </div>
       </section>
     </InquiryContainer>
   );
+};
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["inquiry"])),
+    },
+  };
 };
 
 const InquiryContainer = styled.main`

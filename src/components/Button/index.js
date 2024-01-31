@@ -18,6 +18,7 @@ import {
 const Button = ({ icon, text, color, onClick, disabled, className }) => {
   return (
     <ButtonContainer
+      suppressHydrationWarning
       color={color}
       onClick={onClick}
       disabled={disabled}
@@ -83,7 +84,9 @@ const ButtonContainer = styled.button`
       (props.color === "pink" && `${pinkHover}`) ||
       (props.color === "orange" && `${orangeHover}`)};
     color: ${(props) => props.color === "transparent" && "rgba(0,0,0,0.7)"};
-    opacity: ${(props) => props.color === "makeat" && "0.9"};
+    opacity: ${(props) =>
+      (props.color === "makeat" && "0.9") ||
+      (props.color === "mustard" && "0.8")};
     cursor: pointer;
   }
 

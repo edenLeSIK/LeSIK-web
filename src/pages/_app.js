@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { appWithTranslation } from "next-i18next";
 import { Header, Footer } from "@/layout";
 import { GlobalStyle } from "@/styles/globalStyle";
 
@@ -25,14 +26,12 @@ const App = ({ Component, pageProps }) => {
         />
         <meta property="og:type" content="website" />
       </Head>
-      <>
-        <GlobalStyle />
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </>
+      <GlobalStyle />
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
 };
 
-export default App;
+export default appWithTranslation(App);

@@ -1,6 +1,7 @@
 export const main = "#00b590";
 export const mainHover = "#00a590";
 export const white = "#fff";
+export const offWhite = "#f5f5f5";
 export const black = "#000";
 export const darkGray = "#4a4a5a";
 export const gray = "#9791a1";

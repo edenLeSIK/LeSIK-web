@@ -32,6 +32,38 @@ export const customerMainContentList = {
   ],
 };
 
+export const customerMainContentEnglishVersionList = {
+  label: "For Customer",
+  headline: "Ultra-personalized Custom Food Service",
+  desc: "A tailored health management diet service where menus are generated based on individual health information.",
+  contents: [
+    {
+      id: 1,
+      icon: serve,
+      headline: "Anytime, Anywhere​​",
+      text: "Access our services seamlessly both online and offline through our mobile app.",
+    },
+    {
+      id: 2,
+      icon: plate,
+      headline: "Healthy Life, Healthy Diet",
+      text: "Indulge in a healthy lifestyle with personalized, health-focused meals designed just for you.",
+    },
+    {
+      id: 3,
+      icon: fork,
+      headline: "Diverse and Delicious Meals​​",
+      text: "Healthy eating can be delicious too! Create tasty and diverse meals with fresh ingredients through our Makeat service.​",
+    },
+    {
+      id: 4,
+      icon: menu,
+      headline: "The New Concept of Customized Food",
+      text: "Experience a fresh approach to personalized food with AI suggesting new menus anytime, considering both your health and preferences.",
+    },
+  ],
+};
+
 export const customerPageContentList = {
   label: "Makeat Customers",
   headline: "Makeat이 제시해드려요",

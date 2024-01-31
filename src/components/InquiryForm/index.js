@@ -5,9 +5,15 @@ import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
 import Button from "../Button";
 import { fontColor, red, white } from "@/styles/theme";
-import { formList } from "@/constants/inquiry";
 
-const InquiryForm = () => {
+const InquiryForm = ({
+  formList,
+  warningText,
+  franchiseInfo,
+  successMessage,
+  errorMessage,
+  button,
+}) => {
   const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +21,7 @@ const InquiryForm = () => {
     email: "",
     inquiry: "",
     franchiseName: "",
-    framchiseAddress: "",
+    franchiseAddress: "",
     equipments: [],
   });
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -60,10 +66,10 @@ const InquiryForm = () => {
         formRef.current,
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       );
-      toast.success("신청이 완료되었습니다.");
+      toast.success(successMessage);
     } catch (error) {
       console.error(error);
-      toast.error("메일 전송에 실패하였습니다.");
+      toast.error(errorMessage);
     }
   };
 
@@ -77,12 +83,11 @@ const InquiryForm = () => {
       />
       <form ref={formRef} onSubmit={submitEmail}>
         <p className="text">
-          <span>﹡</span> 필수 항목을 모두 작성해주세요. 전화번호와 이메일
-          형식에 유의하세요.
+          <span>﹡</span> {warningText}
         </p>
         {formList.map((el) => (
           <div className="input-wrapper" key={el.id}>
-            {el.id === 5 && <p className="sort">가맹점 정보</p>}
+            {el.id === 5 && <p className="sort">{franchiseInfo}</p>}
             <label>
               {el.label} {el.mark && <span>﹡</span>}
             </label>
@@ -93,7 +98,7 @@ const InquiryForm = () => {
           <input name="equipments" value={optionsQueryParam} readOnly />
         </div>
         <div className="button-wrapper">
-          <Button text="제출하기" color="main" disabled={isButtonDisabled} />
+          <Button text={button} color="main" disabled={isButtonDisabled} />
         </div>
       </form>
     </InquiryFormContainer>

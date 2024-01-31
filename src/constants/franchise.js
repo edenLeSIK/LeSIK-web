@@ -31,6 +31,31 @@ export const franchiseMainContentList = {
   ],
 };
 
+export const franchiseMainContentEnglishVersionList = {
+  label: "For Franchise",
+  headline: "The Most Advanced Futuristic Food Solution",
+  desc: "A cutting-edge franchise model built on a mobile app and digital production solution.",
+  button: "Do you want makeat?",
+  contents: [
+    {
+      headline: "The First Custom Food Solution​",
+      text: "he first solution that can provide customized food! Seize the vast and rapidly growing market from the very beginning.",
+    },
+    {
+      headline: "Cutting-edge Digital Production Solution",
+      text: "From ordering to cooking, every process is digitally controlled, enabling precise and efficient operation of your establishment.",
+    },
+    {
+      headline: "Operation Based on Demand​",
+      text: "Secure stable business operations based on demand through mobile app access and order processing.​",
+    },
+    {
+      headline: "Cartridge System",
+      text: "With block-unit ingredient supply and a digital cooking control system, everyone can easily and accurately produce meals.",
+    },
+  ],
+};
+
 export const franchiseCheckContentList = {
   label: "Check it out",
   headline: "How do you cooksup?",

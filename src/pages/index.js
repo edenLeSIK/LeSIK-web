@@ -64,7 +64,10 @@ const Home = () => {
         onClick={(selectedIndexes) => {
           if (selectedIndexes.length > 0) {
             const selectedOption = selectedIndexes.map(
-              (index) => franchiseCheckContentList.equipments[index]
+              (index) =>
+                t("franchise:franchiseCheckContentList", {
+                  returnObjects: true,
+                }).equipments[index]
             );
             const optionNames = selectedOption.map((option) => option.name);
             navigateToInquiryPage(optionNames);

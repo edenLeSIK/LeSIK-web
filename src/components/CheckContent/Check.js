@@ -21,8 +21,6 @@ const Check = ({ contents, onClick }) => {
     } else {
       setActiveIndexes((prevIndexes) => [...prevIndexes, i]);
     }
-
-    console.log("현재 선택된 옵션:", activeIndexes);
   };
 
   const isButtonDisabled = activeIndexes.length === 0;

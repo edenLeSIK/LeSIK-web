@@ -1,11 +1,12 @@
 {
   "name": "lesik-web",
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "pnpm@8.15.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@babel/core": "^7.23.7",

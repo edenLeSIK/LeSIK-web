@@ -160,6 +160,3 @@ cc-reporter
 /tsconfig.docs.json
 /typedoc.json
 /.markdownlint.json
-
-# Ignore pnpm lock file
-pnpm-lock.yaml

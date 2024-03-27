@@ -160,3 +160,6 @@ cc-reporter
 /tsconfig.docs.json
 /typedoc.json
 /.markdownlint.json
+
+.env
+.env.local

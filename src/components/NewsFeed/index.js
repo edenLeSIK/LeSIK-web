@@ -29,14 +29,6 @@ const NewsFeed = ({ t }) => {
   );
 };
 
-// export const getStaticProps = async ({ locale }) => {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ["news"])),
-//     },
-//   };
-// };
-
 const FeedContainer = styled.section`
   display: flex;
   -webkit-flex-direction: row;

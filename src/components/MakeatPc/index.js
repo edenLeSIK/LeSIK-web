@@ -53,9 +53,6 @@ const MakeatPc = ({ headline, searchText, appText, downloadText }) => {
           <a href="https://play.google.com/store/apps" target="_blank">
             <Image alt="google-play" src={googlePlay} className="google-play" />
           </a>
-          <a href="https://play.google.com/store/apps" target="_blank">
-            <Image alt="google-play" src={googlePlay} className="google-play" />
-          </a>
         </div>
       </div>
     </MakeatPcContainer>

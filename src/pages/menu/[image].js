@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styled from "styled-components";
-import { background } from "@/styles/theme";
-import balance1 from "@/assets/balance1.png";
-import balance2 from "@/assets/balance1.png";
-import diet1 from "@/assets/balance1.png";
-import diet2 from "@/assets/balance1.png";
+import balance1 from "@/assets/menu/balance1.png";
+import balance2 from "@/assets/menu/balance2.png";
+import diet1 from "@/assets/menu/diet1.png";
+import diet2 from "@/assets/menu/diet2.png";
 
 const images = {
   balance1,
@@ -21,7 +20,7 @@ const Menu = () => {
   if (image && images[image]) {
     return (
       <Container>
-        <Image src={images[image]} alt={image} width={500} height={500} />
+        <Image src={images[image]} alt={image} />
       </Container>
     );
   }
@@ -33,8 +32,13 @@ const Container = styled.main`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
-  background: ${background};
+  height: auto;
+
+  img {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+  }
 `;
 
 export default Menu;

@@ -68,7 +68,11 @@ const Header = () => {
   const iconHoverColor =
     isScrollPastInnerHeight && !isHeaderModal ? lineColor : offWhite;
 
-  if (router.pathname === "/makeat" || router.pathname === "/inquiry") {
+  if (
+    router.pathname === "/makeat" ||
+    router.pathname === "/inquiry" ||
+    router.pathname.startsWith("/menu")
+  ) {
     return null;
   }
 

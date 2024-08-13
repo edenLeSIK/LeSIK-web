@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styled from "styled-components";
-import balance1 from "@/assets/menu/balance1.png";
-import balance2 from "@/assets/menu/balance2.png";
-import diet1 from "@/assets/menu/diet1.png";
-import diet2 from "@/assets/menu/diet2.png";
-rom "@/assets/balance1.png";
+import balance1 from "@/assets/menu/balanceA.png";
+import balance2 from "@/assets/menu/balanceB.png";
+import diet1 from "@/assets/menu/dietA.png";
+import diet2 from "@/assets/menu/dietB.png";
 
 const images = {
   balance1,
